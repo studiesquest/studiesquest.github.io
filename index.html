@@ -3,17 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StudiesQuest Games</title>
+<title>StudiesQuest Arcade</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1 style="text-align:center; color:white;">StudiesQuest Games</h1>
+<header>
+    <h1>StudiesQuest Arcade</h1>
+    <input type="text" id="searchInput" placeholder="Search games...">
+    <div id="filterButtons">
+        <button class="filter-btn all">All</button>
+        <button class="filter-btn playable">Playable</button>
+        <button class="filter-btn slightly">Slightly Unplayable</button>
+        <button class="filter-btn hardly">Hardly Playable</button>
+    </div>
+</header>
 
-<!-- Grid container -->
-<div class="grid-container" id="games"></div>
+<div id="gridContainer" class="grid-container"></div>
 
-<!-- Fullscreen modal -->
 <div id="modal" class="modal">
     <button id="homeBtn">🏠 Home</button>
     <iframe id="gameFrame" src="" frameborder="0" allowfullscreen></iframe>
