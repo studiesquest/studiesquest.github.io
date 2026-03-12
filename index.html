@@ -1,25 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>StudiesQuest</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
-<header>⚔️ StudiesQuest</header>
+<header>
+    <h1>StudiesQuest Games</h1>
+    <input type="text" id="search" placeholder="Search games...">
+    <div id="filters">
+        <button class="filter-btn" data-filter="All">All</button>
+        <button class="filter-btn" data-filter="Playable">Playable</button>
+        <button class="filter-btn" data-filter="Slightly Unplayable">Slightly Unplayable</button>
+        <button class="filter-btn" data-filter="Hardly Playable">Hardly Playable</button>
+    </div>
+</header>
 
-<!-- Top-left Home Button -->
-<a href="index.html" id="home-button">
-  <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home" />
-</a>
-  
-<div class="games" id="games"></div>
+<main id="games" class="game-grid"></main>
 
 <script src="games.js"></script>
+<script>
+// Search functionality
+const searchInput = document.getElementById("search");
+searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    document.querySelectorAll(".game").forEach(game => {
+        const title = game.dataset.title.toLowerCase();
+        game.style.display = title.includes(query) ? "block" : "none";
+    });
+});
+
+// Filter functionality
+document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const filter = btn.dataset.filter;
+        document.querySelectorAll(".game").forEach(game => {
+            if(filter === "All" || game.dataset.playable === filter) {
+                game.style.display = "block";
+            } else {
+                game.style.display = "none";
+            }
+        });
+    });
+});
+</script>
 
 </body>
 </html>
