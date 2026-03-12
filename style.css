@@ -1,69 +1,120 @@
-body{
-margin:0;
-font-family:Arial;
-color:white;
-text-align:center;
-
-background-color:#020617;
-background-image:
-linear-gradient(rgba(0,255,200,0.08) 1px, transparent 1px),
-linear-gradient(90deg, rgba(0,255,200,0.08) 1px, transparent 1px);
-background-size:40px 40px;
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f0f0f;
+    color: #fff;
 }
 
-header{
-font-size:40px;
-padding:25px;
-font-weight:bold;
-letter-spacing:3px;
-border-bottom:2px solid #00ffd5;
-box-shadow:0 0 20px #00ffd5;
+header {
+    background: linear-gradient(90deg, #0b0b0b, #1a1a1a);
+    padding: 20px;
+    text-align: center;
 }
 
-.games{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-gap:30px;
-padding:40px;
+header h1 {
+    margin: 0 0 10px 0;
 }
 
-.game{
-background:#0f172a;
-border-radius:12px;
-padding:10px;
-border:1px solid #00ffd5;
-box-shadow:0 0 15px rgba(0,255,200,0.4);
+#search {
+    padding: 8px;
+    width: 220px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
 }
 
-iframe{
-width:100%;
-height:500px;
-border:none;
-border-radius:10px;
-}
-#home-button {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  width: 45px;
-  height: 45px;
-  border-radius: 8px;
-  background: #00ffd5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 10px #00ffd5;
-  z-index: 1000;
-  cursor: pointer;
-  transition: 0.2s;
+#filters {
+    margin-bottom: 10px;
 }
 
-#home-button img {
-  width: 70%;
-  height: 70%;
+.filter-btn {
+    padding: 6px 12px;
+    margin: 2px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-#home-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px #00ffd5;
+.filter-btn.playable { background-color: #4CAF50; }
+.filter-btn.slightly { background-color: #FFC107; }
+.filter-btn.hardly { background-color: #F44336; }
+
+.filter-btn:hover {
+    opacity: 0.8;
+}
+
+/* Mines-style grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    padding: 20px;
+}
+
+.game-tile {
+    background-color: #1b1b1b;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.game-tile:hover {
+    transform: scale(1.05);
+}
+
+.game-tile img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.game-tile h2 {
+    font-size: 1em;
+    margin: 5px 0 2px 0;
+}
+
+.game-tile p {
+    font-size: 0.8em;
+    margin: 2px 5px 5px 5px;
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.95);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+#gameFrame {
+    width: 90%;
+    height: 90%;
+}
+
+#homeBtn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 10px 15px;
+    background-color: #222;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+    z-index: 1010;
+}
+
+#homeBtn:hover {
+    background-color: #555;
 }
