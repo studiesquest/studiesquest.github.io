@@ -6,7 +6,7 @@ const games = [
 {title:"Smash Karts",src:"https://zapgames.io/smash-karts.embed"},
 {title:"Arrow Archers",src:"https://zapgames.io/arrow-archers.embed"},
 {title:"Drive Mad",src:"https://zapgames.io/drive-mad.embed"},
-{title:"Ragdoll Playground (Sandbox)",src:"https://azgames.io/ragdoll-playground.embed"},
+{title:"People Playground (Sandbox)",src:"https://azgames.io/ragdoll-playground.embed"},
 {title:"Minecraft Classic",src:"https://classic.minecraft.net"},
 
 /* TRENDING */
