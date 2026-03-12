@@ -41,3 +41,29 @@ height:500px;
 border:none;
 border-radius:10px;
 }
+#home-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  background: #00ffd5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px #00ffd5;
+  z-index: 1000;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#home-button img {
+  width: 70%;
+  height: 70%;
+}
+
+#home-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00ffd5;
+}
