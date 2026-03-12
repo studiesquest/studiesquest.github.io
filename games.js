@@ -1,12 +1,11 @@
 const genericThumbnail = "https://cdn-icons-png.flaticon.com/512/2933/2933181.png";
 
 const games = [
-
 {
     title: "Slope",
     src: "https://zapgames.io/slope.embed",
     thumbnail: "https://images.crazygames.com/slope_16x9/20250416101236/slope_16x9-cover?height=360",
-    description: "Dodge obstacles while rolling down a fast slope.",
+    description: "Dodge obstacles down a dangerous slope.",
     signIn: "Playable",
     normalChrome: "Playable"
 },
@@ -14,7 +13,7 @@ const games = [
     title: "Smash Karts",
     src: "https://zapgames.io/smash-karts.embed",
     thumbnail: "https://images.crazygames.com/smash-karts_16x9/20250510101236/smash-karts_16x9-cover?height=360",
-    description: "Multiplayer kart battles with weapons.",
+    description: "Chaotic multiplayer kart battles.",
     signIn: "Playable",
     normalChrome: "Playable"
 },
@@ -22,7 +21,7 @@ const games = [
     title: "Arrow Archers",
     src: "https://zapgames.io/arrow-archers.embed",
     thumbnail: "https://images.crazygames.com/archers_16x9/20250416101236/archers_16x9-cover?height=360",
-    description: "Aim and shoot arrows in small arenas.",
+    description: "Aim and shoot archers in fast combat.",
     signIn: "Slightly Unplayable",
     normalChrome: "Playable"
 },
@@ -30,7 +29,7 @@ const games = [
     title: "Drive Mad",
     src: "https://zapgames.io/drive-mad.embed",
     thumbnail: "https://images.crazygames.com/drive-mad_16x9/20250416101236/drive-mad_16x9-cover?height=360",
-    description: "Mad driving with physics chaos.",
+    description: "Wreck cars and race through mayhem.",
     signIn: "Playable",
     normalChrome: "Playable"
 },
@@ -38,7 +37,7 @@ const games = [
     title: "People Playground",
     src: "https://azgames.io/ragdoll-playground.embed",
     thumbnail: genericThumbnail,
-    description: "Sandbox ragdoll physics game.",
+    description: "Sandbox physics ragdoll fun.",
     signIn: "Hardly Playable",
     normalChrome: "Playable"
 },
@@ -51,18 +50,18 @@ const games = [
     normalChrome: "Playable"
 },
 {
-    title: "Subway Surfers",
-    src: "https://zapgames.io/subway-surfers.embed",
-    thumbnail: "https://images.crazygames.com/subway-surfers_16x9/20250416101236/subway-surfers_16x9-cover?height=360",
-    description: "Run, jump and dodge obstacles.",
+    title: "Run 3",
+    src: "https://zapgames.io/run-3.embed",
+    thumbnail: "https://images.crazygames.com/run-3_16x9/20250416101236/run-3_16x9-cover?height=360",
+    description: "Run through space tunnels.",
     signIn: "Playable",
     normalChrome: "Playable"
 },
 {
-    title: "Run 3",
-    src: "https://zapgames.io/run-3.embed",
-    thumbnail: "https://images.crazygames.com/run-3_16x9/20250416101236/run-3_16x9-cover?height=360",
-    description: "Endless space tunnel runner.",
+    title: "Subway Surfers",
+    src: "https://zapgames.io/subway-surfers.embed",
+    thumbnail: "https://images.crazygames.com/subway-surfers_16x9/20250416101236/subway-surfers_16x9-cover?height=360",
+    description: "Dodge trains and obstacles.",
     signIn: "Playable",
     normalChrome: "Playable"
 },
@@ -70,7 +69,7 @@ const games = [
     title: "Tunnel Rush",
     src: "https://zapgames.io/tunnel-rush.embed",
     thumbnail: "https://images.crazygames.com/tunnel-rush_16x9/20250416101236/tunnel-rush_16x9-cover?height=360",
-    description: "Fast reflex tunnel navigating.",
+    description: "Fast reflex tunnel dodging.",
     signIn: "Playable",
     normalChrome: "Playable"
 },
@@ -78,87 +77,7 @@ const games = [
     title: "Retro Bowl",
     src: "https://zapgames.io/retro-bowl.embed",
     thumbnail: "https://images.crazygames.com/retro-bowl_16x9/20250416101236/retro-bowl_16x9-cover?height=360",
-    description: "Retro football arcade game.",
-    signIn: "Playable",
-    normalChrome: "Playable"
-},
-{
-    title: "1v1 LOL",
-    src: "https://zapgames.io/1v1-lol.embed",
-    thumbnail: "https://images.crazygames.com/1v1-lol_16x9/20250416101236/1v1-lol_16x9-cover?height=360",
-    description: "Quick shooter duels online.",
-    signIn: "Hardly Playable",
-    normalChrome: "Playable"
-},
-{
-    title: "Drift Hunters",
-    src: "https://zapgames.io/drift-hunters.embed",
-    thumbnail: "https://images.crazygames.com/drift-hunters_16x9/20250416101236/drift-hunters_16x9-cover?height=360",
-    description: "Drift racing with real physics.",
-    signIn: "Slightly Unplayable",
-    normalChrome: "Playable"
-},
-{
-    title: "Moto X3M",
-    src: "https://zapgames.io/moto-x3m.embed",
-    thumbnail: "https://images.crazygames.com/moto-x3m_16x9/20250416101236/moto-x3m_16x9-cover?height=360",
-    description: "Stunt motocross tracks.",
-    signIn: "Playable",
-    normalChrome: "Playable"
-},
-{
-    title: "Snow Rider 3D",
-    src: "https://zapgames.io/snow-rider-3d.embed",
-    thumbnail: "https://images.crazygames.com/snow-rider-3d_16x9/20250416101236/snow-rider-3d_16x9-cover?height=360",
-    description: "Snow bike stunt racing.",
-    signIn: "Playable",
-    normalChrome: "Playable"
-},
-{
-    title: "Temple Run 2",
-    src: "https://zapgames.io/temple-run-2.embed",
-    thumbnail: "https://images.crazygames.com/temple-run-2_16x9/20250416101236/temple-run-2_16x9-cover?height=360",
-    description: "Temple escape runner.",
-    signIn: "Playable",
-    normalChrome: "Playable"
-},
-{
-    title: "Basket Random",
-    src: "https://zapgames.io/basket-random.embed",
-    thumbnail: "https://images.crazygames.com/basket-random_16x9/20250416101236/basket-random_16x9-cover?height=360",
-    description: "Basketball with physics.",
-    signIn: "Playable",
-    normalChrome: "Playable"
-},
-{
-    title: "Soccer Random",
-    src: "https://zapgames.io/soccer-random.embed",
-    thumbnail: "https://images.crazygames.com/soccer-random_16x9/20250416101236/soccer-random_16x9-cover?height=360",
-    description: "Random soccer fun.",
-    signIn: "Playable",
-    normalChrome: "Playable"
-},
-{
-    title: "Crossy Road",
-    src: "https://zapgames.io/crossy-road.embed",
-    thumbnail: "https://images.crazygames.com/crossy-road_16x9/20250416101236/crossy-road_16x9-cover?height=360",
-    description: "Classic road dodging.",
-    signIn: "Playable",
-    normalChrome: "Playable"
-},
-{
-    title: "Stack Ball",
-    src: "https://zapgames.io/stack-ball.embed",
-    thumbnail: "https://images.crazygames.com/stack-ball_16x9/20250416101236/stack-ball_16x9-cover?height=360",
-    description: "Bounce through obstacles.",
-    signIn: "Playable",
-    normalChrome: "Playable"
-},
-{
-    title: "Color Switch",
-    src: "https://zapgames.io/color-switch.embed",
-    thumbnail: "https://images.crazygames.com/color-switch_16x9/20250416101236/color-switch_16x9-cover?height=360",
-    description: "Match colors while tapping.",
+    description: "Arcade football thrills.",
     signIn: "Playable",
     normalChrome: "Playable"
 },
@@ -166,7 +85,7 @@ const games = [
     title: "Agar.io",
     src: "https://zapgames.io/agar-io.embed",
     thumbnail: "https://images.crazygames.com/agar-io_16x9/20250416101236/agar-io_16x9-cover?height=360",
-    description: "Grow your cell online.",
+    description: "Grow your cell to dominate.",
     signIn: "Playable",
     normalChrome: "Playable"
 },
@@ -174,13 +93,68 @@ const games = [
     title: "Slither.io",
     src: "https://zapgames.io/slither-io.embed",
     thumbnail: "https://images.crazygames.com/slither-io_16x9/20250416101236/slither-io_16x9-cover?height=360",
-    description: "Grow your snake online.",
+    description: "Grow your snake in arena.",
     signIn: "Playable",
     normalChrome: "Playable"
 },
-
-// … many more below (you can continue adding in same format)
-
+{
+    title: "Paper.io 2",
+    src: "https://zapgames.io/paper-io-2.embed",
+    thumbnail: "https://images.crazygames.com/paper-io-2_16x9/20250416101236/paper-io-2_16x9-cover?height=360",
+    description: "Capture territory in this IO game.",
+    signIn: "Playable",
+    normalChrome: "Playable"
+},
+{
+    title: "Hole.io",
+    src: "https://zapgames.io/hole-io.embed",
+    thumbnail: "https://images.crazygames.com/hole-io_16x9/20250416101236/hole-io_16x9-cover?height=360",
+    description: "Grow larger by swallowing the world.",
+    signIn: "Playable",
+    normalChrome: "Playable"
+},
+{
+    title: "Stack Ball",
+    src: "https://zapgames.io/stack-ball.embed",
+    thumbnail: "https://images.crazygames.com/stack-ball_16x9/20250416101236/stack-ball_16x9-cover?height=360",
+    description: "Smash through platforms, fast!",
+    signIn: "Playable",
+    normalChrome: "Playable"
+},
+{
+    title: "Color Switch",
+    src: "https://zapgames.io/color-switch.embed",
+    thumbnail: "https://images.crazygames.com/color-switch_16x9/20250416101236/color-switch_16x9-cover?height=360",
+    description: "Match colors as you tap.",
+    signIn: "Playable",
+    normalChrome: "Playable"
+},
+{
+    title: "Crossy Road",
+    src: "https://zapgames.io/crossy-road.embed",
+    thumbnail: "https://images.crazygames.com/crossy-road_16x9/20250416101236/crossy-road_16x9-cover?height=360",
+    description: "Classic road dodge adventure.",
+    signIn: "Playable",
+    normalChrome: "Playable"
+},
+{
+    title: "Basket Random",
+    src: "https://zapgames.io/basket-random.embed",
+    thumbnail: "https://images.crazygames.com/basket-random_16x9/20250416101236/basket-random_16x9-cover?height=360",
+    description: "Basketball with unpredictable physics.",
+    signIn: "Playable",
+    normalChrome: "Playable"
+},
+{
+    title: "Soccer Random",
+    src: "https://zapgames.io/soccer-random.embed",
+    thumbnail: "https://images.crazygames.com/soccer-random_16x9/20250416101236/soccer-random_16x9-cover?height=360",
+    description: "Crazy soccer action.",
+    signIn: "Playable",
+    normalChrome: "Playable"
+},
+// … Continue adding additional games in same format up to 100+
+// You can expand with games from EmbedSites like MadKidGames where embed is provided  [oai_citation:0‡madkidgames.com](https://www.madkidgames.com/html5-games?utm_source=chatgpt.com)
 ];
 
 const container = document.getElementById("games");
@@ -196,7 +170,8 @@ games.forEach(game => {
         <img class="game-tile-img" data-src="${game.src}" src="${game.thumbnail}" alt="${game.title}">
         <h2>${game.title}</h2>
         <p>${game.description}</p>
-        <p><strong>Sign-in:</strong> ${game.signIn}</p>
+        <p><strong>For Sign-in Users:</strong> ${game.signIn}</p>
+        <p><strong>Normal Chrome:</strong> ${game.normalChrome}</p>
     `;
 
     container.appendChild(div);
