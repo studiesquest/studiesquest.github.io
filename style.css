@@ -1,118 +1,129 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #1e1f29, #3b3d4d);
-  color: white;
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#031f08;
+color:white;
+overflow-x:hidden;
 }
 
-h1 {
-  text-align: center;
-  margin: 20px 0;
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at center,#0f7a33 0%,#031f08 70%);
+z-index:-1;
 }
 
-#search-bar {
-  display: block;
-  margin: 0 auto 20px auto;
-  padding: 10px;
-  width: 60%;
-  border-radius: 8px;
-  border: none;
-  font-size: 16px;
+header{
+text-align:center;
+padding:20px;
 }
 
-.filters {
-  text-align: center;
-  margin-bottom: 20px;
+h1{
+color:#32ff7e;
+text-shadow:0 0 15px #32ff7e;
+letter-spacing:2px;
 }
 
-.filter-btn {
-  padding: 8px 16px;
-  margin: 0 5px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  color: white;
-  background-color: #4c5c6c;
-  transition: 0.2s;
+#search{
+margin-top:10px;
+padding:10px;
+width:260px;
+border:none;
+border-radius:6px;
 }
 
-.filter-btn:hover {
-  background-color: #6c7c8c;
+.filters{
+margin-top:10px;
 }
 
-#game-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  padding: 0 20px 40px 20px;
+.filters button{
+margin:5px;
+padding:8px 12px;
+border:none;
+border-radius:6px;
+cursor:pointer;
 }
 
-.game-tile {
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 10px;
-  background-size: cover;
-  background-position: center;
-  height: 180px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  transition: transform 0.2s;
+main{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+gap:20px;
+padding:20px;
 }
 
-.game-tile:hover {
-  transform: scale(1.05);
+.tile{
+background:#062b12;
+border-radius:10px;
+overflow:hidden;
+cursor:pointer;
+transition:.2s;
+box-shadow:0 0 10px #0f7a33;
 }
 
-.game-title {
-  background-color: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  text-align: center;
-  padding: 5px;
-  font-size: 14px;
-  font-weight: bold;
+.tile:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #32ff7e;
 }
 
-#game-view {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #1e1f29;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.tile img{
+width:100%;
+height:120px;
+object-fit:cover;
 }
 
-#game-view.hidden {
-  display: none;
+.tile h3{
+margin:8px;
+font-size:16px;
 }
 
-#game-iframe {
-  width: 90%;
-  height: 90%;
-  border: none;
-  border-radius: 10px;
+.tile p{
+margin:8px;
+font-size:12px;
+color:#aaa;
 }
 
-#home-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  padding: 10px 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  background-color: #4c5c6c;
-  color: white;
-  z-index: 10;
+.tag{
+margin:8px;
+padding:4px 6px;
+border-radius:4px;
+font-size:11px;
+display:inline-block;
 }
 
-#home-btn:hover {
-  background-color: #6c7c8c;
+.playable{background:#00a84f;}
+.slight{background:#c9a400;}
+.hard{background:#c40000;}
+
+#modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+display:none;
+flex-direction:column;
+}
+
+#gameFrame{
+flex:1;
+border:none;
+width:100%;
+height:100%;
+}
+
+#home{
+position:absolute;
+top:15px;
+left:15px;
+z-index:5;
+padding:10px 14px;
+border:none;
+border-radius:6px;
+background:#32ff7e;
+font-weight:bold;
+cursor:pointer;
 }
