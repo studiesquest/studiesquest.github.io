@@ -1,63 +1,208 @@
-/* Background with glow + subtle texture */
-body {
-  background: radial-gradient(circle at top left, #1e1e2f, #12121a);
-  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* subtle texture overlay */
-  background-blend-mode: overlay;
-  color: #fff;
-  font-family: 'Segoe UI', sans-serif;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zap Games Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ----- General Reset ----- */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Top-right info box for playable restrictions */
-#playable-info {
+/* ----- Background ----- */
+body {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+/* ----- Top Info Text ----- */
+#playability-info {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 14px;
+  color: #00ffffcc;
+  max-width: 300px;
+  line-height: 1.4;
+  text-shadow: 0 0 5px #00ffff44, 0 0 10px #00ffff22;
+}
+
+/* ----- Home Button ----- */
+#home-btn {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: rgba(30, 30, 50, 0.85);
-  border: 2px solid #7b6cff;
-  border-radius: 12px;
-  padding: 15px 20px;
-  box-shadow: 0 0 20px rgba(123, 108, 255, 0.6);
-  max-width: 250px;
-  font-size: 14px;
-  line-height: 1.4;
-  z-index: 999;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #00ffff;
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
 }
 
-/* Search bar styling */
+/* Hover glow effect */
+#home-btn:hover {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: rgba(0, 255, 255, 0.6);
+  box-shadow: 
+    0 0 10px rgba(0, 255, 255, 0.6),
+    0 0 20px rgba(0, 255, 255, 0.4),
+    inset 0 0 10px rgba(0, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Click effect */
+#home-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+/* ----- Search Bar ----- */
 #search-bar {
   display: block;
-  width: 300px;
-  margin: 30px auto;
+  margin: 100px auto 40px auto;
+  width: 80%;
+  max-width: 600px;
   padding: 12px 20px;
-  border-radius: 20px;
-  border: none;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
   font-size: 16px;
-  box-shadow: 0 0 15px rgba(123, 108, 255, 0.4);
-}
-
-#search-bar::placeholder {
-  color: rgba(255,255,255,0.6);
-}
-
-/* Filter buttons */
-.filter-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid #7b6cff;
-  color: #fff;
-  padding: 8px 16px;
-  margin: 5px;
   border-radius: 12px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.2s ease;
+  border: 2px solid rgba(0,255,255,0.3);
+  background: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+  transition: all 0.3s ease;
 }
 
-.filter-btn:hover {
-  background: #7b6cff;
-  box-shadow: 0 0 15px rgba(123, 108, 255, 0.6);
-  color: #fff;
+#search-bar:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 15px rgba(0,255,255,0.5);
 }
+
+/* ----- Filters (Dropdowns or Buttons) ----- */
+.filter {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #00ffff;
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(0,255,255,0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(0,255,255,0.2);
+}
+
+.filter:hover {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 15px rgba(0,255,255,0.5);
+  transform: translateY(-1px);
+}
+
+/* ----- Game Cards ----- */
+.game-card {
+  display: inline-block;
+  width: 220px;
+  margin: 20px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0,255,255,0.5);
+}
+
+.game-card img {
+  width: 100%;
+  display: block;
+}
+
+.game-card .game-info {
+  padding: 10px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.game-card .game-info .title {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.game-card .game-info .description {
+  font-size: 13px;
+  color: #00ffffcc;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 700px) {
+  #search-bar { width: 90%; }
+  .game-card { width: 45%; margin: 10px; }
+}
+
+@media (max-width: 400px) {
+  .game-card { width: 90%; margin: 10px auto; display: block; }
+}
+</style>
+</head>
+<body>
+
+<div id="playability-info">
+  Some games may need excessive cursor usage, making them hard to play on sign-in pages because the mouse can move off the sign-in page, making the game unresponsive on ChromeOS. Playability ratings have been added.
+</div>
+
+<button id="home-btn">Home</button>
+
+<input type="text" id="search-bar" placeholder="Search games...">
+
+<div style="text-align:center; margin-bottom:20px;">
+  <span class="filter">Playable</span>
+  <span class="filter">Hardly Playable</span>
+  <span class="filter">Slightly Unplayable</span>
+</div>
+
+<!-- Example game cards -->
+<div id="games-container" style="text-align:center;">
+  <div class="game-card">
+    <img src="https://zapgames.io/cache/data/image/game/slope-game-h196x110.webp" alt="Slope">
+    <div class="game-info">
+      <div class="title">Slope</div>
+      <div class="description">Dodge obstacles down the slope.</div>
+    </div>
+  </div>
+  <div class="game-card">
+    <img src="https://zapgames.io/cache/data/image/game/smash-karts-h196x110.webp" alt="Smash Karts">
+    <div class="game-info">
+      <div class="title">Smash Karts</div>
+      <div class="description">Multiplayer kart battles.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
