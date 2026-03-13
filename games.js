@@ -90,4 +90,4 @@ const games = [
 {title:"Stickman Basketball", src:"https://zapgames.io/stickman-basketball.embed", thumbnail:"https://zapgames.io/thumb/stickman-basketball.png", description:"Arcade stickman basketball.", signIn:"Playable", normal:"Playable"},
 {title:"Stickman Hook 2", src:"https://zapgames.io/stickman-hook-2.embed", thumbnail:"https://zapgames.io/thumb/stickman-hook-2.png", description:"Swing even further.", signIn:"Playable", normal:"Playable"}
 ];
-];
+
