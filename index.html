@@ -4,193 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>StudiesQuest</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #fff;
-  }
-  header {
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    background: rgba(0,0,0,0.7);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  header img {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    margin-right: 20px;
-  }
-  header input {
-    flex: 1;
-    padding: 8px;
-    border-radius: 6px;
-    border: none;
-    outline: none;
-  }
-  #filters {
-    margin: 10px 20px;
-  }
-  #filters button {
-    margin-right: 10px;
-    padding: 6px 12px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    color: #fff;
-    font-weight: bold;
-    transition: transform 0.2s;
-  }
-  #filters button:hover {
-    transform: scale(1.1);
-  }
-  #game-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    padding: 20px;
-  }
-  .game-tile {
-    position: relative;
-    width: 100%;
-    padding-top: 100%; /* Square tiles */
-    background-size: cover;
-    background-position: center;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    color: #fff;
-    font-weight: bold;
-    text-align: center;
-  }
-  .game-tile:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
-  }
-  .game-title {
-    background: rgba(0,0,0,0.6);
-    width: 100%;
-    padding: 4px 0;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-  }
-  #game-container {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: #000;
-    z-index: 999;
-    flex-direction: column;
-  }
-  #game-container iframe {
-    flex: 1;
-    width: 100%;
-    border: none;
-  }
-  #home-btn {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    z-index: 1000;
-    padding: 10px 15px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background: #1abc9c;
-    color: #fff;
-    transition: transform 0.2s;
-  }
-  #home-btn:hover {
-    transform: scale(1.1);
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <header>
-  <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" id="logo" alt="Home">
-  <input type="text" id="search" placeholder="Search games...">
+  <div id="home-btn" title="Go Home">&#8962;</div>
+  <h1>StudiesQuest</h1>
+  <input type="text" id="search-bar" placeholder="Search games...">
 </header>
 
 <div id="filters">
-  <button style="background:#1abc9c;" data-filter="Playable">Playable</button>
-  <button style="background:#f39c12;" data-filter="Slightly Unplayable">Slightly Unplayable</button>
-  <button style="background:#e74c3c;" data-filter="Hardly Playable">Hardly Playable</button>
+  <button data-filter="all" class="filter-btn active">All</button>
+  <button data-filter="Playable" class="filter-btn">Playable</button>
+  <button data-filter="Slightly Unplayable" class="filter-btn">Slightly Unplayable</button>
+  <button data-filter="Hardly Playable" class="filter-btn">Hardly Playable</button>
 </div>
 
-<div id="game-grid"></div>
-
-<div id="game-container">
-  <button id="home-btn">Home</button>
-  <iframe id="game-frame" src="" allowfullscreen></iframe>
-</div>
+<main>
+  <div id="game-grid"></div>
+  <div id="game-container" class="hidden">
+    <iframe id="game-frame" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+</main>
 
 <script src="game.js"></script>
-<script>
-const gameGrid = document.getElementById('game-grid');
-const gameContainer = document.getElementById('game-container');
-const gameFrame = document.getElementById('game-frame');
-const homeBtn = document.getElementById('home-btn');
-const searchInput = document.getElementById('search');
-const filterButtons = document.querySelectorAll('#filters button');
-const logo = document.getElementById('logo');
-
-function displayGames(list) {
-  gameGrid.innerHTML = '';
-  list.forEach(game => {
-    const tile = document.createElement('div');
-    tile.classList.add('game-tile');
-    tile.style.backgroundImage = `url('${game.thumbnail}')`;
-    tile.innerHTML = `<div class="game-title">${game.title}</div>`;
-    tile.addEventListener('click', () => {
-      gameContainer.style.display = 'flex';
-      gameFrame.src = game.src;
-      gameGrid.style.display = 'none';
-    });
-    gameGrid.appendChild(tile);
-  });
-}
-
-// Initial load
-displayGames(games);
-
-// Filter buttons
-filterButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    displayGames(games.filter(game => game.signIn === btn.dataset.filter));
-  });
-});
-
-// Search
-searchInput.addEventListener('input', () => {
-  const query = searchInput.value.toLowerCase();
-  displayGames(games.filter(game => game.title.toLowerCase().includes(query)));
-});
-
-// Home button
-homeBtn.addEventListener('click', () => {
-  gameFrame.src = '';
-  gameContainer.style.display = 'none';
-  gameGrid.style.display = 'grid';
-});
-
-// Logo also works as home
-logo.addEventListener('click', () => {
-  gameFrame.src = '';
-  gameContainer.style.display = 'none';
-  gameGrid.style.display = 'grid';
-});
-</script>
-
+<script src="main.js"></script>
 </body>
 </html>
