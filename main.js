@@ -1,58 +1,57 @@
-const grid = document.getElementById("gridContainer");
-const modal = document.getElementById("modal");
-const gameFrame = document.getElementById("gameFrame");
-const homeBtn = document.getElementById("homeBtn");
-const searchInput = document.getElementById("searchInput");
-const filterBtns = document.querySelectorAll(".filter-btn");
+const gameGrid = document.getElementById('game-grid');
+const gameContainer = document.getElementById('game-container');
+const gameFrame = document.getElementById('game-frame');
+const homeBtn = document.getElementById('home-btn');
+const searchBar = document.getElementById('search-bar');
+const filterBtns = document.querySelectorAll('.filter-btn');
 
-function makeTile(game){
-    const tile = document.createElement("div");
-    tile.className = "game-tile";
-    tile.dataset.title = game.title.toLowerCase();
-    tile.dataset.signin = game.signIn.toLowerCase();
-    tile.dataset.normal = game.normal.toLowerCase();
+let filteredGames = games.slice();
 
-    tile.innerHTML = `
-        <img src="${game.thumbnail}" alt="${game.title}">
-        <h3>${game.title}</h3>
-        <p>${game.description}</p>
-        <span>${game.signIn}</span>
-    `;
+// Render games to grid
+function renderGames(gameList) {
+  gameGrid.innerHTML = '';
+  gameList.forEach(game => {
+    const tile = document.createElement('div');
+    tile.classList.add('game-tile');
+    tile.style.backgroundImage = `url(${game.thumbnail})`;
 
-    tile.addEventListener("click", () => {
-        gameFrame.src = game.src;
-        modal.style.display = "flex";
+    const overlay = document.createElement('div');
+    overlay.classList.add('game-overlay');
+    overlay.innerHTML = `<strong>${game.title}</strong><br>${game.description}<br><em>Sign-in: ${game.signIn}</em>`;
+    tile.appendChild(overlay);
+
+    tile.addEventListener('click', () => {
+      gameContainer.classList.remove('hidden');
+      gameFrame.src = game.src;
     });
 
-    return tile;
+    gameGrid.appendChild(tile);
+  });
 }
 
-function renderGames(list){
-    grid.innerHTML = "";
-    list.forEach(g => grid.appendChild(makeTile(g)));
-}
-
-renderGames(games);
-
-homeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-    gameFrame.src = "";
-});
-
-searchInput.addEventListener("input", ()=>{
-    const q = searchInput.value.toLowerCase();
-    renderGames(games.filter(g => g.title.toLowerCase().includes(q)));
-});
-
+// Filters
 filterBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        const type = btn.textContent.toLowerCase();
-        if(type === "all"){
-            renderGames(games);
-        } else {
-            renderGames(games.filter(g => 
-                g.signIn.toLowerCase() === type || g.normal.toLowerCase() === type
-            ));
-        }
-    });
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.getAttribute('data-filter');
+    filteredGames = filter === 'all' ? games : games.filter(g => g.signIn === filter);
+    renderGames(filteredGames);
+  });
 });
+
+// Search
+searchBar.addEventListener('input', () => {
+  const query = searchBar.value.toLowerCase();
+  filteredGames = games.filter(g => g.title.toLowerCase().includes(query));
+  renderGames(filteredGames);
+});
+
+// Home button
+homeBtn.addEventListener('click', () => {
+  gameContainer.classList.add('hidden');
+  gameFrame.src = '';
+});
+
+// Initial render
+renderGames(filteredGames);
