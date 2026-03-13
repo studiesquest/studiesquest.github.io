@@ -1,84 +1,153 @@
 const games = [
-{title:"Slope", src:"https://zapgames.io/slope.embed", thumbnail:"https://www.gameflare.com/images/games/3077/3077‑small.jpg", description:"Fast 3D endless slope runner.", signIn:"Playable", normal:"Playable"},
-{title:"Smash Karts", src:"https://zapgames.io/smash-karts.embed", thumbnail:"https://img.poki.com/180x180/games/smash-karts/logo.png", description:"3D kart battle chaos.", signIn:"Playable", normal:"Playable"},
-{title:"Ragdoll Archers", src:"https://zapgames.io/ragdoll-archers.embed", thumbnail:"https://ragdollninja.com/screenshots/ragdoll-archers/1.jpg", description:"Aim and shoot physics archers.", signIn:"Slightly Unplayable", normal:"Playable"},
-{title:"Drive Mad", src:"https://zapgames.io/drive-mad.embed", thumbnail:"https://cdn.7tf.org/images/games/drive-mad.jpg", description:"Drive crazy and crash stuff.", signIn:"Playable", normal:"Playable"},
-{title:"People Playground (fanmade)", src:"https://azgames.io/ragdoll-playground.embed", thumbnail:"https://pbs.twimg.com/media/DkpoW‑UXsAAQizL.jpg", description:"Sandbox physics chaos.", signIn:"Hardly Playable", normal:"Playable"},
-{title:"Slope Rider", src:"https://zapgames.io/slope-rider.embed", thumbnail:"https://cdn.7tf.org/images/games/slope-rider.jpg", description:"Winter slope dodging.", signIn:"Playable", normal:"Playable"},
-{title:"Basketball Legends", src:"https://zapgames.io/basketball-legends.embed", thumbnail:"https://cdn.7tf.org/images/games/basketball-legends.jpg", description:"Arcade basketball action.", signIn:"Playable", normal:"Playable"},
-{title:"Football Legends", src:"https://zapgames.io/football-legends.embed", thumbnail:"https://cdn.7tf.org/images/games/football-legends.jpg", description:"Fast soccer matches.", signIn:"Playable", normal:"Playable"},
-{title:"Bonk.io", src:"https://zapgames.io/bonk-io.embed", thumbnail:"https://static.bonk.io/img/bonk‑logo.png", description:"Physics multiplayer battles.", signIn:"Playable", normal:"Playable"},
-{title:"Snake.io", src:"https://zapgames.io/snake-io.embed", thumbnail:"https://cdn.7tf.org/images/games/snake-io.jpg", description:"Grow your snake endlessly.", signIn:"Playable", normal:"Playable"},
-{title:"Duck Life", src:"https://zapgames.io/duck-life.embed", thumbnail:"https://cdn.7tf.org/images/games/duck-life.jpg", description:"Train ducks to race.", signIn:"Playable", normal:"Playable"},
-{title:"Short Life", src:"https://zapgames.io/short-life.embed", thumbnail:"https://cdn.7tf.org/images/games/short-life.jpg", description:"Platform and ragdoll fun.", signIn:"Playable", normal:"Playable"},
-{title:"Color Rhythm", src:"https://zapgames.io/color-rhythm.embed", thumbnail:"https://cdn.7tf.org/images/games/color-rhythm.jpg", description:"Tap beats and music fun.", signIn:"Playable", normal:"Playable"},
-{title:"Hyper Tunnel", src:"https://zapgames.io/hyper-tunnel.embed", thumbnail:"https://cdn.7tf.org/images/games/hyper-tunnel.jpg", description:"High speed tunnel dash.", signIn:"Playable", normal:"Playable"},
-{title:"Orbit Beats", src:"https://zapgames.io/orbit-beats.embed", thumbnail:"https://cdn.7tf.org/images/games/orbit-beats.jpg", description:"Music‑arcade beats.", signIn:"Playable", normal:"Playable"},
-{title:"Stack Rush", src:"https://zapgames.io/stack-rush.embed", thumbnail:"https://cdn.7tf.org/images/games/stack-rush.jpg", description:"Smash through stacks.", signIn:"Playable", normal:"Playable"},
-{title:"Chase Rush", src:"https://zapgames.io/chase-rush.embed", thumbnail:"https://cdn.7tf.org/images/games/chase-rush.jpg", description:"Dodge obstacles fast.", signIn:"Playable", normal:"Playable"},
-{title:"Mr Flip", src:"https://zapgames.io/mr-flip.embed", thumbnail:"https://cdn.7tf.org/images/games/mr-flip.jpg", description:"Flip and jump levels.", signIn:"Playable", normal:"Playable"},
-{title:"Orbit Kick", src:"https://zapgames.io/orbit-kick.embed", thumbnail:"https://cdn.7tf.org/images/games/orbit-kick.jpg", description:"Arcade kick fun.", signIn:"Playable", normal:"Playable"},
-{title:"Poxel.io", src:"https://zapgames.io/poxel-io.embed", thumbnail:"https://cdn.7tf.org/images/games/poxel.io.jpg", description:"Grow and battle IO.", signIn:"Playable", normal:"Playable"},
-{title:"Bloxd.io", src:"https://zapgames.io/bloxd-io.embed", thumbnail:"https://cdn.7tf.org/images/games/bloxd-io.jpg", description:"IO arena combat.", signIn:"Playable", normal:"Playable"},
-{title:"Territorial.io", src:"https://zapgames.io/territorial-io.embed", thumbnail:"https://cdn.7tf.org/images/games/territorial-io.jpg", description:"Strategy IO challenge.", signIn:"Playable", normal:"Playable"},
-{title:"Traffic Rally", src:"https://zapgames.io/traffic-rally.embed", thumbnail:"https://cdn.7tf.org/images/games/traffic-rally.jpg", description:"High speed rally action.", signIn:"Playable", normal:"Playable"},
-{title:"Return Man", src:"https://zapgames.io/return-man.embed", thumbnail:"https://cdn.7tf.org/images/games/return-man.jpg", description:"Gridiron rush gameplay.", signIn:"Playable", normal:"Playable"},
-{title:"MineFun.io", src:"https://zapgames.io/minefun-io.embed", thumbnail:"https://cdn.7tf.org/images/games/minefun.io.jpg", description:"Mine and survive IO.", signIn:"Playable", normal:"Playable"},
-{title:"City Brawl", src:"https://zapgames.io/city-brawl.embed", thumbnail:"https://cdn.7tf.org/images/games/city-brawl.jpg", description:"Street fight free for all.", signIn:"Playable", normal:"Playable"},
-{title:"Escape Road", src:"https://zapgames.io/escape-road.embed", thumbnail:"https://cdn.7tf.org/images/games/escape-road.jpg", description:"Road survival action.", signIn:"Playable", normal:"Playable"},
-{title:"Curve Rush", src:"https://zapgames.io/curve-rush.embed", thumbnail:"https://cdn.7tf.org/images/games/curve-rush.jpg", description:"Futuristic racing dash.", signIn:"Playable", normal:"Playable"},
-{title:"Tap Road", src:"https://zapgames.io/tap-road.embed", thumbnail:"https://cdn.7tf.org/images/games/tap-road.jpg", description:"Tap driving fun.", signIn:"Playable", normal:"Playable"},
-{title:"Golf Hit", src:"https://zapgames.io/golf-hit.embed", thumbnail:"https://cdn.7tf.org/images/games/golf-hit.jpg", description:"Golf arcade challenge.", signIn:"Playable", normal:"Playable"},
-{title:"Mini Royale 2", src:"https://zapgames.io/mini-royale-2.embed", thumbnail:"https://cdn.7tf.org/images/games/mini-royale-2.jpg", description:"Battle royale shooter IO.", signIn:"Hardly Playable", normal:"Playable"},
-{title:"Deadshot.io", src:"https://zapgames.io/deadshot-io.embed", thumbnail:"https://cdn.7tf.org/images/games/deadshot-io.jpg", description:"Reflex shooter arena.", signIn:"Hardly Playable", normal:"Playable"},
-{title:"1v1.LOL", src:"https://zapgames.io/1v1.lol.embed", thumbnail:"https://upload.wikimedia.org/wikipedia/en/4/4d/1v1LOL_logo.png", description:"Build and shoot arena shooter.", signIn:"Hardly Playable", normal:"Playable"},
-{title:"Krunker.io", src:"https://zapgames.io/krunker-io.embed", thumbnail:"https://cdn.7tf.org/images/games/krunker-io.jpg", description:"Fast FPS combat.", signIn:"Hardly Playable", normal:"Playable"},
-{title:"Shell Shockers", src:"https://zapgames.io/shell-shockers.embed", thumbnail:"https://cdn.7tf.org/images/games/shell-shockers.jpg", description:"Egg armed FPS war.", signIn:"Hardly Playable", normal:"Playable"},
-{title:"City Car Simulator", src:"https://zapgames.io/city-car-simulator.embed", thumbnail:"https://cdn.7tf.org/images/games/city-car-simulator.jpg", description:"Free roam car sim.", signIn:"Playable", normal:"Playable"},
-{title:"Rocket Soccer", src:"https://zapgames.io/rocket-soccer.embed", thumbnail:"https://cdn.7tf.org/images/games/rocket-soccer.jpg", description:"Soccer meets rockets.", signIn:"Playable", normal:"Playable"},
-{title:"Mad City Rampage", src:"https://zapgames.io/mad-city-rampage.embed", thumbnail:"https://cdn.7tf.org/images/games/mad-city-rampage.jpg", description:"Open city chaos.", signIn:"Playable", normal:"Playable"},
-{title:"Tower Smash", src:"https://zapgames.io/tower-smash.embed", thumbnail:"https://cdn.7tf.org/images/games/tower-smash.jpg", description:"Physics tower destruction.", signIn:"Playable", normal:"Playable"},
-{title:"Stickman Warriors", src:"https://zapgames.io/stickman-warriors.embed", thumbnail:"https://cdn.7tf.org/images/games/stickman-warriors.jpg", description:"Stickman combat battles.", signIn:"Playable", normal:"Playable"},
-{title:"Zombie Survival", src:"https://zapgames.io/zombie-survival.embed", thumbnail:"https://cdn.7tf.org/images/games/zombie-survival.jpg", description:"Zombie survival wild.", signIn:"Hardly Playable", normal:"Playable"},
-{title:"Mini Golf World", src:"https://zapgames.io/mini-golf-world.embed", thumbnail:"https://cdn.7tf.org/images/games/mini-golf-world.jpg", description:"Mini golf courses.", signIn:"Playable", normal:"Playable"},
-{title:"Fidget Spinner Simulator", src:"https://zapgames.io/fidget-spinner-simulator.embed", thumbnail:"https://cdn.7tf.org/images/games/fidget-spinner-simulator.jpg", description:"Spin endlessly!", signIn:"Playable", normal:"Playable"},
-{title:"Rocket Soccer", src:"https://zapgames.io/rocket-soccer.embed", thumbnail:"https://cdn.7tf.org/images/games/rocket-soccer.jpg", description:"Cars play soccer with huge goals.", signIn:"Playable", normal:"Playable"},
-{title:"City Car Simulator", src:"https://zapgames.io/city-car-simulator.embed", thumbnail:"https://cdn.7tf.org/images/games/city-car-simulator.jpg", description:"Drive freely around the city.", signIn:"Playable", normal:"Playable"},
-{title:"Mad City Rampage", src:"https://zapgames.io/mad-city-rampage.embed", thumbnail:"https://cdn.7tf.org/images/games/mad-city-rampage.jpg", description:"Open city chaos action.", signIn:"Playable", normal:"Playable"},
-{title:"Tower Smash", src:"https://zapgames.io/tower-smash.embed", thumbnail:"https://cdn.7tf.org/images/games/tower-smash.jpg", description:"Smash towers with physics.", signIn:"Playable", normal:"Playable"},
-{title:"Stickman Warriors", src:"https://zapgames.io/stickman-warriors.embed", thumbnail:"https://cdn.7tf.org/images/games/stickman-warriors.jpg", description:"Stickman combat battles.", signIn:"Playable", normal:"Playable"},
-{title:"Zombie Survival", src:"https://zapgames.io/zombie-survival.embed", thumbnail:"https://cdn.7tf.org/images/games/zombie-survival.jpg", description:"Survive the zombie hordes.", signIn:"Hardly Playable", normal:"Playable"},
-{title:"Mini Golf World", src:"https://zapgames.io/mini-golf-world.embed", thumbnail:"https://cdn.7tf.org/images/games/mini-golf-world.jpg", description:"Mini golf courses online.", signIn:"Playable", normal:"Playable"},
-{title:"Fidget Spinner Simulator", src:"https://zapgames.io/fidget-spinner-simulator.embed", thumbnail:"https://cdn.7tf.org/images/games/fidget-spinner-simulator.jpg", description:"Spin and relax!", signIn:"Playable", normal:"Playable"},
-{title:"Tank Trouble", src:"https://zapgames.io/tank-trouble.embed", thumbnail:"https://cdn.7tf.org/images/games/tank-trouble.jpg", description:"Tank arena battles.", signIn:"Slightly Unplayable", normal:"Playable"},
-{title:"Pixel Warfare 3", src:"https://zapgames.io/pixel-warfare-3.embed", thumbnail:"https://cdn.7tf.org/images/games/pixel-warfare-3.jpg", description:"Pixel FPS shooting chaos.", signIn:"Hardly Playable", normal:"Playable"},
-{title:"Madalin Cars Multiplayer", src:"https://zapgames.io/madalin-cars-multiplayer.embed", thumbnail:"https://cdn.7tf.org/images/games/madalin-cars-multiplayer.jpg", description:"Drive around with friends.", signIn:"Playable", normal:"Playable"},
-{title:"Basketball Stars", src:"https://zapgames.io/basketball-stars.embed", thumbnail:"https://cdn.7tf.org/images/games/basketball-stars.jpg", description:"Arcade basketball multiplayer.", signIn:"Playable", normal:"Playable"},
-{title:"Soccer Skills", src:"https://zapgames.io/soccer-skills.embed", thumbnail:"https://cdn.7tf.org/images/games/soccer-skills.jpg", description:"Score goals and win.", signIn:"Playable", normal:"Playable"},
-{title:"Stickman Hook", src:"https://zapgames.io/stickman-hook.embed", thumbnail:"https://cdn.7tf.org/images/games/stickman-hook.jpg", description:"Swing through levels.", signIn:"Playable", normal:"Playable"},
-{title:"Tomb Runner", src:"https://zapgames.io/tomb-runner.embed", thumbnail:"https://cdn.7tf.org/images/games/tomb-runner.jpg", description:"Run and avoid traps.", signIn:"Playable", normal:"Playable"},
-{title:"Mad City Online", src:"https://zapgames.io/mad-city-online.embed", thumbnail:"https://cdn.7tf.org/images/games/mad-city-online.jpg", description:"Open world multiplayer.", signIn:"Playable", normal:"Playable"},
-{title:"Zombie Derby", src:"https://zapgames.io/zombie-derby.embed", thumbnail:"https://cdn.7tf.org/images/games/zombie-derby.jpg", description:"Drive through zombies.", signIn:"Playable", normal:"Playable"},
-{title:"Tug the Table", src:"https://zapgames.io/tug-the-table.embed", thumbnail:"https://cdn.7tf.org/images/games/tug-the-table.jpg", description:"Physics table tug fun.", signIn:"Playable", normal:"Playable"},
-{title:"Ultimate Boxing", src:"https://zapgames.io/ultimate-boxing.embed", thumbnail:"https://cdn.7tf.org/images/games/ultimate-boxing.jpg", description:"Box arcade style.", signIn:"Playable", normal:"Playable"},
-{title:"Dragon Simulator", src:"https://zapgames.io/dragon-simulator.embed", thumbnail:"https://cdn.7tf.org/images/games/dragon-simulator.jpg", description:"Fly and burn towns.", signIn:"Playable", normal:"Playable"},
-{title:"Paper.io 2", src:"https://zapgames.io/paper-io-2.embed", thumbnail:"https://cdn.7tf.org/images/games/paper-io-2.jpg", description:"Territory IO game.", signIn:"Playable", normal:"Playable"},
-{title:"Veck.io", src:"https://zapgames.io/veck-io.embed", thumbnail:"https://cdn.7tf.org/images/games/veck-io.jpg", description:"Multiplayer battle IO.", signIn:"Hardly Playable", normal:"Playable"},
-{title:"2v2.io", src:"https://zapgames.io/2v2.io.embed", thumbnail:"https://cdn.7tf.org/images/games/2v2-io.jpg", description:"Team based shooter IO.", signIn:"Hardly Playable", normal:"Playable"},
-{title:"Unobtainium.io", src:"https://zapgames.io/unobtainium-io.embed", thumbnail:"https://cdn.7tf.org/images/games/unobtainium-io.jpg", description:"IO survival challenge.", signIn:"Hardly Playable", normal:"Playable"},
-{title:"Growden.io", src:"https://zapgames.io/growden-io.embed", thumbnail:"https://cdn.7tf.org/images/games/growden-io.jpg", description:"Grow and battle.", signIn:"Playable", normal:"Playable"},
-{title:"Skibbl.io", src:"https://zapgames.io/skibbl-io.embed", thumbnail:"https://cdn.7tf.org/images/games/skibbl-io.jpg", description:"Draw and guess with players.", signIn:"Playable", normal:"Playable"},
-{title:"Hole.io", src:"https://zapgames.io/hole-io.embed", thumbnail:"https://cdn.7tf.org/images/games/hole-io.jpg", description:"Grow your hole and eat the city.", signIn:"Playable", normal:"Playable"},
-{title:"Superhex.io", src:"https://zapgames.io/superhex-io.embed", thumbnail:"https://cdn.7tf.org/images/games/superhex-io.jpg", description:"Area control IO game.", signIn:"Playable", normal:"Playable"},
-{title:"Wormate.io", src:"https://zapgames.io/wormate-io.embed", thumbnail:"https://cdn.7tf.org/images/games/wormate-io.jpg", description:"Grow and battle worms.", signIn:"Playable", normal:"Playable"},
-{title:"Slither.io", src:"https://zapgames.io/slither-io.embed", thumbnail:"https://cdn.7tf.org/images/games/slither-io.jpg", description:"Classic snake IO.", signIn:"Playable", normal:"Playable"},
-{title:"ZombsRoyale.io", src:"https://zapgames.io/zombsroyale-io.embed", thumbnail:"https://cdn.7tf.org/images/games/zombsroyale-io.jpg", description:"Top‑down battle royale IO.", signIn:"Hardly Playable", normal:"Playable"}, // battle royale game example  [oai_citation:0‡Wikipedia](https://en.wikipedia.org/wiki/ZombsRoyale.io?utm_source=chatgpt.com)
-{title:"Dominate.io", src:"https://zapgames.io/dominate-io.embed", thumbnail:"https://cdn.7tf.org/images/games/dominate-io.jpg", description:"Strategy IO conquest.", signIn:"Playable", normal:"Playable"},
-{title:"Starblast.io", src:"https://zapgames.io/starblast-io.embed", thumbnail:"https://cdn.7tf.org/images/games/starblast-io.jpg", description:"Space shooter IO.", signIn:"Hardly Playable", normal:"Playable"},
-{title:"Agar.io", src:"https://zapgames.io/agar-io.embed", thumbnail:"https://cdn.7tf.org/images/games/agar-io.jpg", description:"Classic cell eat IO.", signIn:"Playable", normal:"Playable"},
-{title:"Diep.io", src:"https://zapgames.io/diep-io.embed", thumbnail:"https://cdn.7tf.org/images/games/diep-io.jpg", description:"Tank shooter IO.", signIn:"Hardly Playable", normal:"Playable"},
-{title:"Paper.io", src:"https://zapgames.io/paper-io.embed", thumbnail:"https://cdn.7tf.org/images/games/paper-io.jpg", description:"Territory control IO.", signIn:"Playable", normal:"Playable"},
-{title:"Surviv.io", src:"https://zapgames.io/surviv-io.embed", thumbnail:"https://cdn.7tf.org/images/games/surviv-io.jpg", description:"Battle royale IO top view.", signIn:"Hardly Playable", normal:"Playable"},
-{title:"Mope.io", src:"https://zapgames.io/mope-io.embed", thumbnail:"https://cdn.7tf.org/images/games/mope-io.jpg", description:"Survival IO in nature.", signIn:"Playable", normal:"Playable"},
-{title:"Krunker.io", src:"https://zapgames.io/krunker-io.embed", thumbnail:"https://cdn.7tf.org/images/games/krunker-io.jpg", description:"Fast FPS arena shooter.", signIn:"Hardly Playable", normal:"Playable"}];
+
+{
+title: "Slope",
+src: "https://zapgames.io/slope.embed"
+},
+
+{
+title: "Smash Karts",
+src: "https://zapgames.io/smash-karts.embed"
+},
+
+{
+title: "Drive Mad",
+src: "https://zapgames.io/drive-mad.embed"
+},
+
+{
+title: "Ragdoll Archers",
+src: "https://zapgames.io/ragdoll-archers.embed"
+},
+
+{
+title: "Subway Surfers",
+src: "https://zapgames.io/subway-surfers.embed"
+},
+
+{
+title: "Temple Run 2",
+src: "https://zapgames.io/temple-run-2.embed"
+},
+
+{
+title: "Stickman Hook",
+src: "https://zapgames.io/stickman-hook.embed"
+},
+
+{
+title: "Moto X3M",
+src: "https://zapgames.io/moto-x3m.embed"
+},
+
+{
+title: "Moto X3M Pool Party",
+src: "https://zapgames.io/moto-x3m-pool-party.embed"
+},
+
+{
+title: "Moto X3M Winter",
+src: "https://zapgames.io/moto-x3m-winter.embed"
+},
+
+{
+title: "Run 3",
+src: "https://zapgames.io/run-3.embed"
+},
+
+{
+title: "Tunnel Rush",
+src: "https://zapgames.io/tunnel-rush.embed"
+},
+
+{
+title: "1v1 LOL",
+src: "https://zapgames.io/1v1-lol.embed"
+},
+
+{
+title: "Krunker",
+src: "https://zapgames.io/krunker.embed"
+},
+
+{
+title: "Basketball Stars",
+src: "https://zapgames.io/basketball-stars.embed"
+},
+
+{
+title: "Basket Random",
+src: "https://zapgames.io/basket-random.embed"
+},
+
+{
+title: "Soccer Random",
+src: "https://zapgames.io/soccer-random.embed"
+},
+
+{
+title: "Getaway Shootout",
+src: "https://zapgames.io/getaway-shootout.embed"
+},
+
+{
+title: "Drift Hunters",
+src: "https://zapgames.io/drift-hunters.embed"
+},
+
+{
+title: "Snow Rider 3D",
+src: "https://zapgames.io/snow-rider-3d.embed"
+},
+
+{
+title: "Crossy Road",
+src: "https://zapgames.io/crossy-road.embed"
+},
+
+{
+title: "Paper.io 2",
+src: "https://zapgames.io/paper-io-2.embed"
+},
+
+{
+title: "Hole.io",
+src: "https://zapgames.io/hole-io.embed"
+},
+
+{
+title: "Stack Ball",
+src: "https://zapgames.io/stack-ball.embed"
+},
+
+{
+title: "Helix Jump",
+src: "https://zapgames.io/helix-jump.embed"
+},
+
+{
+title: "Stickman Supreme Duelist",
+src: "https://zapgames.io/stickman-supreme-duelist.embed"
+},
+
+{
+title: "Car Rush",
+src: "https://zapgames.io/car-rush.embed"
+},
+
+{
+title: "Madalin Stunt Cars 2",
+src: "https://zapgames.io/madalin-stunt-cars-2.embed"
+},
+
+{
+title: "Among Us",
+src: "https://zapgames.io/among-us.embed"
+},
+
+{
+title: "People Playground",
+src: "https://azgames.io/ragdoll-playground.embed"
+}
+
 ];
