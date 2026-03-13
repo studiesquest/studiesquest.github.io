@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StudiesQuest Arcade</title>
+<title>StudiesQuest</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <header>
-    <h1>StudiesQuest Arcade</h1>
-    <input type="text" id="searchInput" placeholder="Search games...">
-    <div id="filterButtons">
-        <button class="filter-btn all">All</button>
-        <button class="filter-btn playable">Playable</button>
-        <button class="filter-btn slightly">Slightly Unplayable</button>
-        <button class="filter-btn hardly">Hardly Playable</button>
-    </div>
+  <button id="homeBtn" title="Go Home">🏠</button>
+  <input type="text" id="searchBar" placeholder="Search games...">
+  <div id="filters">
+    <button class="filterBtn" data-filter="all">All</button>
+    <button class="filterBtn" data-filter="Playable">Playable</button>
+    <button class="filterBtn" data-filter="Slightly Unplayable">Slightly Unplayable</button>
+    <button class="filterBtn" data-filter="Hardly Playable">Hardly Playable</button>
+  </div>
 </header>
 
-<div id="gridContainer" class="grid-container"></div>
+<main>
+  <div id="gridContainer"></div>
+</main>
 
-<div id="modal" class="modal">
-    <button id="homeBtn">🏠 Home</button>
-    <iframe id="gameFrame" src="" frameborder="0" allowfullscreen></iframe>
+<div id="modal">
+  <iframe id="gameFrame" frameborder="0"></iframe>
 </div>
 
 <script src="games.js"></script>
