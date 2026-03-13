@@ -7,11 +7,10 @@
 }
 
 body {
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background: linear-gradient(135deg, #0f3, #0a0, #030);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     color: #fff;
-    overflow-x: hidden;
 }
 
 /* --- Gradient Animation --- */
@@ -29,119 +28,85 @@ header {
     padding: 15px 30px;
     background: rgba(0,0,0,0.3);
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 15px rgba(0,255,255,0.3);
 }
 
+/* --- Site Name --- */
 header h1 {
     font-size: 2rem;
-    color: #00f9ff;
-    text-shadow: 0 0 10px #00f9ff, 0 0 20px #00f9ff;
+    color: #fff;
 }
 
 /* --- Home Button --- */
 .home-btn {
     background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(0,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.2);
     padding: 8px 15px;
     border-radius: 8px;
-    color: #00f9ff;
+    color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-weight: bold;
 }
 
 .home-btn:hover {
-    background: rgba(0,255,255,0.2);
-    box-shadow: 0 0 15px #00f9ff;
+    background: rgba(0,255,0,0.2);
+    border-color: #0f0;
+    box-shadow: 0 0 15px #0f0;
 }
 
-/* --- Playability Info Top Left --- */
-.playability-info {
-    position: absolute;
-    top: 20px;
-    left: 30px;
-    font-size: 0.9rem;
-    max-width: 300px;
-    line-height: 1.4;
-    color: #a0f0ff;
-}
-
-/* --- Search & Filters --- */
-.controls {
+/* --- Game Container --- */
+.games-container {
     display: flex;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px;
     justify-content: center;
-    margin: 20px 0;
 }
 
-input[type="text"], select {
-    padding: 10px 15px;
-    border-radius: 10px;
-    border: 1px solid rgba(0,255,255,0.3);
-    background: rgba(0,0,0,0.3);
-    color: #fff;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-}
-
-input[type="text"]:focus, select:focus {
-    border-color: #00f9ff;
-    box-shadow: 0 0 15px #00f9ff;
-}
-
-/* --- Game Cards --- */
-.game-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    padding: 0 30px 50px 30px;
-}
-
+/* --- Individual Game Card --- */
 .game-card {
-    background: rgba(0,0,0,0.25);
-    border-radius: 15px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    backdrop-filter: blur(5px);
-    cursor: pointer;
-}
-
-.game-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 25px #00f9ff;
+    width: 220px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .game-card img {
     width: 100%;
     display: block;
-    border-bottom: 1px solid rgba(0,255,255,0.2);
 }
 
-.game-card .game-info {
-    padding: 10px 15px;
+.game-card .info {
+    padding: 10px;
 }
 
-.game-card .game-info h3 {
-    color: #00f9ff;
-    font-size: 1.2rem;
+.game-card .info h3 {
+    font-size: 1.1rem;
     margin-bottom: 5px;
-    text-shadow: 0 0 8px #00f9ff;
+    color: #fff;
 }
 
-.game-card .game-info p {
+.game-card .info p {
     font-size: 0.9rem;
-    color: #a0f0ff;
+    color: #ddd;
 }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-    .controls {
-        flex-direction: column;
-        align-items: center;
-    }
+/* --- Hover Effect --- */
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #0f0;
+}
+
+/* --- Scrollbar Styling --- */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0,255,0,0.3);
+    border-radius: 5px;
 }
