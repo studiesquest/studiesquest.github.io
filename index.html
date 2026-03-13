@@ -3,30 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StudiesQuest</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+<title>StudiesQuest Games</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div id="home-btn" title="Go Home">&#8962;</div>
-  <h1>StudiesQuest</h1>
-  <input type="text" id="search-bar" placeholder="Search games...">
-</header>
+<div id="home-screen">
+  <h1>StudiesQuest Games</h1>
 
-<div id="filters">
-  <button data-filter="all" class="filter-btn active">All</button>
-  <button data-filter="Playable" class="filter-btn">Playable</button>
-  <button data-filter="Slightly Unplayable" class="filter-btn">Slightly Unplayable</button>
-  <button data-filter="Hardly Playable" class="filter-btn">Hardly Playable</button>
+  <!-- Search bar -->
+  <input type="text" id="search-bar" placeholder="Search games...">
+
+  <!-- Filters -->
+  <div class="filters">
+    <button class="filter-btn" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="Playable">Playable</button>
+    <button class="filter-btn" data-filter="Slightly Unplayable">Slightly Unplayable</button>
+    <button class="filter-btn" data-filter="Hardly Playable">Hardly Playable</button>
+  </div>
+
+  <!-- Game grid -->
+  <div id="game-grid"></div>
 </div>
 
-<main>
-  <div id="game-grid"></div>
-  <div id="game-container" class="hidden">
-    <iframe id="game-frame" src="" frameborder="0" allowfullscreen></iframe>
-  </div>
-</main>
+<!-- Fullscreen iframe -->
+<div id="game-view" class="hidden">
+  <button id="home-btn">🏠 Home</button>
+  <iframe id="game-iframe" src="" frameborder="0" allowfullscreen></iframe>
+</div>
 
 <script src="game.js"></script>
 <script src="main.js"></script>
