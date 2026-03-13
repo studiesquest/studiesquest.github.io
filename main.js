@@ -12,7 +12,7 @@ function renderGames(list) {
     tile.classList.add('game-tile');
     tile.style.backgroundImage = `url('${game.thumbnail}')`;
     tile.title = `${game.description} | Sign-in: ${game.signIn}`;
-    
+
     const title = document.createElement('div');
     title.classList.add('game-title');
     title.innerText = game.title;
