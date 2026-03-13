@@ -2,57 +2,47 @@ const grid = document.getElementById("gridContainer");
 const modal = document.getElementById("modal");
 const gameFrame = document.getElementById("gameFrame");
 const homeBtn = document.getElementById("homeBtn");
-const searchInput = document.getElementById("searchInput");
-const filterBtns = document.querySelectorAll(".filter-btn");
+const searchBar = document.getElementById("searchBar");
+const filterBtns = document.querySelectorAll(".filterBtn");
 
-function makeTile(game){
-    const tile = document.createElement("div");
-    tile.className = "game-tile";
-    tile.dataset.title = game.title.toLowerCase();
-    tile.dataset.signin = game.signIn.toLowerCase();
-    tile.dataset.normal = game.normal.toLowerCase();
-
-    tile.innerHTML = `
-        <img src="${game.thumbnail}" alt="${game.title}">
-        <h3>${game.title}</h3>
-        <p>${game.description}</p>
-        <span>${game.signIn}</span>
-    `;
-
-    tile.addEventListener("click", () => {
-        gameFrame.src = game.src;
-        modal.style.display = "flex";
-    });
-
-    return tile;
-}
-
-function renderGames(list){
+function renderGames(gameList) {
     grid.innerHTML = "";
-    list.forEach(g => grid.appendChild(makeTile(g)));
+    gameList.forEach(game => {
+        const tile = document.createElement("div");
+        tile.classList.add("game-tile");
+        tile.style.backgroundImage = `url('${game.thumbnail || genericThumb}')`;
+        tile.innerHTML = `
+            <div class="tile-overlay">
+                <h3>${game.title}</h3>
+                <p>${game.description}</p>
+                <span>${game.signIn}</span>
+            </div>
+        `;
+        tile.addEventListener("click", () => {
+            gameFrame.src = game.src;
+            modal.style.display = "flex";
+        });
+        grid.appendChild(tile);
+    });
 }
-
-renderGames(games);
 
 homeBtn.addEventListener("click", () => {
     modal.style.display = "none";
     gameFrame.src = "";
 });
 
-searchInput.addEventListener("input", ()=>{
-    const q = searchInput.value.toLowerCase();
-    renderGames(games.filter(g => g.title.toLowerCase().includes(q)));
+searchBar.addEventListener("input", () => {
+    const val = searchBar.value.toLowerCase();
+    const filtered = games.filter(g => g.title.toLowerCase().includes(val));
+    renderGames(filtered);
 });
 
 filterBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-        const type = btn.textContent.toLowerCase();
-        if(type === "all"){
-            renderGames(games);
-        } else {
-            renderGames(games.filter(g => 
-                g.signIn.toLowerCase() === type || g.normal.toLowerCase() === type
-            ));
-        }
+        const filter = btn.dataset.filter;
+        if(filter === "all") renderGames(games);
+        else renderGames(games.filter(g => g.signIn === filter));
     });
 });
+
+renderGames(games);
