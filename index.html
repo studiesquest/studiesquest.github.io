@@ -3,36 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StudiesQuest Games</title>
+<title>StudiesQuest</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div id="home-screen">
-  <h1>StudiesQuest Games</h1>
+<header>
+<h1>STUDIESQUEST</h1>
 
-  <!-- Search bar -->
-  <input type="text" id="search-bar" placeholder="Search games...">
+<input id="search" placeholder="Search games...">
 
-  <!-- Filters -->
-  <div class="filters">
-    <button class="filter-btn" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="Playable">Playable</button>
-    <button class="filter-btn" data-filter="Slightly Unplayable">Slightly Unplayable</button>
-    <button class="filter-btn" data-filter="Hardly Playable">Hardly Playable</button>
-  </div>
+<div class="filters">
+<button data-filter="All">All</button>
+<button data-filter="Playable">Playable</button>
+<button data-filter="Slightly Unplayable">Slightly Unplayable</button>
+<button data-filter="Hardly Playable">Hardly Playable</button>
+</div>
+</header>
 
-  <!-- Game grid -->
-  <div id="game-grid"></div>
+<main id="grid"></main>
+
+<div id="modal">
+<button id="home">HOME</button>
+<iframe id="gameFrame" allowfullscreen></iframe>
 </div>
 
-<!-- Fullscreen iframe -->
-<div id="game-view" class="hidden">
-  <button id="home-btn">🏠 Home</button>
-  <iframe id="game-iframe" src="" frameborder="0" allowfullscreen></iframe>
-</div>
-
-<script src="game.js"></script>
+<script src="games.js"></script>
 <script src="main.js"></script>
+
 </body>
 </html>
