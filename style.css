@@ -1,208 +1,147 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zap Games Hub</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<style>
-/* ----- General Reset ----- */
+/* --- Global Reset & Fonts --- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ----- Background ----- */
 body {
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  color: #ffffff;
-  overflow-x: hidden;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    overflow-x: hidden;
 }
 
-/* Gradient animation */
-@keyframes gradientShift {
-  0% {background-position:0% 50%;}
-  50% {background-position:100% 50%;}
-  100% {background-position:0% 50%;}
+/* --- Gradient Animation --- */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-/* ----- Top Info Text ----- */
-#playability-info {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  font-size: 14px;
-  color: #00ffffcc;
-  max-width: 300px;
-  line-height: 1.4;
-  text-shadow: 0 0 5px #00ffff44, 0 0 10px #00ffff22;
+/* --- Header --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0,255,255,0.3);
 }
 
-/* ----- Home Button ----- */
-#home-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #00ffff;
-  background: rgba(0, 0, 0, 0.2);
-  border: 2px solid rgba(0, 255, 255, 0.3);
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
-  backdrop-filter: blur(4px);
+header h1 {
+    font-size: 2rem;
+    color: #00f9ff;
+    text-shadow: 0 0 10px #00f9ff, 0 0 20px #00f9ff;
 }
 
-/* Hover glow effect */
-#home-btn:hover {
-  background: rgba(0, 255, 255, 0.1);
-  border-color: rgba(0, 255, 255, 0.6);
-  box-shadow: 
-    0 0 10px rgba(0, 255, 255, 0.6),
-    0 0 20px rgba(0, 255, 255, 0.4),
-    inset 0 0 10px rgba(0, 255, 255, 0.3);
-  transform: translateY(-2px);
+/* --- Home Button --- */
+.home-btn {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,255,255,0.3);
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: #00f9ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
 }
 
-/* Click effect */
-#home-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+.home-btn:hover {
+    background: rgba(0,255,255,0.2);
+    box-shadow: 0 0 15px #00f9ff;
 }
 
-/* ----- Search Bar ----- */
-#search-bar {
-  display: block;
-  margin: 100px auto 40px auto;
-  width: 80%;
-  max-width: 600px;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 12px;
-  border: 2px solid rgba(0,255,255,0.3);
-  background: rgba(0, 0, 0, 0.3);
-  color: #ffffff;
-  box-shadow: 0 0 10px rgba(0,255,255,0.2);
-  transition: all 0.3s ease;
+/* --- Playability Info Top Left --- */
+.playability-info {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 0.9rem;
+    max-width: 300px;
+    line-height: 1.4;
+    color: #a0f0ff;
 }
 
-#search-bar:focus {
-  outline: none;
-  border-color: #00ffff;
-  box-shadow: 0 0 15px rgba(0,255,255,0.5);
+/* --- Search & Filters --- */
+.controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
 }
 
-/* ----- Filters (Dropdowns or Buttons) ----- */
-.filter {
-  display: inline-block;
-  margin: 0 10px;
-  padding: 8px 16px;
-  font-size: 14px;
-  color: #00ffff;
-  background: rgba(0, 0, 0, 0.2);
-  border: 2px solid rgba(0,255,255,0.3);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 5px rgba(0,255,255,0.2);
+input[type="text"], select {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,255,255,0.3);
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
-.filter:hover {
-  background: rgba(0, 255, 255, 0.1);
-  border-color: rgba(0, 255, 255, 0.6);
-  box-shadow: 0 0 15px rgba(0,255,255,0.5);
-  transform: translateY(-1px);
+input[type="text"]:focus, select:focus {
+    border-color: #00f9ff;
+    box-shadow: 0 0 15px #00f9ff;
 }
 
-/* ----- Game Cards ----- */
+/* --- Game Cards --- */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 0 30px 50px 30px;
+}
+
 .game-card {
-  display: inline-block;
-  width: 220px;
-  margin: 20px;
-  background: rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0,255,255,0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(0,0,0,0.25);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
 }
 
 .game-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(0,255,255,0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #00f9ff;
 }
 
 .game-card img {
-  width: 100%;
-  display: block;
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid rgba(0,255,255,0.2);
 }
 
 .game-card .game-info {
-  padding: 10px;
-  font-size: 14px;
-  color: #ffffff;
+    padding: 10px 15px;
 }
 
-.game-card .game-info .title {
-  font-weight: 600;
-  margin-bottom: 6px;
+.game-card .game-info h3 {
+    color: #00f9ff;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    text-shadow: 0 0 8px #00f9ff;
 }
 
-.game-card .game-info .description {
-  font-size: 13px;
-  color: #00ffffcc;
+.game-card .game-info p {
+    font-size: 0.9rem;
+    color: #a0f0ff;
 }
 
-/* ----- Responsive ----- */
-@media (max-width: 700px) {
-  #search-bar { width: 90%; }
-  .game-card { width: 45%; margin: 10px; }
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
 }
-
-@media (max-width: 400px) {
-  .game-card { width: 90%; margin: 10px auto; display: block; }
-}
-</style>
-</head>
-<body>
-
-<div id="playability-info">
-  Some games may need excessive cursor usage, making them hard to play on sign-in pages because the mouse can move off the sign-in page, making the game unresponsive on ChromeOS. Playability ratings have been added.
-</div>
-
-<button id="home-btn">Home</button>
-
-<input type="text" id="search-bar" placeholder="Search games...">
-
-<div style="text-align:center; margin-bottom:20px;">
-  <span class="filter">Playable</span>
-  <span class="filter">Hardly Playable</span>
-  <span class="filter">Slightly Unplayable</span>
-</div>
-
-<!-- Example game cards -->
-<div id="games-container" style="text-align:center;">
-  <div class="game-card">
-    <img src="https://zapgames.io/cache/data/image/game/slope-game-h196x110.webp" alt="Slope">
-    <div class="game-info">
-      <div class="title">Slope</div>
-      <div class="description">Dodge obstacles down the slope.</div>
-    </div>
-  </div>
-  <div class="game-card">
-    <img src="https://zapgames.io/cache/data/image/game/smash-karts-h196x110.webp" alt="Smash Karts">
-    <div class="game-info">
-      <div class="title">Smash Karts</div>
-      <div class="description">Multiplayer kart battles.</div>
-    </div>
-  </div>
-</div>
-
-</body>
-</html>
