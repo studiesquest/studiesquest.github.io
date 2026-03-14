@@ -1,112 +1,63 @@
-/* --- Global Reset & Fonts --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
+/* Background with glow + subtle texture */
 body {
-    background: linear-gradient(135deg, #0f3, #0a0, #030);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    color: #fff;
+  background: radial-gradient(circle at top left, #1e1e2f, #12121a);
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* subtle texture overlay */
+  background-blend-mode: overlay;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* --- Gradient Animation --- */
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* Top-right info box for playable restrictions */
+#playable-info {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(30, 30, 50, 0.85);
+  border: 2px solid #7b6cff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 0 20px rgba(123, 108, 255, 0.6);
+  max-width: 250px;
+  font-size: 14px;
+  line-height: 1.4;
+  z-index: 999;
 }
 
-/* --- Header --- */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(10px);
+/* Search bar styling */
+#search-bar {
+  display: block;
+  width: 300px;
+  margin: 30px auto;
+  padding: 12px 20px;
+  border-radius: 20px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 16px;
+  box-shadow: 0 0 15px rgba(123, 108, 255, 0.4);
 }
 
-/* --- Site Name --- */
-header h1 {
-    font-size: 2rem;
-    color: #fff;
+#search-bar::placeholder {
+  color: rgba(255,255,255,0.6);
 }
 
-/* --- Home Button --- */
-.home-btn {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 8px 15px;
-    border-radius: 8px;
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.3s ease;
+/* Filter buttons */
+.filter-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #7b6cff;
+  color: #fff;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
 }
 
-.home-btn:hover {
-    background: rgba(0,255,0,0.2);
-    border-color: #0f0;
-    box-shadow: 0 0 15px #0f0;
-}
-
-/* --- Game Container --- */
-.games-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 30px;
-    justify-content: center;
-}
-
-/* --- Individual Game Card --- */
-.game-card {
-    background: rgba(0,0,0,0.3);
-    border-radius: 12px;
-    overflow: hidden;
-    width: 220px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.game-card img {
-    width: 100%;
-    display: block;
-}
-
-.game-card .info {
-    padding: 10px;
-}
-
-.game-card .info h3 {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    color: #fff;
-}
-
-.game-card .info p {
-    font-size: 0.9rem;
-    color: #ddd;
-}
-
-/* --- Hover Effect --- */
-.game-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px #0f0;
-}
-
-/* --- Scrollbar Styling --- */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.1);
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(0,255,0,0.3);
-    border-radius: 5px;
+.filter-btn:hover {
+  background: #7b6cff;
+  box-shadow: 0 0 15px rgba(123, 108, 255, 0.6);
+  color: #fff;
 }
