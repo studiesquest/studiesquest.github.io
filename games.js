@@ -1,5 +1,5 @@
 const games = [
-{title:"Slope", src:"https://zapgames.io/slope-game.embed", thumbnail:"https://zapgames.io/cache/data/image/game/slope-game-h196x110.webp", description:"Dodge obstacles down the slope.", signIn:"Playable"},
+{title:"Slope", src:"https://zapgames.io/slope.embed", thumbnail:"https://zapgames.io/cache/data/image/game/slope-game-h196x110.webp", description:"Dodge obstacles down the slope.", signIn:"Playable"},
 {title:"Smash Karts", src:"https://zapgames.io/smash-karts.embed", thumbnail:"https://zapgames.io/cache/data/image/game/smash-karts-h196x110.webp", description:"Multiplayer kart battles.", signIn:"Playable"},
 {title:"Drive Mad", src:"https://zapgames.io/drive-mad.embed", thumbnail:"https://zapgames.io/cache/data/image/game/drive-mad-h196x110.webp", description:"Crazy driving physics.", signIn:"Playable"},
 {title:"Moto X3M", src:"https://html5.gamedistribution.com/5b0abd4c0faa4f5eb190a9a16d5a1b4c/?utm_source=azgames.io&utm_medium=moto-x3m-bike-race-game&utm_campaign=block-and-redirect.embed", thumbnail:"https://zapgames.io/cache/data/image/game/moto-x3m-h196x110.webp", description:"Bike obstacle course.", signIn:"Playable"},
