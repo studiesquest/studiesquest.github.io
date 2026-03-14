@@ -176,6 +176,48 @@ left:20px;     /* keeps it toward the left side */
 max-width:520px;
 font-size:13px;
 color:#32ff7e;
+
+  #utilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.tile {
+    background: #0b1a0d;
+    color: #32ff7e;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #32ff7e;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #32ff7e;
+}
+
+.tile img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.maximize-btn {
+    margin-top: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    background: #222;
+    color: #32ff7e;
+    cursor: pointer;
+}
+
+.maximize-btn:hover {
+    background: #32ff7e;
+    color: #000;
+}
 line-height:1.4;
 font-family:Verdana, Geneva, sans-serif;
 text-shadow:0 0 6px rgba(50,255,126,0.4);
