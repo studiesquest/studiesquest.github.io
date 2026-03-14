@@ -171,9 +171,9 @@ box-shadow:
 
 #playable-info{
 position:absolute;
-top:20px;
-left:35%;
-max-width:500px;
+top:70px;      /* pushes it below the title */
+left:20px;     /* keeps it toward the left side */
+max-width:520px;
 font-size:13px;
 color:#32ff7e;
 line-height:1.4;
