@@ -13,32 +13,32 @@ const games = [
   {
     title: "Tiny Arena",
     src: "https://zapgames.io/tiny-arena.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/tiny-arena-h196x110.webp",
-    description: "Fast‑paced minimal arena combat.",
+    thumbnail: "https://zapgames.io/cache/data/image/game/tinyarena-h196x110.webp",
+    description: "Fast-paced arena combat.",
     signIn: "Hardly Playable"
   },
 
   {
     title: "FrontWars.io",
     src: "https://zapgames.io/frontwars-io.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/frontwars-io-h196x110.webp",
-    description: "Strategic territory shooter io.",
+    thumbnail: "https://zapgames.io/cache/data/image/game/frontwarsio-h196x110.webp",
+    description: "Multiplayer strategy shooter.",
     signIn: "Hardly Playable"
   },
 
   {
     title: "Orbit Beats",
     src: "https://zapgames.io/orbit-beats.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/orbit-beats-h196x110.webp",
-    description: "Rhythm & shoot music waves.",
-    signIn: "Playable"
+    thumbnail: "https://zapgames.io/cache/data/image/game/orbitbeats-h196x110.webp",
+    description: "Rhythm-based space shooting.",
+    signIn: "Hardly Playable"
   },
 
   {
     title: "Rob Brainrot 2",
     src: "https://zapgames.io/rob-brainrot-2.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/rob-brainrot-2-h196x110.webp",
-    description: "Zombie survival chaos.",
+    thumbnail: "https://zapgames.io/cache/data/image/game/robbrainrot2-h196x110.webp",
+    description: "Chaotic zombie survival.",
     signIn: "Hardly Playable"
   },
 
@@ -46,127 +46,127 @@ const games = [
     title: "Bloxd.io",
     src: "https://zapgames.io/bloxdio.embed",
     thumbnail: "https://zapgames.io/cache/data/image/game/bloxdio-h196x110.webp",
-    description: "Block shooter io combat.",
+    description: "Block-style multiplayer shooter.",
     signIn: "Hardly Playable"
   },
 
   {
     title: "Escape Road",
     src: "https://zapgames.io/escape-road.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/escape-road-h196x110.webp",
-    description: "Dodge cars and run fast.",
+    thumbnail: "https://zapgames.io/cache/data/image/game/escaperoad-h196x110.webp",
+    description: "High-speed escape driving.",
     signIn: "Playable"
   },
 
   {
     title: "Traffic Road",
     src: "https://zapgames.io/traffic-road.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/traffic-road-h196x110.webp",
-    description: "Cross busy roads safely.",
+    thumbnail: "https://zapgames.io/cache/data/image/game/trafficroad-h196x110.webp",
+    description: "Avoid traffic and survive.",
     signIn: "Playable"
   },
 
   {
     title: "Tiny Wings",
-    src: "https://zapgames.io/tiny-wings.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/tiny-wings-h196x110.webp",
-    description: "Simple flight timing fun.",
+    src: "https://azgames.io/tiny-wings.embed",
+    thumbnail: "https://zapgames.io/cache/data/image/game/tinywings-h196x110.webp",
+    description: "Relaxing flying timing game.",
     signIn: "Playable"
   },
 
   {
     title: "Orbit Kick",
     src: "https://zapgames.io/orbit-kick.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/orbit-kick-h196x110.webp",
-    description: "Trick shot kick scoring.",
+    thumbnail: "https://zapgames.io/cache/data/image/game/orbitkick-h196x110.webp",
+    description: "Score trick shots in orbit.",
     signIn: "Playable"
   },
 
   {
-    title: "Traffic Rally 2",
-    src: "https://zapgames.io/traffic-rally-2.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/traffic-rally-2-h196x110.webp",
-    description: "More high‑speed rally racing.",
+    title: "Traffic Rally",
+    src: "https://zapgames.io/traffic-rally.embed",
+    thumbnail: "https://zapgames.io/cache/data/image/game/trafficrally-h196x110.webp",
+    description: "Arcade racing challenge.",
     signIn: "Playable"
   },
 
   {
     title: "Cowboy Safari",
-    src: "https://zapgames.io/cowboy-safari.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/cowboy-safari-h196x110.webp",
-    description: "Animal chase safari fun.",
+    src: "https://azgames.io/cowboy-safari.embed",
+    thumbnail: "https://zapgames.io/cache/data/image/game/cowboysafari-h196x110.webp",
+    description: "Ride animals and collect coins.",
     signIn: "Playable"
   },
 
   {
     title: "Pingo Gang",
-    src: "https://zapgames.io/pingo-gang.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/pingo-gang-h196x110.webp",
-    description: "Fun match‑3 pingo puzzler.",
+    src: "https://azgames.io/pingo-gang.embed",
+    thumbnail: "https://zapgames.io/cache/data/image/game/pingogang-h196x110.webp",
+    description: "Fun arcade puzzle challenge.",
     signIn: "Playable"
   },
 
   {
     title: "Jet Rush",
     src: "https://zapgames.io/jet-rush.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/jet-rush-h196x110.webp",
-    description: "Fast flying reaction thrill.",
+    thumbnail: "https://zapgames.io/cache/data/image/game/jetrush-h196x110.webp",
+    description: "Fly fast through obstacles.",
     signIn: "Playable"
   },
 
   {
-    title: "Undead Invasion",
-    src: "https://zapgames.io/undead-invasion.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/undead-invasion-h196x110.webp",
-    description: "Survive a zombie invasion.",
+    title: "Basket Random",
+    src: "https://zapgames.io/basket-random.embed",
+    thumbnail: "https://zapgames.io/cache/data/image/game/basketrandom-h196x110.webp",
+    description: "Chaotic physics basketball.",
     signIn: "Playable"
   },
 
   {
     title: "Stack",
-    src: "https://zapgames.io/stack.embed",
+    src: "https://azgames.io/stack.embed",
     thumbnail: "https://zapgames.io/cache/data/image/game/stack-h196x110.webp",
-    description: "Perfect stacking challenge.",
+    description: "Stack blocks perfectly.",
     signIn: "Playable"
   },
 
   {
     title: "Drift Boss",
     src: "https://zapgames.io/drift-boss.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/drift-boss-h196x110.webp",
-    description: "One‑button drifting fun.",
+    thumbnail: "https://zapgames.io/cache/data/image/game/driftboss-h196x110.webp",
+    description: "One-button drifting game.",
     signIn: "Playable"
   },
 
   {
     title: "Tunnel Rush",
     src: "https://zapgames.io/tunnel-rush.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/tunnel-rush-h196x110.webp",
-    description: "Fast reflex tunnel challenge.",
+    thumbnail: "https://zapgames.io/cache/data/image/game/tunnelrush-h196x110.webp",
+    description: "Fast reflex tunnel racing.",
     signIn: "Playable"
   },
 
   {
     title: "Run 3",
     src: "https://zapgames.io/run-3.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/run-3-h196x110.webp",
-    description: "Space platform runner.",
+    thumbnail: "https://zapgames.io/cache/data/image/game/run3-h196x110.webp",
+    description: "Run through space tunnels.",
     signIn: "Playable"
   },
 
   {
     title: "Temple Run 2",
-    src: "https://zapgames.io/temple-run-2.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/temple-run-2-h196x110.webp",
-    description: "Endless temple escape run.",
+    src: "https://azgames.io/temple-run-2.embed",
+    thumbnail: "https://zapgames.io/cache/data/image/game/templerun2-h196x110.webp",
+    description: "Escape the temple endlessly.",
     signIn: "Playable"
   },
 
   {
     title: "People Playground",
-    src: "https://azgames.io/ragdoll-playground.embed",
-    thumbnail: "https://azgames.io/upload/cache/upload/imgs/ragdollplayground-m180x180.png",
-    description: "Physics sandbox fun.",
+    src: "https://zapgames.io/ragdoll-playground.embed",
+    thumbnail: "https://zapgames.io/cache/data/image/game/ragdollplayground-h196x110.webp",
+    description: "Physics sandbox destruction.",
     signIn: "Playable"
   }
 
