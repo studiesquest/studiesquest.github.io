@@ -61,7 +61,7 @@ const games = [
   {
     title: "Traffic Road",
     src: "https://zapgames.io/traffic-road.embed",
-    thumbnail: "https://zapgames.io/cache/data/image/game/trafficroad-h196x110.webp",
+    thumbnail: "https://zapgames.io/cache/data/image/game/traffic-road-h196x110.webp",
     description: "Avoid traffic and survive.",
     signIn: "Playable"
   },
