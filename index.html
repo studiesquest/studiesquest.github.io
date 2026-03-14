@@ -5,138 +5,32 @@
 <title>StudiesQuest</title>
 <link rel="stylesheet" href="style.css">
 </head>
-  
+
 <body>
 
 <header>
+  <h1>STUDIESQUEST</h1>
 
-<h1>STUDIESQUEST</h1>
+  <input id="search" placeholder="Search games...">
 
-<input id="search" placeholder="Search games...">
-
-<div class="filters">
-  <button data-filter="All">All</button>
-  <button data-filter="Playable">Playable</button>
-  <button data-filter="Slightly Unplayable">Slightly Unplayable</button>
-  <button data-filter="Hardly Playable">Hardly Playable</button>
-  <button data-filter="Favorites">⭐ Favorites</button>
-  <button data-filter="Utilities">🏠 Home Utilities</button>
-</div>
+  <div class="filters">
+    <button data-filter="All">All</button>
+    <button data-filter="Playable">Playable</button>
+    <button data-filter="Slightly Unplayable">Slightly Unplayable</button>
+    <button data-filter="Hardly Playable">Hardly Playable</button>
+    <button data-filter="Favorites">⭐ Favorites</button>
+  </div>
   
-<p id="playable-info">
-On Chromebooks using the sign-in page bypass, some games may require extensive cursor movement. This can cause the cursor to leave the sign-in page, which may make the game stop responding. Playability ratings are provided to help indicate how well each game functions in this environment.
-</p>
-
+  <p id="playable-info">
+    On Chromebooks using the sign-in page bypass, some games may require extensive cursor movement. This can cause the cursor to leave the sign-in page, which may make the game stop responding. Playability ratings are provided to help indicate how well each game functions in this environment.
+  </p>
 </header>
 
-<!-- Main games grid -->
 <main id="grid"></main>
-<!-- Homework Utilities Grid -->
-<div id="utilities-container">
-  <h2>Homework Utilities</h2>
-  <div id="utilities-grid" class="grid">
-    <!-- Calculator Tile -->
-    <div class="tile">
-      <div class="tile-title">Calculator</div>
-      <div class="tile-content">
-        <iframe width="219" height="302" src="https://calculator-1.com/outdoor/?f=666666&r=666666" scrolling="no" frameborder="0"></iframe>
-        <button class="maximize-btn">Maximize</button>
-      </div>
-    </div>
 
-    <!-- ChatGPT Tile -->
-    <div class="tile">
-      <div class="tile-title">ChatGPT</div>
-      <div class="tile-content">
-        <img src="data:image/png;base64,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" />
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Notification Popup -->
-<div id="chatgpt-popup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
-  background:#1E1E2F; color:white; padding:25px; border-radius:12px; z-index:9999; text-align:center;">
-  <p>This link leads outside of StudiesQuest</p>
-  <button id="popup-cancel">Cancel</button>
-  <button id="popup-continue">Continue</button>
-</div>
-
-<script>
-// ChatGPT link popup
-const chatTile = document.querySelector('.chatgpt-tile');
-chatTile?.addEventListener('click', (e)=>{
-    e.preventDefault();
-    document.getElementById('chatgpt-popup').style.display='block';
-});
-document.getElementById('popup-cancel').addEventListener('click', ()=>{
-    document.getElementById('chatgpt-popup').style.display='none';
-});
-document.getElementById('popup-continue').addEventListener('click', ()=>{
-    window.open('https://chat.openai.com/', '_blank');
-    document.getElementById('chatgpt-popup').style.display='none';
-});
-
-// Calculator maximize
-document.querySelectorAll('.maximize-btn').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-        const iframe = btn.previousElementSibling;
-        iframe.style.width = '800px';
-        iframe.style.height = '600px';
-    });
-});
-</script>
-
-<style>
-/* Utilities Grid Styling (matches game grid) */
-#utilities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 15px;
-  margin-top: 10px;
-}
-
-#utilities-grid .tile {
-  background: #2B2B3A;
-  border-radius: 12px;
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
-
-#utilities-grid .tile img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.tile-title {
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.tile-content button {
-  margin-top: 10px;
-  padding: 5px 10px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  background:#4CAF50;
-  color:white;
-}
-
-.tile-content button:hover {
-  background:#45a049;
-}
-</style>
-  
-<!-- Modal for playing games -->
 <div id="modal">
-
   <button id="home">HOME</button>
-
   <iframe id="gameFrame" allowfullscreen></iframe>
-
 </div>
 
 <script src="games.js"></script>
