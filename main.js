@@ -1,106 +1,112 @@
+// =======================
+// Main JS for StudiesQuest
+// =======================
+
+// Elements
 const grid = document.getElementById('grid');
+const utilitiesGrid = document.getElementById('utilities-grid');
 const searchInput = document.getElementById('search');
 const filterButtons = document.querySelectorAll('.filters button');
-const modal = document.getElementById('modal');
-const gameFrame = document.getElementById('gameFrame');
-const homeBtn = document.getElementById('home');
 
-let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
-// Render all games
-function renderGames(gamesArray) {
+// -----------------------
+// Populate Games Grid
+// -----------------------
+function displayGames(gameList) {
     grid.innerHTML = '';
-
-    gamesArray.forEach(game => {
+    gameList.forEach(game => {
         const tile = document.createElement('div');
         tile.className = 'tile';
-
-        const img = document.createElement('img');
-        img.src = game.thumbnail;
-        img.alt = game.title;
-
-        const title = document.createElement('h3');
-        title.textContent = game.title;
-
-        const desc = document.createElement('p');
-        desc.textContent = game.description;
-
-        const tag = document.createElement('span');
-        tag.className = 'tag';
-        if (game.signIn === 'Playable') tag.classList.add('playable');
-        else if (game.signIn === 'Slightly Unplayable') tag.classList.add('slight');
-        else if (game.signIn === 'Hardly Playable') tag.classList.add('hard');
-        tag.textContent = game.signIn;
-
-        const favBtn = document.createElement('button');
-        favBtn.textContent = favorites.includes(game.title) ? '★' : '☆';
-        favBtn.style.marginLeft = '6px';
-        favBtn.style.cursor = 'pointer';
-        favBtn.addEventListener('click', e => {
-            e.stopPropagation();
-            toggleFavorite(game.title, favBtn);
+        tile.innerHTML = `
+            <img src="${game.thumbnail}" alt="${game.title}">
+            <h3>${game.title}</h3>
+            <p>${game.description}</p>
+            <span class="tag ${tagClass(game.signIn)}">${game.signIn}</span>
+        `;
+        tile.addEventListener('click', () => {
+            openModal(game.src);
         });
-
-        tile.appendChild(img);
-        tile.appendChild(title);
-        tile.appendChild(desc);
-        tile.appendChild(tag);
-        tile.appendChild(favBtn);
-
-        tile.addEventListener('click', () => openGame(game.src));
-
         grid.appendChild(tile);
     });
 }
 
-// Open modal and load game
-function openGame(src) {
-    gameFrame.src = src;       // just set src, no extra hacks
+// -----------------------
+// Populate Home Utilities Grid
+// -----------------------
+function displayUtilities() {
+    utilitiesGrid.innerHTML = '';
+
+    // Example: Calculator iframe
+    const calculator = document.createElement('div');
+    calculator.className = 'tile';
+    calculator.innerHTML = `
+        <iframe width="219" height="302" src="https://calculator-1.com/outdoor/?f=666666&r=666666" scrolling="no" frameborder="0"></iframe>
+        <br>
+        <a href="https://calculator-1.com/" target="_blank">The Best Free Online Calculator - Calculator-1.com</a>
+    `;
+    utilitiesGrid.appendChild(calculator);
+}
+
+// -----------------------
+// Tag styling helper
+// -----------------------
+function tagClass(signIn) {
+    if (signIn === "Playable") return "playable";
+    if (signIn === "Slightly Unplayable") return "slight";
+    if (signIn === "Hardly Playable") return "hard";
+    return "";
+}
+
+// -----------------------
+// Modal functions
+// -----------------------
+const modal = document.getElementById('modal');
+const gameFrame = document.getElementById('gameFrame');
+const homeBtn = document.getElementById('home');
+
+function openModal(src) {
+    gameFrame.src = src;
     modal.style.display = 'flex';
-    modal.style.opacity = '0';
-    setTimeout(() => modal.style.opacity = '1', 50);
 }
 
-// Close modal
 homeBtn.addEventListener('click', () => {
-    modal.style.opacity = '0';
-    setTimeout(() => {
-        modal.style.display = 'none';
-        gameFrame.src = '';
-    }, 200);
+    modal.style.display = 'none';
+    gameFrame.src = '';
 });
 
-// Favorites
-function toggleFavorite(title, btn) {
-    if (favorites.includes(title)) {
-        favorites = favorites.filter(f => f !== title);
-        btn.textContent = '☆';
-    } else {
-        favorites.push(title);
-        btn.textContent = '★';
-    }
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-}
-
-// Search
+// -----------------------
+// Search functionality
+// -----------------------
 searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase();
-    const filtered = games.filter(game => game.title.toLowerCase().includes(query));
-    renderGames(filtered);
+    const searchTerm = searchInput.value.toLowerCase();
+    const filteredGames = games.filter(game => game.title.toLowerCase().includes(searchTerm));
+    displayGames(filteredGames);
 });
 
-// Filters
-filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const filter = btn.dataset.filter;
-        if (filter === 'All') renderGames(games);
-        else if (filter === 'Favorites') {
-            renderGames(games.filter(g => favorites.includes(g.title)));
+// -----------------------
+// Filter buttons
+// -----------------------
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+
+        if (filter === "All") {
+            grid.style.display = 'grid';
+            utilitiesGrid.style.display = 'none';
+            displayGames(games);
+        } else if (filter === "Utilities") {
+            grid.style.display = 'none';
+            utilitiesGrid.style.display = 'grid';
+            displayUtilities();
         } else {
-            renderGames(games.filter(g => g.signIn === filter));
+            const filtered = games.filter(game => game.signIn === filter);
+            grid.style.display = 'grid';
+            utilitiesGrid.style.display = 'none';
+            displayGames(filtered);
         }
     });
 });
 
-// Initial render
-renderGames(games);
+// -----------------------
+// Initial display
+// -----------------------
+displayGames(games);
