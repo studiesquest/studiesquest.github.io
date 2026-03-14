@@ -10,7 +10,7 @@ const games = [
 {title:"Rocket Soccer", src:"https://zapgames.io/rocket-soccer.embed", thumbnail:"https://zapgames.io/cache/data/image/game/rocket-soccer-f546x307.webp", description:"Score goals.", signIn:"Playable"},
 {title:"Space Waves", src:"https://zapgames.io/space-waves.embed", thumbnail:"https://zapgames.io/cache/data/image/game/space-waves-h196x110.webp", description:"Pass through the obstacles.", signIn:"Playable"},
 // another way of making this its lowk annoying to change them on one line heres a template
-  
+  {
     title: "Tiny Arena",
     src: "https://zapgames.io/tiny-arena.embed",
     thumbnail: "https://zapgames.io/cache/data/image/game/tiny-arena-h196x110.webp",
