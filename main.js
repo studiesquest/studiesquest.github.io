@@ -1,90 +1,143 @@
-const grid=document.getElementById("grid")
-const search=document.getElementById("search")
-const modal=document.getElementById("modal")
-const frame=document.getElementById("gameFrame")
-const home=document.getElementById("home")
+// ==========================
+// Variables
+// ==========================
+const grid = document.getElementById('grid');
+const searchInput = document.getElementById('search');
+const filterButtons = document.querySelectorAll('.filters button');
+const modal = document.getElementById('modal');
+const gameFrame = document.getElementById('gameFrame');
+const homeBtn = document.getElementById('home');
 
-let filter="All"
+let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-let favorites=JSON.parse(localStorage.getItem("favorites")||"[]")
+// ==========================
+// Render Games
+// ==========================
+function renderGames(gamesArray) {
+    grid.innerHTML = '';
 
-function saveFavs(){
-localStorage.setItem("favorites",JSON.stringify(favorites))
+    gamesArray.forEach(game => {
+        const tile = document.createElement('div');
+        tile.classList.add('tile');
+
+        const img = document.createElement('img');
+        img.src = game.thumbnail;
+        img.alt = game.title;
+
+        const title = document.createElement('h3');
+        title.textContent = game.title;
+
+        const desc = document.createElement('p');
+        desc.textContent = game.description;
+
+        const tag = document.createElement('span');
+        tag.classList.add('tag');
+        if (game.signIn === 'Playable') tag.classList.add('playable');
+        else if (game.signIn === 'Slightly Unplayable') tag.classList.add('slight');
+        else if (game.signIn === 'Hardly Playable') tag.classList.add('hard');
+
+        tag.textContent = game.signIn;
+
+        // Favorite toggle
+        const favBtn = document.createElement('button');
+        favBtn.textContent = favorites.includes(game.title) ? '★' : '☆';
+        favBtn.style.marginLeft = '8px';
+        favBtn.style.cursor = 'pointer';
+        favBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleFavorite(game.title, favBtn);
+        });
+
+        tile.appendChild(img);
+        tile.appendChild(title);
+        tile.appendChild(desc);
+        tile.appendChild(tag);
+        tile.appendChild(favBtn);
+
+        tile.addEventListener('click', () => openGame(game.src));
+
+        grid.appendChild(tile);
+    });
 }
 
-function render(){
+// ==========================
+// Open Game in Modal
+// ==========================
+function openGame(src) {
+    // Show modal
+    modal.style.display = 'flex';
+    modal.style.opacity = '0';
+    setTimeout(() => modal.style.opacity = '1', 50);
 
-grid.innerHTML=""
+    // Set iframe attributes
+    gameFrame.setAttribute('src', src);
+    gameFrame.setAttribute('allowfullscreen', '');
+    gameFrame.setAttribute('allow', 'fullscreen; autoplay; pointer-lock');
 
-games
-.filter(g=>{
-
-if(filter==="All") return true
-if(filter==="Favorites") return favorites.includes(g.title)
-return g.signIn===filter
-
-})
-.filter(g=>g.title.toLowerCase().includes(search.value.toLowerCase()))
-.forEach(g=>{
-
-const tile=document.createElement("div")
-tile.className="tile"
-
-const tagClass =
-g.signIn==="Playable"?"playable":
-g.signIn==="Slightly Unplayable"?"slight":"hard"
-
-const starActive=favorites.includes(g.title)
-
-tile.innerHTML=`
-
-<div class="star">${starActive?"⭐":"☆"}</div>
-
-<img src="${g.thumbnail}" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/3/3b/Joystick_icon.svg'">
-
-<h3>${g.title}</h3>
-
-<p>${g.description}</p>
-
-<span class="tag ${tagClass}">${g.signIn}</span>
-`
-
-tile.onclick=()=>{
-modal.style.display="flex"
-frame.src=g.src
+    // Attempt pointer lock after a short delay (fixes Slope on ChromeOS)
+    setTimeout(() => {
+        try {
+            if(gameFrame.contentWindow && gameFrame.contentWindow.document.body.requestPointerLock){
+                gameFrame.contentWindow.document.body.requestPointerLock();
+            }
+        } catch(e) {
+            // fail silently if not allowed
+        }
+    }, 300);
 }
 
-tile.querySelector(".star").onclick=(e)=>{
-e.stopPropagation()
+// ==========================
+// Close Game
+// ==========================
+homeBtn.addEventListener('click', () => {
+    modal.style.opacity = '0';
+    setTimeout(() => {
+        modal.style.display = 'none';
+        gameFrame.setAttribute('src', '');
+    }, 300);
+});
 
-if(favorites.includes(g.title)){
-favorites=favorites.filter(f=>f!==g.title)
-}else{
-favorites.push(g.title)
+// ==========================
+// Favorites Handling
+// ==========================
+function toggleFavorite(title, btn) {
+    if (favorites.includes(title)) {
+        favorites = favorites.filter(f => f !== title);
+        btn.textContent = '☆';
+    } else {
+        favorites.push(title);
+        btn.textContent = '★';
+    }
+    localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 
-saveFavs()
-render()
-}
+// ==========================
+// Search Functionality
+// ==========================
+searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+    const filtered = games.filter(game => game.title.toLowerCase().includes(query));
+    renderGames(filtered);
+});
 
-grid.appendChild(tile)
+// ==========================
+// Filter Buttons
+// ==========================
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        if (filter === 'All') renderGames(games);
+        else if (filter === 'Favorites') {
+            const favGames = games.filter(g => favorites.includes(g.title));
+            renderGames(favGames);
+        } else {
+            const filtered = games.filter(g => g.signIn === filter);
+            renderGames(filtered);
+        }
+    });
+});
 
-})
-
-}
-
-search.oninput=render
-
-document.querySelectorAll(".filters button").forEach(b=>{
-b.onclick=()=>{
-filter=b.dataset.filter
-render()
-}
-})
-
-home.onclick=()=>{
-frame.src=""
-modal.style.display="none"
-}
-
-render()
+// ==========================
+// Initial Render
+// ==========================
+renderGames(games);
