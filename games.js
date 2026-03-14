@@ -29,3 +29,4 @@ const games = [
 {title:"Sprunki", src:"https://zapgames.io/sprunki.embed", thumbnail:"https://zapgames.io/cache/data/image/game/sprunki-h196x110.webp", description:"Fast reaction obstacle game.", signIn:"Playable"},
 {title:"Infinite Craft", src:"https://zapgames.io/infinite-craft.embed", thumbnail:"https://zapgames.io/cache/data/image/game/infinite-craft-h196x110.webp", description:"Combine elements to create anything.", signIn:"Playable"},
 {title:"People Playground", src:"https://zapgames.io/ragdoll-playground.embed", thumbnail:"https://zapgames.io/cache/data/image/game/ragdoll-playground-h196x110.webp", description:"Ragdoll sandbox physics.", signIn:"Playable"}
+];
