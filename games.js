@@ -9,24 +9,43 @@ const games = [
 {title:"Basketball Stars", src:"https://zapgames.io/basketball-stars.embed", thumbnail:"https://zapgames.io/cache/data/image/game/basketball-stars-h196x110.webp", description:"Arcade basketball.", signIn:"Playable"},
 {title:"Rocket Soccer", src:"https://zapgames.io/rocket-soccer.embed", thumbnail:"https://zapgames.io/cache/data/image/game/rocket-soccer-f546x307.webp", description:"Score goals.", signIn:"Playable"},
 {title:"Space Waves", src:"https://zapgames.io/space-waves.embed", thumbnail:"https://zapgames.io/cache/data/image/game/space-waves-h196x110.webp", description:"Pass through the obstacles.", signIn:"Playable"},
- {title:"Drift Boss", src:"https://zapgames.io/drift-boss.embed", thumbnail:"https://zapgames.io/cache/data/image/game/drift-boss-h196x110.webp", description:"Drift along a narrow road.", signIn:"Playable"},
-{title:"Tunnel Rush", src:"https://zapgames.io/tunnel-rush.embed", thumbnail:"https://zapgames.io/cache/data/image/game/tunnel-rush-h196x110.webp", description:"Avoid obstacles at high speed.", signIn:"Playable"},
-{title:"Run 3", src:"https://zapgames.io/run-3.embed", thumbnail:"https://zapgames.io/cache/data/image/game/run3-h196x110.webp", description:"Run through space tunnels.", signIn:"Playable"},
-{title:"Temple Run 2", src:"https://zapgames.io/temple-run-2.embed", thumbnail:"https://zapgames.io/cache/data/image/game/temple-run-2-h196x110.webp", description:"Escape the temple endlessly.", signIn:"Playable"},
-{title:"Geometry Dash", src:"https://zapgames.io/geometry-dash.embed", thumbnail:"https://zapgames.io/cache/data/image/game/geometry-dash-h196x110.webp", description:"Jump through rhythm obstacles.", signIn:"Playable"},
-{title:"Escape Road", src:"https://zapgames.io/escape-road.embed", thumbnail:"https://zapgames.io/cache/data/image/game/escape-road-h196x110.webp", description:"Escape traffic and police.", signIn:"Playable"},
-{title:"Traffic Rally", src:"https://zapgames.io/traffic-rally.embed", thumbnail:"https://zapgames.io/cache/data/image/game/traffic-rally-h196x110.webp", description:"Drive fast through traffic.", signIn:"Playable"},
-{title:"Traffic Road", src:"https://zapgames.io/traffic-road.embed", thumbnail:"https://zapgames.io/cache/data/image/game/traffic-road-h196x110.webp", description:"Avoid cars and survive.", signIn:"Playable"},
-{title:"Jet Rush", src:"https://zapgames.io/jet-rush.embed", thumbnail:"https://zapgames.io/cache/data/image/game/jet-rush-h196x110.webp", description:"Fly through obstacles.", signIn:"Playable"},
-{title:"Basket Random", src:"https://zapgames.io/basket-random.embed", thumbnail:"https://zapgames.io/cache/data/image/game/basket-random-h196x110.webp", description:"Funny physics basketball.", signIn:"Playable"},
-{title:"Soccer Random", src:"https://zapgames.io/soccer-random.embed", thumbnail:"https://zapgames.io/cache/data/image/game/soccer-random-h196x110.webp", description:"Random physics soccer.", signIn:"Playable"},
-{title:"Undead Corridor", src:"https://zapgames.io/undead-corridor.embed", thumbnail:"https://zapgames.io/cache/data/image/game/undead-corridor-h196x110.webp", description:"Fight through zombie corridors.", signIn:"Playable"},
-{title:"2v2.io", src:"https://zapgames.io/2v2-io.embed", thumbnail:"https://zapgames.io/cache/data/image/game/2v2io-h196x110.webp", description:"Multiplayer shooter battles.", signIn:"Hardly Playable"},
-{title:"Veck.io", src:"https://zapgames.io/veck-io.embed", thumbnail:"https://zapgames.io/cache/data/image/game/veckio-h196x110.webp", description:"Online shooter arena.", signIn:"Hardly Playable"},
-{title:"FrontWars.io", src:"https://zapgames.io/frontwars-io.embed", thumbnail:"https://zapgames.io/cache/data/image/game/frontwarsio-h196x110.webp", description:"Strategy multiplayer war game.", signIn:"Slightly Playable"},
-{title:"Orbit Beats", src:"https://zapgames.io/orbit-beats.embed", thumbnail:"https://zapgames.io/cache/data/image/game/orbit-beats-h196x110.webp", description:"Music rhythm shooter.", signIn:"Playable"},
-{title:"Cowboy Safari", src:"https://zapgames.io/cowboy-safari.embed", thumbnail:"https://zapgames.io/cache/data/image/game/cowboy-safari-h196x110.webp", description:"Ride animals collecting coins.", signIn:"Playable"},
-{title:"Sprunki", src:"https://zapgames.io/sprunki.embed", thumbnail:"https://zapgames.io/cache/data/image/game/sprunki-h196x110.webp", description:"Fast reaction obstacle game.", signIn:"Playable"},
-{title:"Infinite Craft", src:"https://zapgames.io/infinite-craft.embed", thumbnail:"https://zapgames.io/cache/data/image/game/infinite-craft-h196x110.webp", description:"Combine elements to create anything.", signIn:"Playable"},
-{title:"People Playground", src:"https://zapgames.io/ragdoll-playground.embed", thumbnail:"https://zapgames.io/cache/data/image/game/ragdoll-playground-h196x110.webp", description:"Ragdoll sandbox physics.", signIn:"Playable"}
-];
+{title:"Drift Boss", src:"https://zapgames.io/drift-boss.embed", thumbnail:"https://zapgames.io/cache/data/image/game/drift-boss-h196x110.webp", description:"Drift through tight corners.", signIn:"Playable"},
+
+{title:"Snow Rider", src:"https://zapgames.io/snow-rider.embed", thumbnail:"https://zapgames.io/cache/data/image/game/snow-rider-h196x110.webp", description:"Ride a sled down snowy hills.", signIn:"Playable"},
+
+{title:"Drift Hunters", src:"https://zapgames.io/drift-hunters.embed", thumbnail:"https://zapgames.io/cache/data/image/game/drift-hunters-h196x110.webp", description:"Realistic 3D drifting simulator.", signIn:"Playable"},
+
+{title:"Jetski Race", src:"https://zapgames.io/jetski-race.embed", thumbnail:"https://zapgames.io/cache/data/image/game/jetski-race-h196x110.webp", description:"High speed water racing.", signIn:"Playable"},
+
+{title:"Football Bros", src:"https://zapgames.io/football-bros.embed", thumbnail:"https://zapgames.io/cache/data/image/game/football-bros-h196x110.webp", description:"Arcade football battles.", signIn:"Playable"},
+
+{title:"Retro Bowl", src:"https://zapgames.io/retro-bowl.embed", thumbnail:"https://zapgames.io/cache/data/image/game/retro-bowl-h196x110.webp", description:"Retro football team manager.", signIn:"Playable"},
+
+{title:"Speed Stars", src:"https://zapgames.io/speed-stars.embed", thumbnail:"https://zapgames.io/cache/data/image/game/speed-stars-h196x110.webp", description:"Fast paced racing game.", signIn:"Playable"},
+
+{title:"Soccer Bros", src:"https://zapgames.io/soccer-bros.embed", thumbnail:"https://zapgames.io/cache/data/image/game/soccer-bros-h196x110.webp", description:"2 player soccer battles.", signIn:"Playable"},
+
+{title:"Snow Road", src:"https://azgames.io/snow-road.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/snowroad-m180x180.png", description:"Drive through snowy tracks.", signIn:"Playable"},
+
+{title:"Wacky Flip", src:"https://azgames.io/wacky-flip.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/wackyflip-m180x180.png", description:"Perform crazy flips.", signIn:"Playable"},
+
+{title:"Tap Road", src:"https://azgames.io/tap-road.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/taproad-m180x180.png", description:"Fast reflex road game.", signIn:"Playable"},
+
+{title:"Curve Rush", src:"https://azgames.io/curve-rush.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/curverush-m180x180.png", description:"Dodge obstacles on curves.", signIn:"Playable"},
+
+{title:"Bike Xtreme", src:"https://azgames.io/bike-xtreme.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/bikextreme-m180x180.png", description:"Extreme bike racing.", signIn:"Playable"},
+
+{title:"Escape Road", src:"https://azgames.io/escape-road.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/escaperoad-m180x180.png", description:"Escape police chases.", signIn:"Playable"},
+
+{title:"Escape Road 2", src:"https://azgames.io/escape-road-2.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/escaperoad2-m180x180.png", description:"Sequel to Escape Road.", signIn:"Playable"},
+
+{title:"Escape Road City 2", src:"https://azgames.io/escape-road-city-2.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/escaperoadcity2-m180x180.png", description:"Escape through city roads.", signIn:"Playable"},
+
+{title:"Slope 2", src:"https://azgames.io/slope-2.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/slope2-m180x180.png", description:"Faster version of Slope.", signIn:"Playable"},
+
+{title:"Slope 3", src:"https://azgames.io/slope-3.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/slope3-m180x180.png", description:"Harder slope challenge.", signIn:"Playable"},
+
+{title:"Head Soccer 2024", src:"https://azgames.io/head-soccer-2024.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/headsoccer2024-m180x180.png", description:"Arcade soccer battles.", signIn:"Playable"},
+
+{title:"People Playground", src:"https://azgames.io/ragdoll-playground.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/ragdollplayground-m180x180.png", description:"Physics sandbox ragdoll game.", signIn:"Playable"}
+]
