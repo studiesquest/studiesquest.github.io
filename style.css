@@ -31,8 +31,26 @@ letter-spacing:2px;
 margin-top:10px;
 padding:10px;
 width:260px;
-border:none;
 border-radius:6px;
+border:1px solid rgba(50,255,126,0.35);
+background:rgba(50,255,126,0.08);
+color:#32ff7e;
+outline:none;
+transition:all .25s ease;
+box-shadow:0 0 6px rgba(50,255,126,0.25);
+}
+
+#search::placeholder{
+color:#32ff7e;
+opacity:0.6;
+}
+
+#search:hover,
+#search:focus{
+background:rgba(50,255,126,0.18);
+box-shadow:
+0 0 10px #32ff7e,
+0 0 20px #32ff7e;
 }
 
 .filters{
@@ -42,9 +60,21 @@ margin-top:10px;
 .filters button{
 margin:5px;
 padding:8px 12px;
-border:none;
 border-radius:6px;
+border:1px solid rgba(50,255,126,0.35);
+background:rgba(50,255,126,0.08);
+color:#32ff7e;
 cursor:pointer;
+transition:all .25s ease;
+box-shadow:0 0 6px rgba(50,255,126,0.25);
+}
+
+.filters button:hover{
+background:#32ff7e;
+color:#031f08;
+box-shadow:
+0 0 10px #32ff7e,
+0 0 25px #32ff7e;
 }
 
 main{
@@ -121,9 +151,20 @@ top:15px;
 left:15px;
 z-index:5;
 padding:10px 14px;
-border:none;
 border-radius:6px;
-background:#32ff7e;
+border:1px solid rgba(50,255,126,0.35);
+background:rgba(50,255,126,0.08);
+color:#32ff7e;
 font-weight:bold;
 cursor:pointer;
+transition:all .25s ease;
+box-shadow:0 0 6px rgba(50,255,126,0.25);
+}
+
+#home:hover{
+background:#32ff7e;
+color:#031f08;
+box-shadow:
+0 0 10px #32ff7e,
+0 0 25px #32ff7e;
 }
