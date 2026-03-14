@@ -33,7 +33,7 @@ const games = [
 
 {title:"Curve Rush", src:"https://azgames.io/curve-rush.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/curverush2-m180x180.png", description:"Dodge obstacles on curves.", signIn:"Playable"},
 
-{title:"Bike Xtreme", src:"https://azgames.io/bike-xtreme.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/bikextreme-m180x180.png", description:"Extreme bike racing.", signIn:"Playable"},
+{title:"Bike Xtreme", src:"https://azgames.io/bike-xtreme.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/bikextreme11-m180x180.png", description:"Extreme bike racing.", signIn:"Playable"},
 
 {title:"Escape Road", src:"https://azgames.io/escape-road.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/escaperoad-m180x180.png", description:"Escape police chases.", signIn:"Playable"},
 
