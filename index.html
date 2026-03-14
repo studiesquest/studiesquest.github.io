@@ -15,34 +15,32 @@
 <input id="search" placeholder="Search games...">
 
 <div class="filters">
-<button data-filter="All">All</button>
-<button data-filter="Playable">Playable</button>
-<button data-filter="Slightly Unplayable">Slightly Unplayable</button>
-<button data-filter="Hardly Playable">Hardly Playable</button>
-<button data-filter="Favorites">⭐ Favorites</button>
+  <button data-filter="All">All</button>
+  <button data-filter="Playable">Playable</button>
+  <button data-filter="Slightly Unplayable">Slightly Unplayable</button>
+  <button data-filter="Hardly Playable">Hardly Playable</button>
+  <button data-filter="Favorites">⭐ Favorites</button>
+  <button data-filter="Utilities">🏠 Home Utilities</button>
 </div>
   
 <p id="playable-info">
 On Chromebooks using the sign-in page bypass, some games may require extensive cursor movement. This can cause the cursor to leave the sign-in page, which may make the game stop responding. Playability ratings are provided to help indicate how well each game functions in this environment.
 </p>
-  <!-- AI Chat Floating Box -->
-<div id="ai-chat">
-  <div id="ai-header">Homework AI 🤖</div>
-  <div id="ai-messages"></div>
-  <div id="ai-input-area">
-    <input type="text" id="ai-input" placeholder="Ask your homework question..." />
-    <button id="ai-send">Send</button>
-  </div>
-</div>
+
 </header>
 
+<!-- Main games grid -->
 <main id="grid"></main>
 
+<!-- Home Utilities grid -->
+<main id="utilities-grid" style="display:none;"></main>
+
+<!-- Modal for playing games -->
 <div id="modal">
 
-<button id="home">HOME</button>
+  <button id="home">HOME</button>
 
-<iframe id="gameFrame" allowfullscreen></iframe>
+  <iframe id="gameFrame" allowfullscreen></iframe>
 
 </div>
 
