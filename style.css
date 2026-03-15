@@ -1,3 +1,4 @@
+/* Body background and fonts */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -15,6 +16,7 @@ body::before {
   z-index: -1;
 }
 
+/* Header and title */
 header {
   text-align: center;
   padding: 20px;
@@ -26,14 +28,18 @@ h1 {
   letter-spacing: 2px;
 }
 
+/* Search bar */
 #search {
   margin-top: 10px;
   padding: 10px;
   width: 260px;
   border: none;
   border-radius: 6px;
+  background: #062b12;
+  color: #32ff7e;
 }
 
+/* Filter buttons */
 .filters {
   margin-top: 10px;
 }
@@ -51,18 +57,35 @@ h1 {
 
 .filters button:hover {
   background: #32ff7e;
-  color: #031f08;
+  color: #062b12;
 }
 
+/* Playability info box with glow */
+#playable-info {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(30, 30, 50, 0.85);
+  border: 2px solid #7b6cff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 0 20px rgba(123, 108, 255, 0.6);
+  max-width: 300px;
+  font-size: 14px;
+  line-height: 1.4;
+  z-index: 999;
+  color: #fff;
+}
+
+/* Game grid */
 main {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   padding: 20px;
-  max-width: 1600px; /* caps width for ultra-wide monitors */
-  margin: 0 auto;    /* centers the grid */
 }
 
+/* Tiles */
 .tile {
   background: #062b12;
   border-radius: 10px;
@@ -102,18 +125,11 @@ main {
   display: inline-block;
 }
 
-.playable {
-  background: #00a84f;
-}
+.playable { background: #00a84f; }
+.slight { background: #c9a400; }
+.hard { background: #c40000; }
 
-.slight {
-  background: #c9a400;
-}
-
-.hard {
-  background: #c40000;
-}
-
+/* Modal and iframe */
 #modal {
   position: fixed;
   top: 0;
@@ -132,6 +148,7 @@ main {
   height: 100%;
 }
 
+/* Home button */
 #home {
   position: absolute;
   top: 15px;
