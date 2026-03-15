@@ -279,3 +279,18 @@ opacity:0.6;
 opacity:1;
 filter:drop-shadow(0 0 6px gold);
 }
+
+.playability {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-top: 4px;
+
+  color: #7dff9b;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(125,255,155,0.4);
+
+  backdrop-filter: blur(4px);
+}
