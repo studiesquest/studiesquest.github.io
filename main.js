@@ -1,98 +1,106 @@
-const grid = document.getElementById("gameGrid");
-const search = document.getElementById("search");
+const grid = document.getElementById('grid');
+const searchInput = document.getElementById('search');
+const filterButtons = document.querySelectorAll('.filters button');
+const modal = document.getElementById('modal');
+const gameFrame = document.getElementById('gameFrame');
+const homeBtn = document.getElementById('home');
 
-let currentFilter = "all";
-let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-function loadGames(){
-grid.innerHTML = "";
+// Render all games
+function renderGames(gamesArray) {
+    grid.innerHTML = '';
 
-games.forEach(game => {
+    gamesArray.forEach(game => {
+        const tile = document.createElement('div');
+        tile.className = 'tile';
 
-const tile = document.createElement("div");
-tile.className = "tile";
+        const img = document.createElement('img');
+        img.src = game.thumbnail;
+        img.alt = game.title;
 
-tile.dataset.playability = game.playability;
-tile.dataset.title = game.title.toLowerCase();
+        const title = document.createElement('h3');
+        title.textContent = game.title;
 
-const isFav = favorites.includes(game.title);
+        const desc = document.createElement('p');
+        desc.textContent = game.description;
 
-tile.innerHTML = `
-<div class="favStar ${isFav ? "active" : ""}" data-title="${game.title}">⭐</div>
-<img src="${game.image}">
-<h3>${game.title}</h3>
-<span class="playability">${game.playability}</span>
-`;
+        const tag = document.createElement('span');
+        tag.className = 'tag';
+        if (game.signIn === 'Playable') tag.classList.add('playable');
+        else if (game.signIn === 'Slightly Unplayable') tag.classList.add('slight');
+        else if (game.signIn === 'Hardly Playable') tag.classList.add('hard');
+        tag.textContent = game.signIn;
 
-tile.querySelector(".favStar").onclick = (e) => {
-e.stopPropagation();
-toggleFavorite(game.title);
-};
+        const favBtn = document.createElement('button');
+        favBtn.textContent = favorites.includes(game.title) ? '★' : '☆';
+        favBtn.style.marginLeft = '6px';
+        favBtn.style.cursor = 'pointer';
+        favBtn.addEventListener('click', e => {
+            e.stopPropagation();
+            toggleFavorite(game.title, favBtn);
+        });
 
-tile.onclick = () => launchGame(game.url);
+        tile.appendChild(img);
+        tile.appendChild(title);
+        tile.appendChild(desc);
+        tile.appendChild(tag);
+        tile.appendChild(favBtn);
 
-grid.appendChild(tile);
+        tile.addEventListener('click', () => openGame(game.src));
 
+        grid.appendChild(tile);
+    });
+}
+
+// Open modal and load game
+function openGame(src) {
+    gameFrame.src = src;       // just set src, no extra hacks
+    modal.style.display = 'flex';
+    modal.style.opacity = '0';
+    setTimeout(() => modal.style.opacity = '1', 50);
+}
+
+// Close modal
+homeBtn.addEventListener('click', () => {
+    modal.style.opacity = '0';
+    setTimeout(() => {
+        modal.style.display = 'none';
+        gameFrame.src = '';
+    }, 200);
 });
 
-applyFilters();
+// Favorites
+function toggleFavorite(title, btn) {
+    if (favorites.includes(title)) {
+        favorites = favorites.filter(f => f !== title);
+        btn.textContent = '☆';
+    } else {
+        favorites.push(title);
+        btn.textContent = '★';
+    }
+    localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 
-function toggleFavorite(title){
-
-if(favorites.includes(title)){
-favorites = favorites.filter(f => f !== title);
-}else{
-favorites.push(title);
-}
-
-localStorage.setItem("favorites", JSON.stringify(favorites));
-loadGames();
-}
-
-function launchGame(url){
-
-const player = document.getElementById("gamePlayer");
-
-player.innerHTML = `
-<iframe src="${url}" frameborder="0" allowfullscreen></iframe>
-`;
-
-document.getElementById("playerSection").style.display = "block";
-}
-
-function filterGames(type){
-currentFilter = type;
-applyFilters();
-}
-
-function applyFilters(){
-
-const searchValue = search.value.toLowerCase();
-
-document.querySelectorAll(".tile").forEach(tile => {
-
-let show = true;
-
-if(currentFilter === "favorites"){
-show = favorites.includes(tile.dataset.title);
-}
-else if(currentFilter !== "all"){
-show = tile.dataset.playability === currentFilter;
-}
-
-if(!tile.dataset.title.includes(searchValue)){
-show = false;
-}
-
-tile.style.display = show ? "block" : "none";
-
+// Search
+searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+    const filtered = games.filter(game => game.title.toLowerCase().includes(query));
+    renderGames(filtered);
 });
 
-}
+// Filters
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        if (filter === 'All') renderGames(games);
+        else if (filter === 'Favorites') {
+            renderGames(games.filter(g => favorites.includes(g.title)));
+        } else {
+            renderGames(games.filter(g => g.signIn === filter));
+        }
+    });
+});
 
-function searchGames(){
-applyFilters();
-}
-
-loadGames();
+// Initial render
+renderGames(games);
