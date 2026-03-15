@@ -10,44 +10,122 @@ const games = [
 {title:"Rocket Soccer", src:"https://zapgames.io/rocket-soccer.embed", thumbnail:"https://zapgames.io/cache/data/image/game/rocket-soccer-f546x307.webp", description:"Score goals.", signIn:"Playable"},
 {title:"Space Waves", src:"https://zapgames.io/space-waves.embed", thumbnail:"https://zapgames.io/cache/data/image/game/space-waves-h196x110.webp", description:"Pass through the obstacles.", signIn:"Playable"},
 {title:"Drift Boss", src:"https://zapgames.io/drift-boss.embed", thumbnail:"https://zapgames.io/cache/data/image/game/drift-boss-h196x110.webp", description:"Drift through tight corners.", signIn:"Playable"},
-
 {title:"Snow Rider", src:"https://zapgames.io/snow-rider.embed", thumbnail:"https://zapgames.io/cache/data/image/game/snow-rider-h196x110.webp", description:"Ride a sled down snowy hills.", signIn:"Playable"},
-
 {title:"Drift Hunters", src:"https://zapgames.io/drift-hunters.embed", thumbnail:"https://zapgames.io/cache/data/image/game/drift-hunters-h196x110.webp", description:"Realistic 3D drifting simulator.", signIn:"Playable"},
-
 {title:"Jetski Race", src:"https://zapgames.io/jetski-race.embed", thumbnail:"https://zapgames.io/cache/data/image/game/jetski-race-h196x110.webp", description:"High speed water racing.", signIn:"Playable"},
-
 {title:"Football Bros", src:"https://zapgames.io/football-bros.embed", thumbnail:"https://zapgames.io/cache/data/image/game/football-bros-h196x110.webp", description:"Arcade football battles.", signIn:"Playable"},
-
 {title:"Retro Bowl", src:"https://zapgames.io/retro-bowl.embed", thumbnail:"https://zapgames.io/cache/data/image/game/retro-bowl-h196x110.webp", description:"Retro football team manager.", signIn:"Playable"},
-
 {title:"Speed Stars", src:"https://zapgames.io/speed-stars.embed", thumbnail:"https://zapgames.io/cache/data/image/game/speed-stars-h196x110.webp", description:"Fast paced racing game.", signIn:"Playable"},
-
 {title:"Soccer Bros", src:"https://zapgames.io/soccer-bros.embed", thumbnail:"https://zapgames.io/cache/data/image/game/soccer-bros-h196x110.webp", description:"2 player soccer battles.", signIn:"Playable"},
-
 {title:"Snow Road", src:"https://azgames.io/snow-road.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/snowroad-m180x180.png", description:"Drive through snowy tracks.", signIn:"Playable"},
-
 {title:"Wacky Flip", src:"https://azgames.io/wacky-flip.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/wackyflip-m180x180.png", description:"Perform crazy flips.", signIn:"Playable"},
-
 {title:"Tap Road", src:"https://azgames.io/tap-road.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/taproad-m180x180.jpg", description:"Fast reflex road game.", signIn:"Playable"},
-
 {title:"Curve Rush", src:"https://azgames.io/curve-rush.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/curverush2-m180x180.png", description:"Dodge obstacles on curves.", signIn:"Playable"},
-
 {title:"Bike Xtreme", src:"https://azgames.io/bike-xtreme.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/bikextreme11-m180x180.png", description:"Extreme bike racing.", signIn:"Playable"},
-
 {title:"Escape Road", src:"https://azgames.io/escape-road.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/escaperoad-m180x180.png", description:"Escape police chases.", signIn:"Playable"},
-
 {title:"Escape Road 2", src:"https://azgames.io/escape-road-2.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/escaperoad21-m180x180.png", description:"Sequel to Escape Road.", signIn:"Playable"},
-
 {title:"Escape Road City 2", src:"https://azgames.io/escape-road-city-2.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/escaperoadcity2-m180x180.png", description:"Escape through city roads.", signIn:"Playable"},
-
 {title:"Slope 2", src:"https://azgames.io/slope-2.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/slope2-m180x180.png", description:"Faster version of Slope.", signIn:"Playable"},
-
 {title:"Slope 3", src:"https://azgames.io/slope-3.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/slope1-m180x180.png", description:"Harder slope challenge.", signIn:"Playable"},
-
 {title:"Head Soccer 2024", src:"https://azgames.io/head-soccer-2024.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/thumbnail_90x90-m180x180.jpg", description:"Arcade soccer battles.", signIn:"Playable"},
-
-{title:"People Playground", src:"https://azgames.io/ragdoll-playground.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/ragdollplayground-m180x180.png", description:"Physics sandbox ragdoll game.", signIn:"Playable"},
-
-{title:"https://zapgames.io/five-nights-at-epsteins.embed", thumbnail:"https://zapgames.io/cache/data/image/game/five-nights-at-epsteins-h196x110.webp", description:"EFN!", signIn:"Playable"},
+{title:"People Playground", src:"https://azgames.io/ragdoll-playground.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/ragdollplayground-m180x180.png", description:"Physics sandbox ragdoll game.", signIn:"Playable"}
 ];
+
+const grid = document.getElementById("gameGrid");
+const search = document.getElementById("search");
+
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+let currentFilter = "all";
+
+function loadGames(){
+grid.innerHTML="";
+
+games.forEach(game=>{
+
+const tile=document.createElement("div");
+tile.className="tile";
+tile.dataset.title=game.title.toLowerCase();
+tile.dataset.playability=game.signIn;
+
+const fav=favorites.includes(game.title);
+
+tile.innerHTML=`
+<div class="favStar ${fav?"active":""}">⭐</div>
+<img src="${game.thumbnail}">
+<h3>${game.title}</h3>
+<span class="playability">${game.signIn}</span>
+`;
+
+tile.querySelector(".favStar").onclick=(e)=>{
+e.stopPropagation();
+toggleFavorite(game.title);
+};
+
+tile.onclick=()=>{
+openGame(game);
+};
+
+grid.appendChild(tile);
+
+});
+
+applyFilters();
+}
+
+function openGame(game){
+
+const player=document.getElementById("gamePlayer");
+
+player.innerHTML=`
+<iframe src="${game.src}" frameborder="0" allowfullscreen></iframe>
+`;
+
+document.getElementById("playerSection").style.display="block";
+}
+
+function toggleFavorite(title){
+
+if(favorites.includes(title)){
+favorites=favorites.filter(f=>f!==title);
+}else{
+favorites.push(title);
+}
+
+localStorage.setItem("favorites",JSON.stringify(favorites));
+loadGames();
+}
+
+function filterGames(type){
+currentFilter=type;
+applyFilters();
+}
+
+function applyFilters(){
+
+const value=search.value.toLowerCase();
+
+document.querySelectorAll(".tile").forEach(tile=>{
+
+let show=true;
+
+if(currentFilter==="favorites"){
+show=favorites.includes(tile.dataset.title);
+}
+else if(currentFilter!=="all"){
+show=tile.dataset.playability===currentFilter;
+}
+
+if(!tile.dataset.title.includes(value)){
+show=false;
+}
+
+tile.style.display=show?"block":"none";
+
+});
+}
+
+function searchGames(){
+applyFilters();
+}
+
+loadGames();
