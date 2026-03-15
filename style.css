@@ -17,44 +17,37 @@ background:radial-gradient(circle at center,#0f7a33 0%,#031f08 70%);
 z-index:-1;
 }
 
-/* ===== Header ===== */
+/* ===== Header Layout ===== */
 
 header{
 padding:20px;
-text-align:center;
+max-width:1200px;
+margin:auto;
 }
 
+/* top row */
+
+.header-top{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+/* title */
+
 h1{
-display:inline-block;
 margin:0;
 color:#32ff7e;
 text-shadow:0 0 15px #32ff7e;
 letter-spacing:2px;
+font-size:36px;
 }
 
-/* playability text beside title */
-
-#playable-info{
-display:inline-block;
-margin-left:18px;
-max-width:650px;
-vertical-align:middle;
-
-font-size:13px;
-line-height:1.4;
-
-color:#32ff7e;
-opacity:0.7;
-
-text-shadow:
-0 0 5px #32ff7e,
-0 0 10px #32ff7e;
-}
-
-/* ===== Search ===== */
+/* search */
 
 #search{
-margin-top:15px;
 padding:10px;
 width:260px;
 
@@ -63,14 +56,13 @@ border-radius:6px;
 
 background:#062b12;
 color:#32ff7e;
-
-outline:none;
 }
 
-/* ===== Filters ===== */
+/* filters */
 
 .filters{
-margin-top:10px;
+margin-top:15px;
+text-align:center;
 }
 
 .filters button{
@@ -93,6 +85,23 @@ background:#32ff7e;
 color:#031f08;
 }
 
+/* playability text */
+
+#playable-info{
+margin-top:10px;
+text-align:center;
+
+font-size:13px;
+line-height:1.5;
+
+color:#32ff7e;
+opacity:0.7;
+
+text-shadow:
+0 0 5px #32ff7e,
+0 0 10px #32ff7e;
+}
+
 /* ===== Game Grid ===== */
 
 main{
@@ -106,10 +115,10 @@ gap:20px;
 padding:20px;
 
 max-width:1600px;
-margin:0 auto;
+margin:auto;
 }
 
-/* ===== Game Tiles ===== */
+/* ===== Tiles ===== */
 
 .tile{
 background:#062b12;
@@ -147,7 +156,7 @@ font-size:12px;
 color:#aaa;
 }
 
-/* ===== Playability Tags ===== */
+/* tags */
 
 .tag{
 margin:8px;
@@ -199,7 +208,7 @@ width:100%;
 height:100%;
 }
 
-/* ===== Home Button ===== */
+/* home button */
 
 #home{
 position:absolute;
