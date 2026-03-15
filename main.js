@@ -15,11 +15,19 @@ tile.className = "tile";
 tile.dataset.playability = game.playability;
 tile.dataset.title = game.title.toLowerCase();
 
+const isFav = favorites.includes(game.title);
+
 tile.innerHTML = `
+<div class="favStar ${isFav ? "active" : ""}" data-title="${game.title}">⭐</div>
 <img src="${game.image}">
 <h3>${game.title}</h3>
 <span class="playability">${game.playability}</span>
 `;
+
+tile.querySelector(".favStar").onclick = (e) => {
+e.stopPropagation();
+toggleFavorite(game.title);
+};
 
 tile.onclick = () => launchGame(game.url);
 
@@ -28,6 +36,18 @@ grid.appendChild(tile);
 });
 
 applyFilters();
+}
+
+function toggleFavorite(title){
+
+if(favorites.includes(title)){
+favorites = favorites.filter(f => f !== title);
+}else{
+favorites.push(title);
+}
+
+localStorage.setItem("favorites", JSON.stringify(favorites));
+loadGames();
 }
 
 function launchGame(url){
@@ -48,15 +68,18 @@ applyFilters();
 
 function applyFilters(){
 
+const searchValue = search.value.toLowerCase();
+
 document.querySelectorAll(".tile").forEach(tile => {
 
 let show = true;
 
-if(currentFilter !== "all"){
+if(currentFilter === "favorites"){
+show = favorites.includes(tile.dataset.title);
+}
+else if(currentFilter !== "all"){
 show = tile.dataset.playability === currentFilter;
 }
-
-const searchValue = search.value.toLowerCase();
 
 if(!tile.dataset.title.includes(searchValue)){
 show = false;
@@ -70,22 +93,6 @@ tile.style.display = show ? "block" : "none";
 
 function searchGames(){
 applyFilters();
-}
-
-function showFavorites(){
-
-document.querySelectorAll(".tile").forEach(tile => {
-
-const title = tile.dataset.title;
-
-if(favorites.includes(title)){
-tile.style.display = "block";
-}else{
-tile.style.display = "none";
-}
-
-});
-
 }
 
 loadGames();
