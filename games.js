@@ -114,4 +114,5 @@ src:"https://zapgames.io/geometry-dash.embed",
 thumbnail:"https://zapgames.io/cache/data/image/game/geometry-dash-h196x110.webp",
 signIn:"Playable"
 }
+
 ];
