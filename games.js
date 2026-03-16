@@ -30,4 +30,88 @@ const games = [
 {title:"Head Soccer 2024", src:"https://azgames.io/head-soccer-2024.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/thumbnail_90x90-m180x180.jpg", description:"Arcade soccer battles.", signIn:"Playable"},
 {title:"People Playground", src:"https://azgames.io/ragdoll-playground.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/ragdollplayground-m180x180.png", description:"Physics sandbox ragdoll game.", signIn:"Playable"},
 {title:"Five Nights at Epsteins", src:"https://zapgames.io/five-nights-at-epsteins.embed", thumbnail:"https://zapgames.io/cache/data/image/game/five-nights-at-epsteins-h196x110.webp", description:"Survive epstein in his island", signIn:"Playable"} 
+// better formatting
+  {
+title:"Rob Brainrot 2",
+src:"https://zapgames.io/rob-brainrot-2.embed",
+thumbnail:"https://zapgames.io/cache/data/image/game/rob-brainrot-2-h196x110.webp",
+signIn:"Hardly Playable"
+},
+
+{
+title:"Escape Tsunami Brainrots Online",
+src:"https://zapgames.io/escape-tsunami-brainrots-online.embed",
+thumbnail:"https://zapgames.io/cache/data/image/game/escape-tsunami-brainrots-online-h196x110.webp",
+signIn:"Hardly Playable"
+},
+
+{
+title:"Rocket Goal",
+src:"https://zapgames.io/rocket-goal.embed",
+thumbnail:"https://zapgames.io/cache/data/image/game/rocket-goal-h196x110.webp",
+signIn:"Playable"
+},
+
+{
+title:"Veck.io",
+src:"https://zapgames.io/veck-io.embed",
+thumbnail:"https://zapgames.io/cache/data/image/game/veck-io-h196x110.webp",
+signIn:"Hardly Playable"
+},
+
+{
+title:"Ragdoll Archers",
+src:"https://zapgames.io/ragdoll-archers.embed",
+thumbnail:"https://zapgames.io/cache/data/image/game/ragdoll-archers-h196x110.webp",
+signIn:"Slightly Unplayable"
+},
+
+{
+title:"Dude Theft Auto",
+src:"https://zapgames.io/dude-theft-auto.embed",
+thumbnail:"https://zapgames.io/cache/data/image/game/dude-theft-auto-h196x110.webp",
+signIn:"Hardly Playable"
+},
+
+{
+title:"Geometry Dash Lite",
+src:"https://zapgames.io/geometry-dash-lite.embed",
+thumbnail:"https://zapgames.io/cache/data/image/game/geometry-dash-lite-h196x110.webp",
+signIn:"Playable"
+},
+
+{
+title:"OpenFront.io",
+src:"https://zapgames.io/openfront-io.embed",
+thumbnail:"https://zapgames.io/cache/data/image/game/openfront-io-h196x110.webp",
+signIn:"Playable"
+},
+
+{
+title:"Level Devil",
+src:"https://zapgames.io/level-devil.embed",
+thumbnail:"https://zapgames.io/cache/data/image/game/level-devil-h196x110.webp",
+signIn:"Playable"
+},
+
+{
+title:"Fortnite Game",
+src:"https://zapgames.io/fortnite-game.embed",
+thumbnail:"https://zapgames.io/cache/data/image/game/fortnite-game-h196x110.webp",
+signIn:"Hardly Playable"
+},
+
+{
+title:"Minecraft",
+src:"https://zapgames.io/minecraft.embed",
+thumbnail:"https://zapgames.io/cache/data/image/game/minecraft-h196x110.webp",
+signIn:"Hardly Playable"
+},
+
+{
+title:"Geometry Dash",
+src:"https://zapgames.io/geometry-dash.embed",
+thumbnail:"https://zapgames.io/cache/data/image/game/geometry-dash-h196x110.webp",
+signIn:"Playable"
+}
 ];
