@@ -323,22 +323,16 @@ padding:6px 10px 10px 10px;
 .favStar{
 cursor:pointer;
 font-size:18px;
-opacity:.6;
-transition:transform .2s, opacity .2s;
+color:#777;
+transition:color .25s ease, transform .15s ease;
 }
 
 .favStar:hover{
-transform:scale(1.3);
+transform:scale(1.1);
 }
 
 .favStar.active{
-opacity:1;
-animation:popStar .3s ease;
-filter:drop-shadow(0 0 6px gold);
+color:#ffd84d;
 }
 
-@keyframes popStar{
-0%{transform:scale(.5);}
-60%{transform:scale(1.4);}
-100%{transform:scale(1);}
-}
+
