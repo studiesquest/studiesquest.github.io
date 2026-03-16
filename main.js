@@ -20,9 +20,18 @@ tile.dataset.title=game.title.toLowerCase();
 
 const fav=favorites.includes(game.title);
 
+
 tile.innerHTML=`
 <img src="${game.thumbnail}" loading="lazy">
 
+<h3>${game.title}</h3>
+
+<div class="gameInfo">
+<span class="playability">${game.signIn}</span>
+<div class="favStar ${fav?"active":""}">⭐</div>
+</div>
+`;
+  
 <h3>${game.title}</h3>
 
 <div class="gameInfo">
