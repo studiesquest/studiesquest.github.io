@@ -3,6 +3,7 @@ const search = document.getElementById("search");
 const modal = document.getElementById("modal");
 const frame = document.getElementById("gameFrame");
 const home = document.getElementById("home");
+const fullscreen = document.getElementById("fullscreen");
 
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 let currentFilter = "All";
