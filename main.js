@@ -28,7 +28,8 @@ const games = [
 {title:"Slope 2", src:"https://azgames.io/slope-2.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/slope2-m180x180.png", signIn:"Playable"},
 {title:"Slope 3", src:"https://azgames.io/slope-3.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/slope1-m180x180.png", signIn:"Playable"},
 {title:"Head Soccer 2024", src:"https://azgames.io/head-soccer-2024.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/thumbnail_90x90-m180x180.jpg", signIn:"Playable"},
-{title:"People Playground", src:"https://azgames.io/ragdoll-playground.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/ragdollplayground-m180x180.png", signIn:"Playable"}
+{title:"People Playground", src:"https://azgames.io/ragdoll-playground.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/ragdollplayground-m180x180.png", signIn:"Playable"},
+{title:"People Playground", src:"https://zapgames.io/five-nights-at-epsteins.embed", thumbnail:"https://zapgames.io/cache/data/image/game/five-nights-at-epsteins-h196x110.webp", "signIn:"Playable"}
 ];
 
 const grid = document.getElementById("grid");
