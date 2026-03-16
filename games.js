@@ -29,5 +29,5 @@ const games = [
 {title:"Slope 3", src:"https://azgames.io/slope-3.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/slope1-m180x180.png", description:"Harder slope challenge.", signIn:"Playable"},
 {title:"Head Soccer 2024", src:"https://azgames.io/head-soccer-2024.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/thumbnail_90x90-m180x180.jpg", description:"Arcade soccer battles.", signIn:"Playable"},
 {title:"People Playground", src:"https://azgames.io/ragdoll-playground.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/ragdollplayground-m180x180.png", description:"Physics sandbox ragdoll game.", signIn:"Playable"},
-{title:"Five Nights at Epsteins", src:"https://zapgames.io/five-nights-at-epsteins.embed", thumbnail:"https://zapgames.io/cache/data/image/game/five-nights-at-epsteins-h196x110.webp"' description:"Survive epstein in his island", signIn:"Playable"} 
+{title:"Five Nights at Epsteins", src:"https://zapgames.io/five-nights-at-epsteins.embed", thumbnail:"https://zapgames.io/cache/data/image/game/five-nights-at-epsteins-h196x110.webp", description:"Survive epstein in his island", signIn:"Playable"} 
 ];
