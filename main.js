@@ -101,3 +101,9 @@ frame.src="";
 };
 
 loadGames();
+
+fullscreen.onclick = () => {
+if(frame.requestFullscreen){
+frame.requestFullscreen();
+}
+};
