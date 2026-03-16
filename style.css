@@ -270,17 +270,18 @@ background:rgba(50,255,126,1);
 }
 
 .favStar{
-position:absolute;
-top:8px;
-right:8px;
 cursor:pointer;
 font-size:18px;
-opacity:0.6;
+color:#777;
+transition:color .25s ease, transform .15s ease;
+}
+
+.favStar:hover{
+transform:scale(1.1);
 }
 
 .favStar.active{
-opacity:1;
-filter:drop-shadow(0 0 6px gold);
+color:#ffd84d;
 }
 
 .playability{
@@ -319,26 +320,3 @@ align-items:center;
 justify-content:space-between;
 padding:6px 10px 10px 10px;
 }
-
-.favStar{
-cursor:pointer;
-font-size:18px;
-color:#777;
-transition:color .25s ease, transform .15s ease;
-}
-
-.favStar:hover{
-transform:scale(1.1);
-}
-
-.favStar.active{
-color:#ffd84d;
-}
-
-.gameInfo{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:6px 10px 10px 10px;
-}
-
