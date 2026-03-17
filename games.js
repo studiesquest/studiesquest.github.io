@@ -44,7 +44,7 @@ const games = [
   {title:"Minecraft", src:"https://zapgames.io/minecraft.embed", thumbnail:"https://zapgames.io/cache/data/image/game/minecraft-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Geometry Dash", src:"https://zapgames.io/geometry-dash.embed", thumbnail:"https://zapgames.io/cache/data/image/game/geometry-dash-h196x110.webp", signIn:"Playable"},
   {title:"Granny", src:"https://zapgames.io/granny.embed", thumbnail:"https://zapgames.io/cache/data/image/game/granny-h196x110.webp", signIn:"Hardly Playable"},
-  {title:"Bucket Smash", src:"", thumbnail:"https://zapgames.io/cache/data/image/game/bucket-smash-h196x110.webp", signIn:"Playable"},
+  {title:"Bucket Smash", src:"https://zapgames.io/bucket-smash.embed", thumbnail:"https://zapgames.io/cache/data/image/game/bucket-smash-h196x110.webp", signIn:"Playable"},
   {title:"Slow Roads", src:"https://zapgames.io/slow-roads.embed", thumbnail:"https://zapgames.io/cache/data/image/game/slow-roads-h196x110.webp", signIn:"Playable"},
   {title:"Deer Adventure", src:"https://zapgames.io/deer-adventure.embed", thumbnail:"https://zapgames.io/cache/data/image/game/deer-adventure-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Survival Race", src:"https://zapgames.io/survival-race.embed", thumbnail:"https://zapgames.io/cache/data/image/game/survival-race-h196x110.webp", signIn:"Playable"},
