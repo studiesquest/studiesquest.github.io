@@ -44,10 +44,10 @@ const games = [
   {title:"Minecraft", src:"https://zapgames.io/minecraft.embed", thumbnail:"https://zapgames.io/cache/data/image/game/minecraft-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Geometry Dash", src:"https://zapgames.io/geometry-dash.embed", thumbnail:"https://zapgames.io/cache/data/image/game/geometry-dash-h196x110.webp", signIn:"Playable"},
   {title:"Granny", src:"https://zapgames.io/granny.embed", thumbnail:"https://zapgames.io/cache/data/image/game/granny-h196x110.webp", signIn:"Hardly Playable"},
-  {title:"https://zapgames.io/bucket-smash.embed", src:"", thumbnail:"https://zapgames.io/cache/data/image/game/bucket-smash-h196x110.webp", signIn:"Playable"},
-  {title:"Slow Roads", src:"https://zapgames.io/slow-roads.embed", thumbnail:"", signIn:"Playable"},
-  {title:"Deer Adventures", src:"https://zapgames.io/deer-adventure.embed", thumbnail:"", signIn:"Hardly Playable"},
+  {title:"Bucket Smash", src:"", thumbnail:"https://zapgames.io/cache/data/image/game/bucket-smash-h196x110.webp", signIn:"Playable"},
+  {title:"Slow Roads", src:"https://zapgames.io/slow-roads.embed", thumbnail:"https://zapgames.io/cache/data/image/game/slow-roads-h196x110.webp", signIn:"Playable"},
+  {title:"Deer Adventure", src:"https://zapgames.io/deer-adventure.embed", thumbnail:"https://zapgames.io/cache/data/image/game/deer-adventure-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Survival Race", src:"https://zapgames.io/survival-race.embed", thumbnail:"https://zapgames.io/cache/data/image/game/survival-race-h196x110.webp", signIn:"Playable"},
-  {title:"Getting Over It", src:"https://zapgames.io/getting-over-it.embed", thumbnail:"https://zapgames.io/cache/data/image/game/getting-over-it-h196x110.webp", signIn:"Playable"},
+  {title:"Getting Over It", src:"https://zapgames.io/getting-over-it.embed", thumbnail:"https://zapgames.io/cache/data/image/game/getting-over-it-h196x110.webp", signIn:"Slightly Unplayable"},
   {title:"Russian Traffic Route 66", src:"https://zapgames.io/route-66-russian-traffic.embed", thumbnail:"https://zapgames.io/cache/data/image/game/route-66-russian-traffic-h196x110.webp", signIn:"Playable", description:"This lowk funny"}
 ];
