@@ -30,6 +30,7 @@ const games = [
   {title:"Head Soccer 2024", src:"https://azgames.io/head-soccer-2024.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/thumbnail_90x90-m180x180.jpg", description:"Arcade soccer battles.", signIn:"Playable"},
   {title:"People Playground", src:"https://azgames.io/ragdoll-playground.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/ragdollplayground-m180x180.png", description:"Physics sandbox ragdoll game.", signIn:"Playable"},
   {title:"Five Nights at Epsteins", src:"https://zapgames.io/five-nights-at-epsteins.embed", thumbnail:"https://zapgames.io/cache/data/image/game/five-nights-at-epsteins-h196x110.webp", description:"Survive epstein in his island", signIn:"Playable"},
+  {title:"Five Nights at Trumps", src:"https://zapgames.io/five-nights-at-trumps.embed", thumbnail:"https://zapgames.io/cache/data/image/game/five-nights-at-trumps-h196x110.webp", signIn:"Playable", description:"Aw hell nah they got epstein AND trump too?"},
   {title:"Rob Brainrot 2", src:"https://zapgames.io/rob-brainrot-2.embed", thumbnail:"https://zapgames.io/cache/data/image/game/rob-brainrot-2-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Escape Tsunami Brainrots Online", src:"https://zapgames.io/escape-tsunami-brainrots-online.embed", thumbnail:"https://zapgames.io/cache/data/image/game/escape-tsunami-brainrots-online-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Rocket Goal", src:"https://zapgames.io/rocket-goal.embed", thumbnail:"https://zapgames.io/cache/data/image/game/rocket-goal-h196x110.webp", signIn:"Playable"},
@@ -37,9 +38,16 @@ const games = [
   {title:"Ragdoll Archers", src:"https://zapgames.io/ragdoll-archers.embed", thumbnail:"https://zapgames.io/cache/data/image/game/ragdoll-archers-h196x110.webp", signIn:"Slightly Unplayable"},
   {title:"Dude Theft Auto", src:"https://zapgames.io/dude-theft-auto.embed", thumbnail:"https://zapgames.io/cache/data/image/game/dude-theft-auto-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Geometry Dash Lite", src:"https://zapgames.io/geometry-dash-lite.embed", thumbnail:"https://zapgames.io/cache/data/image/game/geometry-dash-lite-h196x110.webp", signIn:"Playable"},
-  {title:"OpenFront.io", src:"https://zapgames.io/openfront-io.embed", thumbnail:"https://zapgames.io/cache/data/image/game/openfront-io-h196x110.webp", signIn:"Playable"},
+  {title:"OpenFront.io", src:"https://zapgames.io/openfrontio.embed", thumbnail:"https://zapgames.io/cache/data/image/game/openfrontio-h196x110.webp", signIn:"Playable"},
   {title:"Level Devil", src:"https://zapgames.io/level-devil.embed", thumbnail:"https://zapgames.io/cache/data/image/game/level-devil-h196x110.webp", signIn:"Playable"},
   {title:"Fortnite Game", src:"https://zapgames.io/fortnite-game.embed", thumbnail:"https://zapgames.io/cache/data/image/game/fortnite-game-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Minecraft", src:"https://zapgames.io/minecraft.embed", thumbnail:"https://zapgames.io/cache/data/image/game/minecraft-h196x110.webp", signIn:"Hardly Playable"},
-  {title:"Geometry Dash", src:"https://zapgames.io/geometry-dash.embed", thumbnail:"https://zapgames.io/cache/data/image/game/geometry-dash-h196x110.webp", signIn:"Playable"}
+  {title:"Geometry Dash", src:"https://zapgames.io/geometry-dash.embed", thumbnail:"https://zapgames.io/cache/data/image/game/geometry-dash-h196x110.webp", signIn:"Playable"},
+  {title:"Granny", src:"https://zapgames.io/granny.embed", thumbnail:"https://zapgames.io/cache/data/image/game/granny-h196x110.webp", signIn:"Hardly Playable"},
+  {title:"https://zapgames.io/bucket-smash.embed", src:"", thumbnail:"https://zapgames.io/cache/data/image/game/bucket-smash-h196x110.webp", signIn:"Playable"},
+  {title:"Slow Roads", src:"https://zapgames.io/slow-roads.embed", thumbnail:"", signIn:"Playable"},
+  {title:"Deer Adventures", src:"https://zapgames.io/deer-adventure.embed", thumbnail:"", signIn:"Hardly Playable"},
+  {title:"Survival Race", src:"https://zapgames.io/survival-race.embed", thumbnail:"https://zapgames.io/cache/data/image/game/survival-race-h196x110.webp", signIn:"Playable"},
+  {title:"Getting Over It", src:"https://zapgames.io/getting-over-it.embed", thumbnail:"https://zapgames.io/cache/data/image/game/getting-over-it-h196x110.webp", signIn:"Playable"},
+  {title:"Russian Traffic Route 66", src:"https://zapgames.io/route-66-russian-traffic.embed", thumbnail:"https://zapgames.io/cache/data/image/game/route-66-russian-traffic-h196x110.webp", signIn:"Playable", description:"This lowk funny"}
 ];
