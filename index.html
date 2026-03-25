@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,135 +11,163 @@
 
 <body>
 
-<!-- ===== GitHub Icon (top-right) ===== -->
-<a id="gh-link" href="https://github.com/studiesquest/studiesquest.github.io" target="_blank" title="GitHub">
-  <svg viewBox="0 0 16 16" width="28" height="28" fill="currentColor">
-    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-  </svg>
-</a>
-
-<header>
-  <h1>STUDIESQUEST</h1>
-
-  <input id="search" placeholder="Search games...">
-
-  <!-- Tab switcher -->
-  <div class="tab-bar">
-    <button class="tab-btn active" data-tab="games">🎮 Games</button>
-    <button class="tab-btn" data-tab="utilities">📚 Study Utilities</button>
-  </div>
-
-  <!-- Game filters (only visible on games tab) -->
-  <div class="filters" id="game-filters">
-    <button data-filter="All" class="active">All</button>
-    <button data-filter="Playable">Playable</button>
-    <button data-filter="Slightly Unplayable">Slightly Unplayable</button>
-    <button data-filter="Hardly Playable">Hardly Playable</button>
-    <button data-filter="Favorites">⭐ Favorites</button>
-  </div>
-
-  <p id="playable-info">
-    On Chromebooks using the sign-in page bypass, cursor lock is blocked. Games needing mouse aiming may not work well. Press <kbd>Shift+Tab</kbd> to quickly hide everything.
-  </p>
-  <p id="game-count"></p>
-</header>
-
-<!-- ===== Game Grid ===== -->
-<main id="grid"></main>
-
-<!-- ===== Utilities Grid (hidden by default) ===== -->
-<section id="utilities" style="display:none">
-  <div class="util-grid">
-
-    <div class="util-card" id="util-music">
-      <div class="util-icon">🎵</div>
-      <h3>Music Player</h3>
-      <p>Free lofi & chill beats — no ads, no login</p>
-    </div>
-
-    <div class="util-card" data-redirect="https://www.youtube.com" id="util-yt">
-      <div class="util-icon">📺</div>
-      <h3>YouTube</h3>
-      <p>Opens in a new tab</p>
-    </div>
-
-    <div class="util-card" data-redirect="https://chat.openai.com" id="util-chatgpt">
-      <div class="util-icon">🤖</div>
-      <h3>ChatGPT</h3>
-      <p>Opens in a new tab</p>
-    </div>
-
-    <div class="util-card" data-redirect="https://docs.google.com" id="util-docs">
-      <div class="util-icon">📝</div>
-      <h3>Google Docs</h3>
-      <p>Opens in a new tab</p>
-    </div>
-
-    <div class="util-card" data-redirect="https://docs.google.com/presentation" id="util-slides">
-      <div class="util-icon">📊</div>
-      <h3>Google Slides</h3>
-      <p>Opens in a new tab</p>
-    </div>
-
-    <div class="util-card" data-redirect="https://www.desmos.com/calculator" id="util-desmos">
-      <div class="util-icon">📐</div>
-      <h3>Desmos Calculator</h3>
-      <p>Opens in a new tab</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===== Game Modal ===== -->
-<div id="modal">
-  <button id="home">← HOME</button>
-  <iframe id="gameFrame" allowfullscreen></iframe>
-</div>
-
-<!-- ===== Redirect Popup (Rayfield-style) ===== -->
-<div id="redirect-popup">
-  <div class="popup-card">
-    <div class="popup-icon">🔗</div>
-    <h2 id="popup-title">External Redirect</h2>
-    <p id="popup-msg">This will open in a new tab. We can't embed this site — do you want to continue?</p>
-    <div class="popup-url" id="popup-url"></div>
-    <div class="popup-actions">
-      <button id="popup-cancel">Cancel</button>
-      <button id="popup-go">Continue →</button>
-    </div>
-  </div>
-</div>
-
-<!-- ===== Panic Screen (Shift+Tab) — looks like Google Sign-In ===== -->
-<div id="panic">
-  <div class="panic-signin-container">
-    <svg class="panic-google-logo" viewBox="0 0 74 24" width="74" height="24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M9.44 11.693v2.85h5.45c-.22 1.503-1.637 4.398-5.45 4.398-3.284 0-5.964-2.73-5.964-6.096s2.68-6.096 5.964-6.096c1.84 0 3.072.784 3.774 1.455l2.254-2.172C13.91 4.58 11.895 3.5 9.44 3.5 4.225 3.5 0 7.726 0 12.94s4.225 9.44 9.44 9.44c5.45 0 9.073-3.832 9.073-9.24 0-.613-.06-1.127-.156-1.447H9.44" fill="#4285F4"/>
-      <path d="M29.98 12.833c0-3.37-2.316-5.83-5.657-5.83-3.34 0-5.753 2.46-5.753 5.83 0 3.328 2.413 5.817 5.753 5.817 3.34 0 5.657-2.49 5.657-5.817zm-2.85 0c0 1.96-1.39 3.26-2.807 3.26-1.417 0-2.825-1.3-2.825-3.26 0-1.983 1.408-3.275 2.825-3.275 1.418 0 2.807 1.292 2.807 3.275z" fill="#EA4335"/>
-      <path d="M42.3 12.833c0-3.37-2.317-5.83-5.658-5.83-3.34 0-5.753 2.46-5.753 5.83 0 3.328 2.413 5.817 5.753 5.817 3.34 0 5.658-2.49 5.658-5.817zm-2.85 0c0 1.96-1.39 3.26-2.808 3.26-1.417 0-2.825-1.3-2.825-3.26 0-1.983 1.408-3.275 2.825-3.275 1.418 0 2.808 1.292 2.808 3.275z" fill="#FBBC05"/>
-      <path d="M53.945 7.62v10.51c0 4.14-2.807 5.84-5.54 5.84-2.81 0-4.524-1.88-5.17-3.4l2.45-1.02c.41 1 1.41 2.05 2.71 2.05 1.77 0 2.89-1.09 2.89-3.18v-.78h-.09c-.61.75-1.8 1.44-3.18 1.44-3.04 0-5.69-2.58-5.69-5.77 0-3.21 2.65-5.82 5.69-5.82 1.39 0 2.57.69 3.18 1.42h.09V7.62h2.66zm-2.58 5.25c0-1.93-1.31-3.27-2.73-3.27-1.45 0-2.81 1.34-2.81 3.27 0 1.91 1.36 3.23 2.81 3.23 1.42 0 2.73-1.32 2.73-3.23z" fill="#4285F4"/>
-      <path d="M57.695 3.8h2.86v14.65h-2.86V3.8z" fill="#34A853"/>
-      <path d="M68.528 15.34l2.254 1.5c-.722 1.07-2.453 2.74-5.228 2.74-3.328 0-5.707-2.55-5.707-5.76 0-3.42 2.453-5.83 5.422-5.83 2.978 0 4.5 2.45 4.965 3.77l.285.71-7.85 3.25c.594 1.17 1.5 1.78 2.88 1.78 1.39 0 2.27-.68 2.98-1.45zm-6.02-2.77l5.06-2.1c-.28-.66-1.03-1.12-1.95-1.12-1.25 0-2.99 1.07-3.11 3.22z" fill="#EA4335"/>
+  <!-- ===== GitHub Icon (top-right) ===== -->
+  <a id="gh-link" href="https://github.com/studiesquest/studiesquest.github.io" target="_blank" title="GitHub">
+    <svg viewBox="0 0 16 16" width="28" height="28" fill="currentColor">
+      <path
+        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
     </svg>
-    <h1 class="panic-signin-title">Sign in</h1>
-    <p class="panic-signin-subtitle">to continue to Google Docs</p>
-    <div class="panic-signin-input-box">
-      <input type="text" class="panic-signin-input" placeholder=" " value="student.name@school.edu">
-      <label class="panic-signin-label">Email or phone</label>
+  </a>
+
+  <header>
+    <h1>STUDIESQUEST</h1>
+
+    <input id="search" placeholder="Search games...">
+
+    <!-- Tab switcher -->
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="games">🎮 Games</button>
+      <button class="tab-btn" data-tab="utilities">📚 Study Utilities</button>
     </div>
-    <div class="panic-signin-actions">
-      <button class="panic-signin-forgot">Forgot email?</button>
+
+    <!-- Game filters (only visible on games tab) -->
+    <div class="filters" id="game-filters">
+      <button data-filter="All" class="active">All</button>
+      <button data-filter="Playable">Playable</button>
+      <button data-filter="Slightly Unplayable">Slightly Unplayable</button>
+      <button data-filter="Hardly Playable">Hardly Playable</button>
+      <button data-filter="Favorites">⭐ Favorites</button>
     </div>
-    <p class="panic-signin-guest">Not your computer? Use Guest mode to sign in privately. <a href="#">Learn more</a></p>
-    <div class="panic-signin-bottom">
-      <button class="panic-signin-create">Create account</button>
-      <button class="panic-signin-next">Next</button>
+
+    <p id="playable-info">
+      On Chromebooks using the sign-in page bypass, cursor lock is blocked. Games needing mouse aiming may not work
+      well. Press <kbd>Shift+Tab</kbd> to quickly hide everything.
+    </p>
+    <p id="game-count"></p>
+  </header>
+
+  <!-- ===== Game Grid ===== -->
+  <main id="grid"></main>
+
+  <!-- ===== Utilities Grid (hidden by default) ===== -->
+  <section id="utilities" style="display:none">
+    <div class="util-grid">
+
+      <div class="util-card" id="util-music">
+        <div class="util-icon">🎵</div>
+        <h3>Music Player</h3>
+        <p>Free lofi & chill beats — no ads, no login</p>
+      </div>
+
+      <div class="util-card" data-redirect="https://www.youtube.com" id="util-yt">
+        <div class="util-icon">📺</div>
+        <h3>YouTube</h3>
+        <p>Opens in a new tab</p>
+      </div>
+
+      <div class="util-card" data-redirect="https://chat.openai.com" id="util-chatgpt">
+        <div class="util-icon">🤖</div>
+        <h3>ChatGPT</h3>
+        <p>Opens in a new tab</p>
+      </div>
+
+      <div class="util-card" data-redirect="https://docs.google.com" id="util-docs">
+        <div class="util-icon">📝</div>
+        <h3>Google Docs</h3>
+        <p>Opens in a new tab</p>
+      </div>
+
+      <div class="util-card" data-redirect="https://docs.google.com/presentation" id="util-slides">
+        <div class="util-icon">📊</div>
+        <h3>Google Slides</h3>
+        <p>Opens in a new tab</p>
+      </div>
+
+      <div class="util-card" data-redirect="https://www.desmos.com/calculator" id="util-desmos">
+        <div class="util-icon">📐</div>
+        <h3>Desmos Calculator</h3>
+        <p>Opens in a new tab</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Game Modal ===== -->
+  <div id="modal">
+    <button id="home">← HOME</button>
+    <iframe id="gameFrame" allowfullscreen></iframe>
+  </div>
+
+  <!-- ===== Redirect Popup (Rayfield-style) ===== -->
+  <div id="redirect-popup">
+    <div class="popup-card">
+      <div class="popup-icon">🔗</div>
+      <h2 id="popup-title">External Redirect</h2>
+      <p id="popup-msg">This will open in a new tab. We can't embed this site — do you want to continue?</p>
+      <div class="popup-url" id="popup-url"></div>
+      <div class="popup-actions">
+        <button id="popup-cancel">Cancel</button>
+        <button id="popup-go">Continue →</button>
+      </div>
     </div>
   </div>
-</div>
 
-<script src="games.js"></script>
-<script src="main.js"></script>
+  <!-- ===== Panic Screen (Shift+Tab) — looks like Google Sign-In ===== -->
+  <div id="panic">
+    <div class="panic-signin-container">
+      <svg class="panic-google-logo" viewBox="0 0 74 24" width="74" height="24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M9.44 11.693v2.85h5.45c-.22 1.503-1.637 4.398-5.45 4.398-3.284 0-5.964-2.73-5.964-6.096s2.68-6.096 5.964-6.096c1.84 0 3.072.784 3.774 1.455l2.254-2.172C13.91 4.58 11.895 3.5 9.44 3.5 4.225 3.5 0 7.726 0 12.94s4.225 9.44 9.44 9.44c5.45 0 9.073-3.832 9.073-9.24 0-.613-.06-1.127-.156-1.447H9.44"
+          fill="#4285F4" />
+        <path
+          d="M29.98 12.833c0-3.37-2.316-5.83-5.657-5.83-3.34 0-5.753 2.46-5.753 5.83 0 3.328 2.413 5.817 5.753 5.817 3.34 0 5.657-2.49 5.657-5.817zm-2.85 0c0 1.96-1.39 3.26-2.807 3.26-1.417 0-2.825-1.3-2.825-3.26 0-1.983 1.408-3.275 2.825-3.275 1.418 0 2.807 1.292 2.807 3.275z"
+          fill="#EA4335" />
+        <path
+          d="M42.3 12.833c0-3.37-2.317-5.83-5.658-5.83-3.34 0-5.753 2.46-5.753 5.83 0 3.328 2.413 5.817 5.753 5.817 3.34 0 5.658-2.49 5.658-5.817zm-2.85 0c0 1.96-1.39 3.26-2.808 3.26-1.417 0-2.825-1.3-2.825-3.26 0-1.983 1.408-3.275 2.825-3.275 1.418 0 2.808 1.292 2.808 3.275z"
+          fill="#FBBC05" />
+        <path
+          d="M53.945 7.62v10.51c0 4.14-2.807 5.84-5.54 5.84-2.81 0-4.524-1.88-5.17-3.4l2.45-1.02c.41 1 1.41 2.05 2.71 2.05 1.77 0 2.89-1.09 2.89-3.18v-.78h-.09c-.61.75-1.8 1.44-3.18 1.44-3.04 0-5.69-2.58-5.69-5.77 0-3.21 2.65-5.82 5.69-5.82 1.39 0 2.57.69 3.18 1.42h.09V7.62h2.66zm-2.58 5.25c0-1.93-1.31-3.27-2.73-3.27-1.45 0-2.81 1.34-2.81 3.27 0 1.91 1.36 3.23 2.81 3.23 1.42 0 2.73-1.32 2.73-3.23z"
+          fill="#4285F4" />
+        <path d="M57.695 3.8h2.86v14.65h-2.86V3.8z" fill="#34A853" />
+        <path
+          d="M68.528 15.34l2.254 1.5c-.722 1.07-2.453 2.74-5.228 2.74-3.328 0-5.707-2.55-5.707-5.76 0-3.42 2.453-5.83 5.422-5.83 2.978 0 4.5 2.45 4.965 3.77l.285.71-7.85 3.25c.594 1.17 1.5 1.78 2.88 1.78 1.39 0 2.27-.68 2.98-1.45zm-6.02-2.77l5.06-2.1c-.28-.66-1.03-1.12-1.95-1.12-1.25 0-2.99 1.07-3.11 3.22z"
+          fill="#EA4335" />
+      </svg>
+      <h1 class="panic-signin-title">Sign in</h1>
+      <p class="panic-signin-subtitle">to continue to Google Docs</p>
+      <div class="panic-signin-input-box">
+        <input type="text" class="panic-signin-input" placeholder=" ">
+        <label class="panic-signin-label">Email or phone</label>
+      </div>
+      <div class="panic-signin-actions">
+        <button class="panic-signin-forgot" id="panic-forgot">Forgot email?</button>
+      </div>
+      <p class="panic-signin-guest">Not your computer? Use Guest mode to sign in privately. <a href="#">Learn more</a>
+      </p>
+      <div class="panic-signin-bottom">
+        <button class="panic-signin-create" id="panic-create">Create account</button>
+        <button class="panic-signin-next" id="panic-next">Next</button>
+      </div>
+    </div>
+
+    <div class="panic-error-container" style="display:none;">
+      <div class="panic-error-content">
+        <div class="panic-google-logo-error">
+          <span style="color:#4285f4">G</span><span style="color:#ea4335">o</span><span
+            style="color:#fbbc05">o</span><span style="color:#4285f4">g</span><span style="color:#34a853">l</span><span
+            style="color:#ea4335">e</span>
+        </div>
+        <p><b>500.</b> <ins>That's an error.</ins></p>
+        <p>The server encountered an error and could not complete your request.<br><br>If the problem persists, please
+          report your problem and mention this error message and the query that caused it. <ins>That's all we
+            know.</ins></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="games.js"></script>
+  <script src="main.js"></script>
 
 </body>
+
 </html>
