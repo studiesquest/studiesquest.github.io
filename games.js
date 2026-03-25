@@ -92,7 +92,6 @@ const games = [
 
   // --- HORROR / ADVENTURE ---
   {title:"Bad Parenting", src:"https://zapgames.io/bad-parenting.embed", thumbnail:"https://zapgames.io/cache/data/image/game/bad-parenting-h196x110.webp", signIn:"Playable"},
-  {title:"Horror Nun", src:"https://zapgames.io/horror-nun.embed", thumbnail:"https://zapgames.io/cache/data/image/game/horror-nun-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Baldi's Basics Plus", src:"https://zapgames.io/baldis-basics-plus.embed", thumbnail:"https://zapgames.io/cache/data/image/game/baldis-basics-plus-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Murder", src:"https://zapgames.io/murder.embed", thumbnail:"https://zapgames.io/cache/data/image/game/murder-h196x110.webp", signIn:"Playable"},
   {title:"Murder Mystery", src:"https://zapgames.io/murder-mystery.embed", thumbnail:"https://zapgames.io/cache/data/image/game/murder-mystery-h196x110.webp", signIn:"Playable"},
