@@ -43,11 +43,9 @@ const games = [
   {title:"Geometry Dash Lite", src:"https://zapgames.io/geometry-dash-lite.embed", thumbnail:"https://zapgames.io/cache/data/image/game/geometry-dash-lite-h196x110.webp", signIn:"Playable"},
   {title:"OpenFront.io", src:"https://zapgames.io/openfrontio.embed", thumbnail:"https://zapgames.io/cache/data/image/game/openfrontio-h196x110.webp", signIn:"Playable"},
   {title:"Level Devil", src:"https://zapgames.io/level-devil.embed", thumbnail:"https://zapgames.io/cache/data/image/game/level-devil-h196x110.webp", signIn:"Playable"},
-  // FIXED: Fortnite — was not loading, using zapgames embed
   {title:"Fortnite Game", src:"https://zapgames.io/fortnite-game.embed", thumbnail:"https://zapgames.io/cache/data/image/game/fortnite-game-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Minecraft", src:"https://zapgames.io/minecraft.embed", thumbnail:"https://zapgames.io/cache/data/image/game/minecraft-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Geometry Dash", src:"https://zapgames.io/geometry-dash.embed", thumbnail:"https://zapgames.io/cache/data/image/game/geometry-dash-h196x110.webp", signIn:"Playable"},
-  // FIXED: Granny — was using miniplay.com which blocks iframes, switched to zapgames
   {title:"Granny", src:"https://zapgames.io/granny.embed", thumbnail:"https://zapgames.io/cache/data/image/game/granny-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Bucket Smash", src:"https://zapgames.io/bucket-smash.embed", thumbnail:"https://zapgames.io/cache/data/image/game/bucket-smash-h196x110.webp", signIn:"Playable"},
   {title:"Slow Roads", src:"https://zapgames.io/slow-roads.embed", thumbnail:"https://zapgames.io/cache/data/image/game/slow-roads-h196x110.webp", signIn:"Playable"},
@@ -55,19 +53,12 @@ const games = [
   {title:"Survival Race", src:"https://zapgames.io/survival-race.embed", thumbnail:"https://zapgames.io/cache/data/image/game/survival-race-h196x110.webp", signIn:"Playable"},
   {title:"Getting Over It", src:"https://zapgames.io/getting-over-it.embed", thumbnail:"https://zapgames.io/cache/data/image/game/getting-over-it-h196x110.webp", signIn:"Slightly Unplayable"},
   {title:"Russian Traffic Route 66", src:"https://zapgames.io/route-66-russian-traffic.embed", thumbnail:"https://zapgames.io/cache/data/image/game/route-66-russian-traffic-h196x110.webp", signIn:"Playable"},
-
-  // ============================================================
-  // 50 NEW GAMES — popular/trending, no duplicates
-  // ============================================================
-
-  // --- HUGELY POPULAR CLASSICS ---
   {title:"Subway Surfers", src:"https://zapgames.io/subway-surfers.embed", thumbnail:"https://zapgames.io/cache/data/image/game/subway-surfers-h196x110.webp", signIn:"Playable"},
   {title:"Run 3", src:"https://azgames.io/run-3.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/run3-m180x180.png", signIn:"Playable"},
   {title:"Cookie Clicker", src:"https://azgames.io/cookie-clicker.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/cookieclicker-m180x180.png", signIn:"Playable"},
   {title:"Tetris", src:"https://azgames.io/tetris.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/tetris-m180x180.png", signIn:"Playable"},
   {title:"2048", src:"https://azgames.io/2048.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/2048-m180x180.png", signIn:"Playable"},
   {title:"Pacman", src:"https://azgames.io/pacman-30th-anniversary.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/pacman-m180x180.png", signIn:"Playable"},
-
   // --- TRENDING ON ZAPGAMES ---
   {title:"Basket Random", src:"https://zapgames.io/basket-random.embed", thumbnail:"https://zapgames.io/cache/data/image/game/basket-random-h196x110.webp", signIn:"Playable"},
   {title:"Traffic Rally", src:"https://zapgames.io/traffic-rally.embed", thumbnail:"https://zapgames.io/cache/data/image/game/traffic-rally-h196x110.webp", signIn:"Playable"},
@@ -100,7 +91,6 @@ const games = [
   {title:"Horror Nun", src:"https://zapgames.io/horror-nun.embed", thumbnail:"https://zapgames.io/cache/data/image/game/horror-nun-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Baldi's Basics Plus", src:"https://zapgames.io/baldis-basics-plus.embed", thumbnail:"https://zapgames.io/cache/data/image/game/baldis-basics-plus-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Murder", src:"https://zapgames.io/murder.embed", thumbnail:"https://zapgames.io/cache/data/image/game/murder-h196x110.webp", signIn:"Playable"},
-
   // --- POPULAR ON AZGAMES ---
   {title:"Vex 3", src:"https://azgames.io/vex-3.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/vex3-m180x180.png", signIn:"Playable"},
   {title:"Trap the Cat", src:"https://azgames.io/trap-the-cat.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/trapthecat-m180x180.png", signIn:"Playable"},
