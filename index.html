@@ -1,37 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>StudiesQuest</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudiesQuest</title>
+  <meta name="description" content="StudiesQuest — Play free unblocked games. Curated for Chromebook playability.">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-<h1>STUDIESQUEST</h1>
+  <h1>STUDIESQUEST</h1>
 
-<input id="search" placeholder="Search games...">
+  <input id="search" placeholder="Search games...">
 
-<div class="filters">
-<button data-filter="All">All</button>
-<button data-filter="Playable">Playable</button>
-<button data-filter="Slightly Unplayable">Slightly Unplayable</button>
-<button data-filter="Hardly Playable">Hardly Playable</button>
-<button data-filter="Favorites">⭐ Favorites</button>
-</div>
+  <div class="filters">
+    <button data-filter="All" class="active">All</button>
+    <button data-filter="Playable">Playable</button>
+    <button data-filter="Slightly Unplayable">Slightly Unplayable</button>
+    <button data-filter="Hardly Playable">Hardly Playable</button>
+    <button data-filter="Favorites">⭐ Favorites</button>
+  </div>
 
-<p id="playable-info">
-On Chromebooks using the sign-in page bypass, some games may require extensive cursor movement. This can cause the cursor to leave the sign-in page, which may make the game stop responding. Playability ratings are provided to help indicate how well each game functions in this environment.
-</p>
-
+  <p id="playable-info">
+    On Chromebooks using the sign-in page bypass, cursor lock is blocked. Games needing mouse aiming may not work well. Playability ratings show how each game handles this.
+  </p>
+  <p id="game-count"></p>
 </header>
 
 <main id="grid"></main>
 
 <div id="modal">
-<button id="home">HOME</button>
-<iframe id="gameFrame" allowfullscreen></iframe>
+  <button id="home">← HOME</button>
+  <iframe id="gameFrame" allowfullscreen></iframe>
 </div>
 
 <script src="games.js"></script>
