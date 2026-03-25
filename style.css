@@ -769,7 +769,7 @@ main {
   color: #222;
   font-family: Arial, sans-serif;
   text-align: left;
-  display: flex !important;
+  display: flex;
   flex-direction: column;
 }
 
