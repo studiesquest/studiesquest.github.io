@@ -108,7 +108,7 @@ const games = [
   {title:"Poxel.io", src:"https://zapgames.io/poxel-io.embed", thumbnail:"https://zapgames.io/cache/data/image/game/poxel-io-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Tiny Arena", src:"https://zapgames.io/tiny-arena.embed", thumbnail:"https://zapgames.io/cache/data/image/game/tiny-arena-h196x110.webp", signIn:"Slightly Unplayable"},
   {title:"Kart Bros io", src:"https://zapgames.io/kart-bros-io.embed", thumbnail:"https://zapgames.io/cache/data/image/game/kart-bros-io-game-h196x110.webp", signIn:"Playable"},
-  {title:"Undead Invasion", src:"https://zapgames.io/undead-invasion.embed", thumbnail:"https://zapgames.io/cache/data/image/game/undead-invasion-h196x110.webp", signIn:"Hardly Playable"},
+  {title:"Undead Invasion", src:"https://zapgames.io/undead-invasion.embed", thumbnail:"https://zapgames.io/cache/data/image/game/undead-invasion-h196x110.webp", signIn:"Playable"},
   {title:"City Brawl", src:"https://zapgames.io/city-brawl.embed", thumbnail:"https://zapgames.io/cache/data/image/game/city-brawl-h196x110.webp", signIn:"Slightly Unplayable"},
 
   // --- MISC POPULAR ---
