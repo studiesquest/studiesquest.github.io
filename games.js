@@ -63,14 +63,14 @@ const games = [
   {title:"FNAF 2", src:"https://zapgames.io/fnaf-2.embed", thumbnail:"https://zapgames.io/cache/data/image/game/fnaf-2-h196x110.webp", signIn:"Playable"},
   {title:"FNAF 3", src:"https://zapgames.io/fnaf-3.embed", thumbnail:"https://zapgames.io/cache/data/image/game/fnaf-3-h196x110.webp", signIn:"Playable"},
   {title:"FNAF Sister Location", src:"https://zapgames.io/fnaf-sister-location.embed", thumbnail:"https://zapgames.io/cache/data/image/game/fnaf-sister-location-h196x110.webp", signIn:"Playable"},
-  {title:"Hollow Knight", src:"https://zapgames.io/hollow-knight.embed", thumbnail:"https://zapgames.io/cache/data/image/game/hollow-knight-h196x110.webp", signIn:"Slightly Unplayable"},
+  {title:"Hollow Knight", src:"https://zapgames.io/hollow-knight.embed", thumbnail:"https://zapgames.io/cache/data/image/game/hollow-knight-h196x110.webp", signIn:"Playable"},
   {title:"Slope Rider", src:"https://zapgames.io/slope-rider.embed", thumbnail:"https://zapgames.io/cache/data/image/game/slope-rider-h196x110.webp", signIn:"Playable"},
   {title:"Golf Hit", src:"https://zapgames.io/golf-hit.embed", thumbnail:"https://zapgames.io/cache/data/image/game/golf-hit-h196x110.webp", signIn:"Playable"},
   {title:"Return Man", src:"https://zapgames.io/return-man.embed", thumbnail:"https://zapgames.io/cache/data/image/game/return-man-h196x110.webp", signIn:"Playable"},
 
   // --- TRENDING ---
   {title:"Ragdoll Hit", src:"https://zapgames.io/ragdoll-hit.embed", thumbnail:"https://zapgames.io/cache/data/image/game/ragdoll-hit-h196x110.webp", signIn:"Playable"},
-  {title:"Car Chaos", src:"https://zapgames.io/car-chaos.embed", thumbnail:"https://zapgames.io/cache/data/image/game/car-chaos-h196x110.webp", signIn:"Hardly Playable"},
+  {title:"Car Chaos", src:"https://zapgames.io/car-chaos.embed", thumbnail:"https://zapgames.io/cache/data/image/game/car-chaos-h196x110.webp", signIn:"Playable"},
   {title:"Pokerogue", src:"https://zapgames.io/pokerogue.embed", thumbnail:"https://zapgames.io/cache/data/image/game/pokerogue-h196x110.webp", signIn:"Playable"},
   {title:"Cookie Clicker 2", src:"https://zapgames.io/cookie-clicker-2.embed", thumbnail:"https://zapgames.io/cache/data/image/game/cookie-clicker-2-h196x110.webp", signIn:"Playable"},
   {title:"Fireboy and Watergirl", src:"https://zapgames.io/fireboy-and-watergirl.embed", thumbnail:"https://zapgames.io/cache/data/image/game/fireboy-and-watergirl-h196x110.webp", signIn:"Playable"},
@@ -102,14 +102,14 @@ const games = [
   {title:"Build Now GG", src:"https://zapgames.io/buildnow-gg.embed", thumbnail:"https://zapgames.io/cache/data/image/game/buildnow-gg-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Bloxd.io", src:"https://zapgames.io/bloxdio.embed", thumbnail:"https://zapgames.io/cache/data/image/game/bloxdio-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Krunker", src:"https://zapgames.io/krunker.embed", thumbnail:"https://zapgames.io/cache/data/image/game/krunker-h196x110.webp", signIn:"Hardly Playable"},
-  {title:"Rocket League", src:"https://zapgames.io/rocket-league.embed", thumbnail:"https://zapgames.io/cache/data/image/game/rocket-league-h196x110.webp", signIn:"Hardly Playable"},
+  {title:"Rocket League", src:"https://zapgames.io/rocket-league.embed", thumbnail:"https://zapgames.io/cache/data/image/game/rocket-league-h196x110.webp", signIn:"Playable"},
   {title:"2v2.io", src:"https://zapgames.io/2v2io.embed", thumbnail:"https://zapgames.io/cache/data/image/game/2v2io-h196x110.webp", signIn:"Hardly Playable"},
   {title:"FrontWars.io", src:"https://zapgames.io/frontwarsio.embed", thumbnail:"https://zapgames.io/cache/data/image/game/frontwarsio-h196x110.webp", signIn:"Playable"},
   {title:"Poxel.io", src:"https://zapgames.io/poxel-io.embed", thumbnail:"https://zapgames.io/cache/data/image/game/poxel-io-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Tiny Arena", src:"https://zapgames.io/tiny-arena.embed", thumbnail:"https://zapgames.io/cache/data/image/game/tiny-arena-h196x110.webp", signIn:"Slightly Unplayable"},
   {title:"Kart Bros io", src:"https://zapgames.io/kart-bros-io.embed", thumbnail:"https://zapgames.io/cache/data/image/game/kart-bros-io-game-h196x110.webp", signIn:"Playable"},
   {title:"Undead Invasion", src:"https://zapgames.io/undead-invasion.embed", thumbnail:"https://zapgames.io/cache/data/image/game/undead-invasion-h196x110.webp", signIn:"Hardly Playable"},
-  {title:"City Brawl", src:"https://zapgames.io/city-brawl.embed", thumbnail:"https://zapgames.io/cache/data/image/game/city-brawl-h196x110.webp", signIn:"Hardly Playable"},
+  {title:"City Brawl", src:"https://zapgames.io/city-brawl.embed", thumbnail:"https://zapgames.io/cache/data/image/game/city-brawl-h196x110.webp", signIn:"Slightly Unplayable"},
 
   // --- MISC POPULAR ---
   {title:"Ragdoll Launcher", src:"https://zapgames.io/ragdoll-launcher.embed", thumbnail:"https://zapgames.io/cache/data/image/game/ragdoll-launcher-h196x110.webp", signIn:"Playable"},
