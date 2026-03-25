@@ -1,41 +1,61 @@
-const grid = document.getElementById("grid");
-const search = document.getElementById("search");
-const modal = document.getElementById("modal");
-const frame = document.getElementById("gameFrame");
-const home = document.getElementById("home");
+/* ===== DOM refs ===== */
+const grid    = document.getElementById("grid");
+const search  = document.getElementById("search");
+const modal   = document.getElementById("modal");
+const frame   = document.getElementById("gameFrame");
+const homeBtn = document.getElementById("home");
+const countEl = document.getElementById("game-count");
+const filterBtns = document.querySelectorAll(".filters button");
 
-let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+/* ===== State ===== */
+let favorites     = JSON.parse(localStorage.getItem("sq_favs") || "[]");
 let currentFilter = "All";
 
-function loadGames() {
+/* ===== Badge class helper ===== */
+function badgeClass(signIn) {
+  if (signIn === "Playable")            return "badge-playable";
+  if (signIn === "Slightly Unplayable") return "badge-slight";
+  return "badge-hard";
+}
+
+/* ===== Build tiles ===== */
+function render() {
   grid.innerHTML = "";
 
-  games.forEach(game => {
+  games.forEach((g, i) => {
+    const isFav = favorites.includes(g.title);
+
     const tile = document.createElement("div");
     tile.className = "tile";
-    tile.dataset.playability = game.signIn;
-    tile.dataset.title = game.title.toLowerCase();
-
-    const fav = favorites.includes(game.title);
+    tile.dataset.play  = g.signIn;
+    tile.dataset.title = g.title.toLowerCase();
 
     tile.innerHTML = `
-      <img src="${game.thumbnail}" loading="lazy">
-      <h3>${game.title}</h3>
+      <img src="${g.thumbnail}" alt="${g.title}" loading="lazy" onerror="this.style.background='#0a1e10';this.alt='No image'">
+      <h3>${g.title}</h3>
       <div class="gameInfo">
-        <span class="playability">${game.signIn}</span>
-        <div class="favStar ${fav ? "active" : ""}">⭐</div>
+        <span class="playability ${badgeClass(g.signIn)}">${g.signIn}</span>
+        <span class="favStar ${isFav ? "active" : ""}">⭐</span>
       </div>
     `;
 
-    tile.querySelector(".favStar").onclick = (e) => {
+    /* fav toggle */
+    tile.querySelector(".favStar").addEventListener("click", e => {
       e.stopPropagation();
-      toggleFavorite(game.title);
-    };
+      if (favorites.includes(g.title)) {
+        favorites = favorites.filter(f => f !== g.title);
+      } else {
+        favorites.push(g.title);
+      }
+      localStorage.setItem("sq_favs", JSON.stringify(favorites));
+      render();
+    });
 
-    tile.onclick = () => {
-      frame.src = game.src;
+    /* open game */
+    tile.addEventListener("click", () => {
+      frame.src = g.src;
       modal.style.display = "flex";
-    };
+    });
 
     grid.appendChild(tile);
   });
@@ -43,46 +63,57 @@ function loadGames() {
   applyFilters();
 }
 
-function toggleFavorite(title) {
-  if (favorites.includes(title)) {
-    favorites = favorites.filter(f => f !== title);
-  } else {
-    favorites.push(title);
-  }
-  localStorage.setItem("favorites", JSON.stringify(favorites));
-  loadGames();
-}
-
+/* ===== Filters ===== */
 function applyFilters() {
-  const value = search.value.toLowerCase();
+  const q = search.value.toLowerCase();
+  let shown = 0;
 
   document.querySelectorAll(".tile").forEach(tile => {
-    let show = true;
+    let visible = true;
 
     if (currentFilter === "Favorites") {
-      show = favorites.includes(tile.querySelector("h3").innerText);
+      visible = favorites.includes(tile.querySelector("h3").textContent);
     } else if (currentFilter !== "All") {
-      show = tile.dataset.playability === currentFilter;
+      visible = tile.dataset.play === currentFilter;
     }
 
-    if (!tile.dataset.title.includes(value)) show = false;
+    if (visible && q) {
+      visible = tile.dataset.title.includes(q);
+    }
 
-    tile.style.display = show ? "block" : "none";
+    tile.style.display = visible ? "" : "none";
+    if (visible) shown++;
   });
+
+  if (countEl) countEl.textContent = `Showing ${shown} of ${games.length} games`;
 }
 
-document.querySelectorAll(".filters button").forEach(btn => {
-  btn.onclick = () => {
+/* ===== Filter buttons ===== */
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    filterBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
     currentFilter = btn.dataset.filter;
     applyFilters();
-  };
+  });
 });
 
+/* ===== Search ===== */
 search.addEventListener("input", applyFilters);
 
-home.onclick = () => {
+/* ===== Close modal ===== */
+homeBtn.addEventListener("click", () => {
   modal.style.display = "none";
   frame.src = "";
-};
+});
 
-loadGames();
+/* ===== ESC to close ===== */
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && modal.style.display === "flex") {
+    modal.style.display = "none";
+    frame.src = "";
+  }
+});
+
+/* ===== Init ===== */
+render();
