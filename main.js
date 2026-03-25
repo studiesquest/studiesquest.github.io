@@ -198,24 +198,63 @@ popup.addEventListener("click", e => {
   }
 });
 
-/* ===== Panic Screen (Shift+Tab) ===== */
+/* ===== Panic Screen (Shift+Tab) & Fake Error ===== */
+const panicSignIn = document.querySelector('.panic-signin-container');
+const panicError = document.querySelector('.panic-error-container');
+const panicBtns = [
+  document.getElementById('panic-next'),
+  document.getElementById('panic-create'),
+  document.getElementById('panic-forgot')
+];
+
+function triggerFakeError() {
+  this.classList.add('panic-loading');
+  const oldText = this.innerText;
+  this.innerText = 'Please wait...';
+  
+  setTimeout(() => {
+    panicSignIn.style.display = 'none';
+    panicError.style.display = 'flex';
+    
+    // reset button silently in background for next time
+    this.classList.remove('panic-loading');
+    this.innerText = oldText;
+  }, 1500);
+}
+
+panicBtns.forEach(btn => {
+  if(btn) btn.addEventListener('click', triggerFakeError);
+});
+
 document.addEventListener("keydown", e => {
   // Shift+Tab = toggle panic screen
   if (e.shiftKey && e.key === "Tab") {
     e.preventDefault();
 
     if (panic.classList.contains("show")) {
-      // hide panic, restore game
+      // hide panic
       panic.classList.remove("show");
+      
+      // reset fake login state after hide transition
+      setTimeout(() => {
+        panicSignIn.style.display = '';
+        panicError.style.display = 'none';
+        
+        // Remove focus from any active inputs
+        if(document.activeElement) document.activeElement.blur();
+      }, 300);
     } else {
-      // show panic — hide everything else
+      // show panic
       panic.classList.add("show");
+      
+      // Focus email input automatically
+      const emailInput = document.querySelector('.panic-signin-input');
+      if(emailInput) {
+        setTimeout(() => emailInput.focus(), 100);
+      }
     }
     return;
   }
-
-  // Shift+Tab again or any key while panic is shown — keep panic
-  // Only Shift+Tab toggles it off (handled above)
 });
 
 /* ===== Init ===== */
