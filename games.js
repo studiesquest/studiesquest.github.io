@@ -1,6 +1,6 @@
 const games = [
   // ============================================================
-  // EXISTING GAMES (fixed where needed)
+  //templateeeeeeeee
   // ============================================================
   {title:"Slope", src:"https://zapgames.io/slope.embed", thumbnail:"https://zapgames.io/cache/data/image/game/slope-game-h196x110.webp", signIn:"Playable"},
   {title:"Smash Karts", src:"https://zapgames.io/smash-karts.embed", thumbnail:"https://zapgames.io/cache/data/image/game/smash-karts-h196x110.webp", signIn:"Playable"},
@@ -43,12 +43,8 @@ const games = [
   {title:"Geometry Dash Lite", src:"https://zapgames.io/geometry-dash-lite.embed", thumbnail:"https://zapgames.io/cache/data/image/game/geometry-dash-lite-h196x110.webp", signIn:"Playable"},
   {title:"OpenFront.io", src:"https://zapgames.io/openfrontio.embed", thumbnail:"https://zapgames.io/cache/data/image/game/openfrontio-h196x110.webp", signIn:"Playable"},
   {title:"Level Devil", src:"https://zapgames.io/level-devil.embed", thumbnail:"https://zapgames.io/cache/data/image/game/level-devil-h196x110.webp", signIn:"Playable"},
-  // FIXED: Fortnite — confirmed zapgames embed
-  {title:"Fortnite Game", src:"https://zapgames.io/fortnite-game.embed", thumbnail:"https://zapgames.io/cache/data/image/game/fortnite-game-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Minecraft", src:"https://zapgames.io/minecraft.embed", thumbnail:"https://zapgames.io/cache/data/image/game/minecraft-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Geometry Dash", src:"https://zapgames.io/geometry-dash.embed", thumbnail:"https://zapgames.io/cache/data/image/game/geometry-dash-h196x110.webp", signIn:"Playable"},
-  // FIXED: Granny — switched from broken miniplay.com to zapgames
-  {title:"Granny", src:"https://zapgames.io/granny.embed", thumbnail:"https://zapgames.io/cache/data/image/game/granny-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Bucket Smash", src:"https://zapgames.io/bucket-smash.embed", thumbnail:"https://zapgames.io/cache/data/image/game/bucket-smash-h196x110.webp", signIn:"Playable"},
   {title:"Slow Roads", src:"https://zapgames.io/slow-roads.embed", thumbnail:"https://zapgames.io/cache/data/image/game/slow-roads-h196x110.webp", signIn:"Playable"},
   {title:"Deer Adventure", src:"https://zapgames.io/deer-adventure.embed", thumbnail:"https://zapgames.io/cache/data/image/game/deer-adventure-h196x110.webp", signIn:"Hardly Playable"},
