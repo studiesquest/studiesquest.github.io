@@ -22,7 +22,7 @@ const games = [
   {title:"Soccer Bros", src:"https://zapgames.io/soccer-bros.embed", thumbnail:"https://zapgames.io/cache/data/image/game/soccer-bros-h196x110.webp", signIn:"Playable"},
   {title:"Snow Road", src:"https://azgames.io/snow-road.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/snowroad-m180x180.png", signIn:"Playable"},
   {title:"Wacky Flip", src:"https://zapgames.io/wacky-flip.embed", thumbnail:"https://zapgames.io/cache/data/image/game/wacky-flip-h196x110.webp", signIn:"Playable"},
-  {title:"Tap Road", src:"https://zapgames.io/tap-road.embed", thumbnail:"https://zapgames.io/cache/data/image/game/tap-road-h196x110.webp", signIn:"Playable"},
+  {title:"Tap Road", src:"https://zapgames.io/tap-road.embed", thumbnail:"https://zapgames.io/cache/data/image/game/tap-road-game-h196x110.webp", signIn:"Playable"},
   {title:"Curve Rush", src:"https://zapgames.io/curve-rush.embed", thumbnail:"https://zapgames.io/cache/data/image/game/curve-rush-h196x110.webp", signIn:"Playable"},
   {title:"Bike Xtreme", src:"https://azgames.io/bike-xtreme.embed", thumbnail:"https://azgames.io/upload/cache/upload/imgs/bikextreme11-m180x180.png", signIn:"Playable"},
   {title:"Escape Road", src:"https://zapgames.io/escape-road.embed", thumbnail:"https://zapgames.io/cache/data/image/game/escape-road-h196x110.webp", signIn:"Playable"},
