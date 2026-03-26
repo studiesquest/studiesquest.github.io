@@ -7,6 +7,7 @@
 <p align="center">
   <b>100+ free unblocked games — NO pop-up ads, NO tracking, NO lag.</b><br>
   Built for Chromebook sign-in page bypass. Just open and play.
+  (right now I am using banner ads that you can close but I need this to buy a real domain for you guys!)
 </p>
 
 <p align="center">
