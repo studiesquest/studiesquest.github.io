@@ -172,7 +172,7 @@ const games = [
   { title: "Gladihoppers", src: "https://zapgames.io/gladihoppers.embed", thumbnail: "https://zapgames.io/cache/data/image/game/gladihoppers-h196x110.webp", signIn: "Playable" },
   { title: "8 Ball Pool", src: "https://zapgames.io/8-ball-pool.embed", thumbnail: "https://zapgames.io/cache/data/image/game/8-ball-pool-h196x110.webp", signIn: "Playable" },
   { title: "Crazy Cattle 3D", src: "https://zapgames.io/crazy-cattle-3d.embed", thumbnail: "https://zapgames.io/cache/data/image/game/crazy-cattle-3d-h196x110.webp", signIn: "Playable" },
-  { title: "Granny 2", src: "https://zapgames.io/granny-2.embed", thumbnail: "https://zapgames.io/cache/data/image/game/granny-2-h196x110.webp", signIn: "Hardly Playable" },
+  { title: "Granny 2", src: "https://app-307198.games.s3.yandex.net/307198/dh5j5bw8jreyyvj0jgfmsgf434ycwr1w_brotli/index.html?is-united-page=1&skip-guard=1&header=no&clid=13924144&flags=%7B%22adv_sticky_banner_disabled%22%3Atrue%7D&sdk=%2Fsdk%2F_%2Fv2.1cfa6241c8b6991a4ef6.js#origin=https%3A%2F%2Fyandex.com&app-id=307198&device-type=desktop", thumbnail: "https://zapgames.io/cache/data/image/game/granny-2-h196x110.webp", signIn: "Hardly Playable" },
   { title: "Fall Guys", src: "https://zapgames.io/fall-guys.embed", thumbnail: "https://zapgames.io/cache/data/image/game/fall-guys-h196x110.webp", signIn: "Playable" },
   { title: "Super Mario Bros", src: "https://zapgames.io/super-mario-bros.embed", thumbnail: "https://zapgames.io/cache/data/image/game/super-mario-bros-h196x110.webp", signIn: "Playable" },
   { title: "GeoGuessr", src: "https://zapgames.io/geoguessr.embed", thumbnail: "https://zapgames.io/cache/data/image/game/geoguessr-h196x110.webp", signIn: "Playable" },
