@@ -53,6 +53,7 @@ const games = [
   {title:"Russian Traffic Route 66", src:"https://zapgames.io/route-66-russian-traffic.embed", thumbnail:"https://zapgames.io/cache/data/image/game/route-66-russian-traffic-h196x110.webp", signIn:"Playable"},
 
   // ============================================================
+  // 50 NEW GAMES — popular/trending, ALL using zapgames thumbnails
   // ============================================================
 
   // --- MASSIVE HITS ---
@@ -115,5 +116,5 @@ const games = [
   {title:"Short Trip", src:"https://zapgames.io/short-trip.embed", thumbnail:"https://zapgames.io/cache/data/image/game/short-trip-h196x110.webp", signIn:"Playable"},
   {title:"Adopt Me", src:"https://zapgames.io/adopt-me.embed", thumbnail:"https://zapgames.io/cache/data/image/game/adopt-me-h196x110.webp", signIn:"Playable"},
   {title:"Love Tester", src:"https://zapgames.io/love-tester.embed", thumbnail:"https://zapgames.io/cache/data/image/game/love-tester-h196x110.webp", signIn:"Playable"},
-  {title:"Granny", src:"https://zapgames.io/granny.embed", thumbnail:"https://zapgames.io/cache/data/image/game/granny-h196x110.webp", signIn:"Hardly Playable"},
+  {title:"Granny", src:"https://html5.gamedistribution.com/14495da5e76c4f1982de1160e4ffaa23/?gd_sdk_referrer_url=https://studiesquest.github.io", thumbnail:"https://zapgames.io/cache/data/image/game/granny-h196x110.webp", signIn:"Hardly Playable"},
 ];
