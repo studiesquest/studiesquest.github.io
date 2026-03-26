@@ -78,7 +78,7 @@ const games = [
   { title: "Atari Breakout", src: "https://zapgames.io/atari-breakout.embed", thumbnail: "https://zapgames.io/cache/data/image/game/atari-breakout-h196x110.webp", signIn: "Slightly Unplayable" },
   { title: "Sushi Party", src: "https://zapgames.io/sushi-party.embed", thumbnail: "https://zapgames.io/cache/data/image/game/sushi-party-h196x110.webp", signIn: "Playable" },
   { title: "Bad Parenting", src: "https://zapgames.io/bad-parenting.embed", thumbnail: "https://zapgames.io/cache/data/image/game/bad-parenting-h196x110.webp", signIn: "Playable" },
-  { title: "Baldi's Basics Plus", src: "https://zapgames.io/baldis-basics-plus.embed", thumbnail: "https://zapgames.io/cache/data/image/game/baldis-basics-plus-h196x110.webp", signIn: "Hardly Playable" },
+  { title: "Baldis Basics Plus", src: "https://zapgames.io/baldis-basics-plus.embed", thumbnail: "https://zapgames.io/cache/data/image/game/baldis-basics-plus-h196x110.webp", signIn: "Hardly Playable" },
   { title: "Murder", src: "https://zapgames.io/murder.embed", thumbnail: "https://zapgames.io/cache/data/image/game/murder-h196x110.webp", signIn: "Playable" },
   { title: "Murder Mystery", src: "https://zapgames.io/murder-mystery.embed", thumbnail: "https://zapgames.io/cache/data/image/game/murder-mystery-h196x110.webp", signIn: "Playable" },
   { title: "Evil Nun", src: "https://zapgames.io/evil-nun.embed", thumbnail: "https://zapgames.io/cache/data/image/game/evil-nun-h196x110.webp", signIn: "Hardly Playable" },
