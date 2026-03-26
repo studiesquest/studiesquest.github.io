@@ -266,21 +266,17 @@ main {
   aspect-ratio: 16/9;
   overflow: hidden;
   position: relative;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .tile img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Prevents cropping */
+  object-fit: cover;
   transition: transform 0.3s ease;
   /* Improve quality of upscaled low-res thumbnails */
   image-rendering: -webkit-optimize-contrast;
   image-rendering: high-quality;
-  transform: scale(1.02); /* Slight scale to reduce gap */
 }
 
 .tile:hover img {
