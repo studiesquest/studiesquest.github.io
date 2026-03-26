@@ -145,8 +145,13 @@ homeBtn.addEventListener("click", () => {
   modal.style.display = "none";
   frame.src = "";
   // Slide ads back into view to maximize profit
-  document.querySelectorAll(".ad-sidebar").forEach(ad => ad.style.transform = "none");
+  document.querySelectorAll(".ad-sidebar").forEach(ad => ad.style.transform = "");
 });
+
+/* ===== Restore ads helper ===== */
+function restoreAds() {
+  document.querySelectorAll(".ad-sidebar").forEach(ad => ad.style.transform = "");
+}
 
 /* ===== Tab Switching ===== */
 tabBtns.forEach(btn => {
@@ -154,6 +159,9 @@ tabBtns.forEach(btn => {
     tabBtns.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
     currentTab = btn.dataset.tab;
+
+    // Restore ads on every tab switch
+    restoreAds();
 
     if (currentTab === "games") {
       grid.style.display = "";
@@ -175,16 +183,15 @@ tabBtns.forEach(btn => {
 
 /* ===== Utility Cards ===== */
 
-// Desmos Graphing Calculator
-const utilDesmos = document.getElementById("util-desmos");
-if(utilDesmos) {
-  utilDesmos.addEventListener("click", () => {
-    frame.src = "https://www.desmos.com/calculator";
+// Embed cards — open inside the game modal iframe
+document.querySelectorAll(".util-card[data-embed]").forEach(card => {
+  card.addEventListener("click", () => {
+    frame.src = card.dataset.embed;
     modal.style.display = "flex";
   });
-}
+});
 
-// Redirect cards (YouTube, ChatGPT, Docs, Slides, Desmos)
+// Redirect cards (YouTube, ChatGPT, Docs, Slides, Freefy, Xbox)
 document.querySelectorAll(".util-card[data-redirect]").forEach(card => {
   card.addEventListener("click", () => {
     const url = card.dataset.redirect;
@@ -202,7 +209,11 @@ popupCancel.addEventListener("click", () => {
 
 popupGo.addEventListener("click", () => {
   if (pendingRedirect) {
-    window.open(pendingRedirect, "_blank");
+    // Try window.open first, fall back to location.href if popup blocked
+    const win = window.open(pendingRedirect, "_blank");
+    if (!win || win.closed || typeof win.closed === 'undefined') {
+      window.location.href = pendingRedirect;
+    }
   }
   popup.classList.remove("show");
   pendingRedirect = null;
