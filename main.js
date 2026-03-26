@@ -228,6 +228,90 @@ popup.addEventListener("click", e => {
 });
 
 /* ===== Panic Screen (Shift+Tab) & Fake Error ===== */
+
+// Theme definitions
+const panicThemes = {
+  docs:      { name: 'Google Docs',      title: 'Docs',      color: '#4285F4' },
+  slides:    { name: 'Google Slides',     title: 'Slides',    color: '#FBBC04' },
+  drive:     { name: 'Google Drive',      title: 'Drive',     color: '#34A853' },
+  gmail:     { name: 'Gmail',             title: 'Gmail',     color: '#EA4335' },
+  classroom: { name: 'Google Classroom',  title: 'Classroom', color: '#0F9D58' },
+};
+
+// Load saved settings
+let currentTheme = localStorage.getItem('sq_panic_theme') || 'docs';
+let savedEmail = localStorage.getItem('sq_panic_email') || '';
+let savedPassword = localStorage.getItem('sq_panic_pass') || '';
+
+// Settings modal refs
+const settingsBtn = document.getElementById('settings-btn');
+const settingsModal = document.getElementById('settings-modal');
+const settingsEmail = document.getElementById('settings-email');
+const settingsPass = document.getElementById('settings-password');
+const settingsSave = document.getElementById('settings-save');
+const settingsClose = document.getElementById('settings-close');
+const themeBtns = document.querySelectorAll('.theme-btn');
+const panicAppName = document.getElementById('panic-app-name');
+const panicDocsTitle = document.querySelector('.panic-docs-title');
+const passError = document.getElementById('panic-pass-error');
+
+// Apply theme on load
+function applyTheme() {
+  const t = panicThemes[currentTheme];
+  if (panicAppName) panicAppName.textContent = t.name;
+  if (panicDocsTitle) panicDocsTitle.textContent = t.title;
+}
+applyTheme();
+
+// Settings modal open
+if (settingsBtn) {
+  settingsBtn.addEventListener('click', () => {
+    settingsEmail.value = savedEmail;
+    settingsPass.value = savedPassword;
+    // Highlight active theme
+    themeBtns.forEach(b => {
+      b.classList.toggle('active', b.dataset.theme === currentTheme);
+    });
+    settingsModal.classList.add('show');
+  });
+}
+
+// Theme picker
+themeBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    themeBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentTheme = btn.dataset.theme;
+  });
+});
+
+// Save settings
+if (settingsSave) {
+  settingsSave.addEventListener('click', () => {
+    savedEmail = settingsEmail.value.trim();
+    savedPassword = settingsPass.value;
+    localStorage.setItem('sq_panic_theme', currentTheme);
+    localStorage.setItem('sq_panic_email', savedEmail);
+    localStorage.setItem('sq_panic_pass', savedPassword);
+    applyTheme();
+    settingsModal.classList.remove('show');
+  });
+}
+
+// Close settings
+if (settingsClose) {
+  settingsClose.addEventListener('click', () => {
+    settingsModal.classList.remove('show');
+  });
+}
+
+// Click outside settings card to close
+if (settingsModal) {
+  settingsModal.addEventListener('click', e => {
+    if (e.target === settingsModal) settingsModal.classList.remove('show');
+  });
+}
+
 const panicEmailC = document.querySelector('.panic-email-container');
 const panicPassC = document.querySelector('.panic-password-container');
 const panicDocsC = document.querySelector('.panic-docs-bug-container');
@@ -249,9 +333,14 @@ if(btnEmailNext) {
       
       if(emailInput && emailInput.value.trim() !== '') {
         emailDisplay.innerText = emailInput.value;
+      } else if (savedEmail) {
+        emailDisplay.innerText = savedEmail;
       } else {
         emailDisplay.innerText = 'student@school.edu';
       }
+      
+      // Hide any previous error
+      if(passError) passError.classList.remove('show');
       
       this.classList.remove('panic-loading');
       this.innerText = oldText;
@@ -264,6 +353,17 @@ if(btnEmailNext) {
 
 if(btnPassNext) {
   btnPassNext.addEventListener('click', function() {
+    const passInput = panicPassC.querySelector('input.panic-signin-input');
+    const enteredPass = passInput ? passInput.value : '';
+    
+    // If a password is saved and the user entered the wrong one, show error
+    if (savedPassword && enteredPass !== savedPassword) {
+      if(passError) passError.classList.add('show');
+      return; // Don't advance
+    }
+    
+    // Correct password or no password set — advance to bug screen
+    if(passError) passError.classList.remove('show');
     this.classList.add('panic-loading');
     const oldText = this.innerText;
     this.innerText = 'Please wait...';
@@ -317,11 +417,15 @@ window.addEventListener("keydown", e => {
           showPassCb.checked = false;
           if(passInput) passInput.type = 'password';
         }
+        if(passError) passError.classList.remove('show');
         
         if(document.activeElement) document.activeElement.blur();
       }, 300);
     } else {
       panic.classList.add("show");
+      // Apply theme and pre-fill email
+      applyTheme();
+      if(savedEmail && emailInput) emailInput.value = savedEmail;
       if(emailInput) {
         setTimeout(() => emailInput.focus(), 100);
       }
