@@ -50,9 +50,16 @@ function render() {
     tile.dataset.play  = g.signIn;
     tile.dataset.title = g.title.toLowerCase();
 
+    // Upgrade zapgames thumbnails to high-res, but keep original as fallback
+    let highResThumb = g.thumbnail;
+    let isZapgames = g.thumbnail.includes("zapgames.io") && g.thumbnail.includes("h196x110");
+    if (isZapgames) {
+      highResThumb = g.thumbnail.replace("h196x110", "f546x307");
+    }
+
     tile.innerHTML = `
       <div class="thumb-wrap">
-        <img src="${g.thumbnail}" alt="${g.title}" loading="lazy">
+        <img src="${highResThumb}" alt="${g.title}" loading="lazy" data-original="${g.thumbnail}">
       </div>
       <h3>${g.title}</h3>
       <div class="gameInfo">
@@ -61,9 +68,15 @@ function render() {
       </div>
     `;
 
-    /* image error fallback */
+    /* image error fallback (try original low-res, then letter placeholder) */
     const img = tile.querySelector("img");
-    img.addEventListener("error", () => handleImgError(img, g.title));
+    img.addEventListener("error", function() {
+      if (this.src !== this.dataset.original && this.dataset.original) {
+        this.src = this.dataset.original;
+      } else {
+        handleImgError(this, g.title);
+      }
+    });
 
     /* fav toggle */
     tile.querySelector(".favStar").addEventListener("click", e => {
