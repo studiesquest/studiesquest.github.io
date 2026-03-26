@@ -97,6 +97,7 @@ function render() {
       frame.src = g.src;
       modal.style.display = "flex";
       settingsBtn.style.display = "none";
+      if (typeof handleForcePanic === 'function') handleForcePanic(true);
     });
 
     grid.appendChild(tile);
@@ -145,6 +146,7 @@ homeBtn.addEventListener("click", () => {
   frame.src = "";
   settingsBtn.style.display = "";
   document.querySelectorAll(".ad-sidebar").forEach(ad => ad.style.transform = "");
+  if (typeof handleForcePanic === 'function') handleForcePanic(false);
 });
 
 function restoreAds() {
@@ -229,6 +231,18 @@ const panicThemes = {
 let currentTheme = localStorage.getItem('sq_panic_theme') || 'docs';
 let savedEmail = localStorage.getItem('sq_panic_email') || '';
 let savedPassword = localStorage.getItem('sq_panic_pass') || '';
+let forcePanic = localStorage.getItem('sq_force_panic') === 'true';
+let forcePanicInterval = null;
+
+function handleForcePanic(isActive) {
+  if (forcePanicInterval) clearInterval(forcePanicInterval);
+  if (isActive && forcePanic) {
+    forcePanicInterval = setInterval(() => {
+      window.focus();
+      document.body.focus();
+    }, 500);
+  }
+}
 
 // settingsBtn moved to top
 const settingsModal = document.getElementById('settings-modal');
@@ -236,6 +250,7 @@ const settingsEmail = document.getElementById('settings-email');
 const settingsPass = document.getElementById('settings-password');
 const settingsSave = document.getElementById('settings-save');
 const settingsClose = document.getElementById('settings-close');
+const settingsForcePanic = document.getElementById('settings-force-panic');
 const themeBtns = document.querySelectorAll('.theme-btn');
 const panicAppName = document.getElementById('panic-app-name');
 const panicDocsTitle = document.querySelector('.panic-docs-title');
@@ -252,6 +267,7 @@ if (settingsBtn) {
   settingsBtn.addEventListener('click', () => {
     settingsEmail.value = savedEmail;
     settingsPass.value = savedPassword;
+    if (settingsForcePanic) settingsForcePanic.checked = forcePanic;
     themeBtns.forEach(b => {
       b.classList.toggle('active', b.dataset.theme === currentTheme);
     });
@@ -271,10 +287,15 @@ if (settingsSave) {
   settingsSave.addEventListener('click', () => {
     savedEmail = settingsEmail.value.trim();
     savedPassword = settingsPass.value;
+    if (settingsForcePanic) forcePanic = settingsForcePanic.checked;
+
     localStorage.setItem('sq_panic_theme', currentTheme);
     localStorage.setItem('sq_panic_email', savedEmail);
     localStorage.setItem('sq_panic_pass', savedPassword);
+    localStorage.setItem('sq_force_panic', forcePanic);
+
     applyTheme();
+    if (typeof handleForcePanic === 'function') handleForcePanic(modal.style.display === "flex");
     settingsModal.classList.remove('show');
   });
 }
@@ -407,6 +428,13 @@ window.addEventListener("keydown", e => {
       if(savedEmail && emailInput) emailInput.value = savedEmail;
       if(emailInput) {
         setTimeout(() => emailInput.focus(), 100);
+      }
+
+      if (modal.style.display === "flex") {
+        modal.style.display = "none";
+        frame.src = "";
+        if (typeof settingsBtn !== 'undefined' && settingsBtn) settingsBtn.style.display = "";
+        if (typeof handleForcePanic === 'function') handleForcePanic(false);
       }
     }
     return;
