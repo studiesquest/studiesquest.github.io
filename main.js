@@ -23,6 +23,7 @@ let pendingRedirect = null;
 function badgeClass(signIn) {
   if (signIn === "Playable")            return "badge-playable";
   if (signIn === "Slightly Unplayable") return "badge-slight";
+  if (signIn === "Cloud Gaming")        return "badge-cloud";
   return "badge-hard";
 }
 
@@ -64,7 +65,8 @@ function render() {
 
     const img = tile.querySelector("img");
     img.addEventListener("error", function() {
-      if (this.src !== this.dataset.original && this.dataset.original) {
+      if (!this.dataset.triedOriginal) {
+        this.dataset.triedOriginal = "1";
         this.src = this.dataset.original;
       } else {
         handleImgError(this, g.title);
@@ -83,6 +85,14 @@ function render() {
     });
 
     tile.addEventListener("click", () => {
+      if (g.signIn === "Cloud Gaming") {
+        pendingRedirect = g.src;
+        popupUrl.textContent = g.src;
+        document.getElementById('popup-title').textContent = 'Xbox Cloud Gaming';
+        document.getElementById('popup-msg').textContent = 'This opens Xbox Cloud Gaming in a new tab. Note: Fortnite and some titles may not work on sign-in page bypasses.';
+        popup.classList.add('show');
+        return;
+      }
       frame.src = g.src;
       modal.style.display = "flex";
     });
