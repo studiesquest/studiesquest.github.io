@@ -96,7 +96,14 @@ const games = [
   {title:"Murder", src:"https://zapgames.io/murder.embed", thumbnail:"https://zapgames.io/cache/data/image/game/murder-h196x110.webp", signIn:"Playable"},
   {title:"Murder Mystery", src:"https://zapgames.io/murder-mystery.embed", thumbnail:"https://zapgames.io/cache/data/image/game/murder-mystery-h196x110.webp", signIn:"Playable"},
   {title:"Evil Nun", src:"https://zapgames.io/evil-nun.embed", thumbnail:"https://zapgames.io/cache/data/image/game/evil-nun-h196x110.webp", signIn:"Hardly Playable"},
-  {title:"99 Nights in the Forest", src:"https://zapgames.io/99-nights-in-the-forest.embed", thumbnail:"https://zapgames.io/cache/data/image/game/99-nights-in-the-forest-h196x110.webp", signIn:"Playable"},
+  {title:"99 Nights in the Forest", src:"https://zapgames.io/99-nights-in-the-forest.embed", thumbnail:"https://zapgames.io/cache/data/image/game/99-nights-in-the-forest-h196x110.webp", signIn:"
+  {
+  title: "Granny",
+  src: "https://html5.gamedistribution.com/14495da5e76c4f1982de1160e4ffaa23/?gd_sdk_referrer_url=https://www.example.com/games/granny",
+  thumbnail: "https://play-lh.googleusercontent.com/9U3pZ3Qx9wYy4d2GrannyGameIcon", // you can change this if you want
+  description: "Escape the house before Granny catches you.",
+  signIn: "Playable"
+},
 
   // --- COMPETITIVE / MULTIPLAYER ---
   {title:"Build Now GG", src:"https://zapgames.io/buildnow-gg.embed", thumbnail:"https://zapgames.io/cache/data/image/game/buildnow-gg-h196x110.webp", signIn:"Hardly Playable"},
