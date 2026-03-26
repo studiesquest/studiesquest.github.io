@@ -160,11 +160,14 @@ tabBtns.forEach(btn => {
 
 /* ===== Utility Cards ===== */
 
-// Music player — opens embedded SoundCloud in modal
-document.getElementById("util-music").addEventListener("click", () => {
-  frame.src = "https://zapgames.io/lofi-hip-hop-radio.embed";
-  modal.style.display = "flex";
-});
+// Desmos Graphing Calculator
+const utilDesmos = document.getElementById("util-desmos");
+if(utilDesmos) {
+  utilDesmos.addEventListener("click", () => {
+    frame.src = "https://www.desmos.com/calculator";
+    modal.style.display = "flex";
+  });
+}
 
 // Redirect cards (YouTube, ChatGPT, Docs, Slides, Desmos)
 document.querySelectorAll(".util-card[data-redirect]").forEach(card => {
@@ -270,7 +273,7 @@ if(userPill) {
   });
 }
 
-document.addEventListener("keydown", e => {
+window.addEventListener("keydown", e => {
   if (e.shiftKey && e.key === "Tab") {
     e.preventDefault();
 
@@ -299,7 +302,7 @@ document.addEventListener("keydown", e => {
     }
     return;
   }
-});
+}, true);
 
 /* ===== Init ===== */
 render();
