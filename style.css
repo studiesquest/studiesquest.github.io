@@ -1,7 +1,7 @@
-/* ===== Google Font ===== */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
-/* ===== CSS Variables ===== */
+
 :root {
   --bg-deep: #050e08;
   --bg-mid: #0a1e10;
@@ -15,7 +15,7 @@
   --glass-blur: 12px;
 }
 
-/* ===== Reset & Base ===== */
+
 
 * {
   box-sizing: border-box;
@@ -51,7 +51,7 @@ body::after {
   pointer-events: none;
 }
 
-/* ===== Scrollbar ===== */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -69,7 +69,7 @@ body::after {
   background: var(--accent-glow);
 }
 
-/* ===== GitHub Icon ===== */
+
 
 #gh-link {
   position: fixed;
@@ -86,7 +86,7 @@ body::after {
   transform: scale(1.1);
 }
 
-/* ===== Header ===== */
+
 
 header {
   padding: 36px 24px 12px;
@@ -104,7 +104,7 @@ h1 {
   margin-bottom: 18px;
 }
 
-/* ===== Search ===== */
+
 
 #search {
   display: block;
@@ -133,7 +133,7 @@ h1 {
   box-shadow: 0 0 20px rgba(0, 230, 118, 0.2);
 }
 
-/* ===== Tab Bar ===== */
+
 
 .tab-bar {
   display: flex;
@@ -169,7 +169,7 @@ h1 {
   box-shadow: 0 0 20px rgba(0, 230, 118, 0.3);
 }
 
-/* ===== Filters ===== */
+
 
 .filters {
   display: flex;
@@ -203,7 +203,7 @@ h1 {
   transform: translateY(-1px);
 }
 
-/* ===== KBD tag ===== */
+
 kbd {
   display: inline-block;
   padding: 2px 6px;
@@ -215,7 +215,7 @@ kbd {
   color: var(--accent);
 }
 
-/* ===== Playability Info ===== */
+
 
 #playable-info {
   margin: 6px auto 0;
@@ -227,7 +227,7 @@ kbd {
   opacity: .55;
 }
 
-/* ===== Game Grid ===== */
+
 
 main {
   display: grid;
@@ -238,7 +238,7 @@ main {
   margin: auto;
 }
 
-/* ===== Tiles ===== */
+
 
 .tile {
   background: var(--bg-card);
@@ -259,7 +259,7 @@ main {
     0 0 0 1px rgba(0, 230, 118, 0.1);
 }
 
-/* ===== Tile Image ===== */
+
 
 .tile .thumb-wrap {
   width: 100%;
@@ -274,7 +274,7 @@ main {
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
-  /* Improve quality of upscaled low-res thumbnails */
+  
   image-rendering: -webkit-optimize-contrast;
   image-rendering: high-quality;
 }
@@ -283,7 +283,7 @@ main {
   transform: scale(1.06);
 }
 
-/* fallback placeholder */
+
 .tile .img-placeholder {
   width: 100%;
   height: 100%;
@@ -297,7 +297,7 @@ main {
   text-transform: uppercase;
 }
 
-/* ===== Tile Text ===== */
+
 
 .tile h3 {
   padding: 10px 12px 2px;
@@ -316,7 +316,7 @@ main {
   opacity: .7;
 }
 
-/* ===== Game Info Row ===== */
+
 
 .gameInfo {
   display: flex;
@@ -325,7 +325,7 @@ main {
   padding: 4px 12px 12px;
 }
 
-/* ===== Playability Badge ===== */
+
 
 .playability {
   display: inline-block;
@@ -357,7 +357,7 @@ main {
   box-shadow: 0 0 8px rgba(244, 67, 54, 0.1);
 }
 
-/* ===== Favorite Star ===== */
+
 
 .favStar {
   font-size: 18px;
@@ -377,7 +377,7 @@ main {
   transform: scale(1.1);
 }
 
-/* ===== Modal ===== */
+
 
 #modal {
   position: fixed;
@@ -419,7 +419,7 @@ main {
   transform: scale(1.05);
 }
 
-/* ===== Game Count ===== */
+
 
 #game-count {
   text-align: center;
@@ -429,7 +429,7 @@ main {
   padding: 4px 0 0;
 }
 
-/* ===== Utilities Section ===== */
+
 
 #utilities {
   max-width: 1000px;
@@ -479,7 +479,7 @@ main {
   opacity: .7;
 }
 
-/* ===== Redirect Popup (Rayfield-style) ===== */
+
 
 #redirect-popup {
   position: fixed;
@@ -596,7 +596,7 @@ main {
   transform: translateY(-1px);
 }
 
-/* ===== Panic Screen (Google Sign In fake) ===== */
+
 
 #panic {
   position: fixed;
@@ -662,7 +662,7 @@ main {
 .panic-signin-input:focus {
   border: 2px solid #0b57d0;
   padding: 15px;
-  /* adjust for border width */
+  
 }
 
 .panic-signin-label {
@@ -763,7 +763,7 @@ main {
   pointer-events: none;
 }
 
-/* ===== Panic Screen Stage 2 (Password) ===== */
+
 .panic-user-pill {
   display: inline-flex;
   align-items: center;
@@ -803,7 +803,7 @@ main {
   cursor: pointer;
 }
 
-/* ===== Panic Screen Stage 3 (Fake Docs Bug) ===== */
+
 .panic-docs-bug-container {
   width: 100vw;
   height: 100vh;
@@ -918,7 +918,7 @@ main {
   border-radius: 4px;
 }
 
-/* ===== Responsive ===== */
+
 
 @media(max-width:600px) {
   main {
@@ -949,7 +949,7 @@ main {
   }
 }
 
-/* ===== Sidebar Ad Placeholders ===== */
+
 .ad-sidebar {
   position: fixed;
   top: 15vh;
@@ -1001,12 +1001,12 @@ main {
 .ad-left .ad-close { right: -12px; }
 .ad-right .ad-close { left: -12px; }
 
-/* Hide on smaller screens to strictly prevent blocking content */
+
 @media (max-width: 1300px) {
   .ad-sidebar { display: none !important; }
 }
 
-/* ===== Settings Gear Button ===== */
+
 #settings-btn {
   position: fixed;
   bottom: 24px;
@@ -1034,7 +1034,7 @@ main {
   box-shadow: 0 0 20px rgba(25, 190, 40, 0.4);
 }
 
-/* ===== Settings Modal ===== */
+
 #settings-modal {
   display: none;
   position: fixed;
@@ -1096,7 +1096,7 @@ main {
   border-color: var(--accent);
 }
 
-/* Theme Picker */
+
 .theme-picker {
   display: flex;
   flex-wrap: wrap;
@@ -1126,7 +1126,7 @@ main {
   font-weight: 600;
 }
 
-/* Settings Bottom Buttons */
+
 .settings-bottom {
   display: flex;
   gap: 12px;
@@ -1163,7 +1163,7 @@ main {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* ===== Panic Password Error ===== */
+
 .panic-pass-error {
   color: #d93025;
   font-size: 13px;
@@ -1173,3 +1173,5 @@ main {
 }
 
 .panic-pass-error.show { display: block; }
+ins { display: block !important; text-decoration: none !important; overflow: hidden; }
+ins:empty { display: none !important; }
