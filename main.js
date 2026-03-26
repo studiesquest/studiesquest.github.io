@@ -144,6 +144,8 @@ search.addEventListener("input", applyFilters);
 homeBtn.addEventListener("click", () => {
   modal.style.display = "none";
   frame.src = "";
+  // Slide ads back into view to maximize profit
+  document.querySelectorAll(".ad-sidebar").forEach(ad => ad.style.transform = "none");
 });
 
 /* ===== Tab Switching ===== */
