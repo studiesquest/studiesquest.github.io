@@ -96,8 +96,7 @@ const games = [
   {title:"Murder", src:"https://zapgames.io/murder.embed", thumbnail:"https://zapgames.io/cache/data/image/game/murder-h196x110.webp", signIn:"Playable"},
   {title:"Murder Mystery", src:"https://zapgames.io/murder-mystery.embed", thumbnail:"https://zapgames.io/cache/data/image/game/murder-mystery-h196x110.webp", signIn:"Playable"},
   {title:"Evil Nun", src:"https://zapgames.io/evil-nun.embed", thumbnail:"https://zapgames.io/cache/data/image/game/evil-nun-h196x110.webp", signIn:"Hardly Playable"},
-  {title:"99 Nights in the Forest", src:"https://zapgames.io/99-nights-in-the-forest.embed", thumbnail:"https://zapgames.io/cache/data/image/game/99-nights-in-the-forest-h196x110.webp", description:"Survive the nights in the forest.", signIn:"Playable"},
-  {title:"Granny", src:"https://classroom6x.org/en/full/granny", thumbnail:"https://play-lh.googleusercontent.com/9U3pZ3Qx9wYy4d2GrannyGameIcon", description:"Escape the house before Granny catches you.", signIn:"Playable"},
+  {title:"99 Nights in the Forest", src:"https://zapgames.io/99-nights-in-the-forest.embed", thumbnail:"https://zapgames.io/cache/data/image/game/99-nights-in-the-forest-h196x110.webp", signIn:"Playable"},
 
   // --- COMPETITIVE / MULTIPLAYER ---
   {title:"Build Now GG", src:"https://zapgames.io/buildnow-gg.embed", thumbnail:"https://zapgames.io/cache/data/image/game/buildnow-gg-h196x110.webp", signIn:"Hardly Playable"},
@@ -117,4 +116,5 @@ const games = [
   {title:"Short Trip", src:"https://zapgames.io/short-trip.embed", thumbnail:"https://zapgames.io/cache/data/image/game/short-trip-h196x110.webp", signIn:"Playable"},
   {title:"Adopt Me", src:"https://zapgames.io/adopt-me.embed", thumbnail:"https://zapgames.io/cache/data/image/game/adopt-me-h196x110.webp", signIn:"Playable"},
   {title:"Love Tester", src:"https://zapgames.io/love-tester.embed", thumbnail:"https://zapgames.io/cache/data/image/game/love-tester-h196x110.webp", signIn:"Playable"},
+  {title:"Granny", src:"https://zapgames.io/granny.embed", thumbnail:"https://zapgames.io/cache/data/image/game/granny-h196x110.webp", signIn:"Hardly Playable"},
 ];
