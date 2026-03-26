@@ -53,7 +53,6 @@ const games = [
   {title:"Russian Traffic Route 66", src:"https://zapgames.io/route-66-russian-traffic.embed", thumbnail:"https://zapgames.io/cache/data/image/game/route-66-russian-traffic-h196x110.webp", signIn:"Playable"},
 
   // ============================================================
-  // 50 NEW GAMES — popular/trending, ALL using zapgames thumbnails
   // ============================================================
 
   // --- MASSIVE HITS ---
