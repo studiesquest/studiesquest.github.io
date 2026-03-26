@@ -19,7 +19,7 @@
 
 <body>
 
-  <!-- ===== Ad Placeholders (Desktop Only) ===== -->
+  
   <div class="ad-sidebar ad-left">
     <button class="ad-close" onclick="this.parentElement.style.transform='translateX(-200%)'" title="Hide Ad">❮</button>
     <script>
@@ -47,7 +47,7 @@
     <script src="https://www.highperformanceformat.com/b64296e2ea256965fa584c721f19f8c1/invoke.js"></script>
   </div>
 
-  <!-- ===== GitHub Icon (top-right) ===== -->
+  
   <a id="gh-link" href="https://github.com/studiesquest/studiesquest.github.io" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href,'_blank');return false;" title="GitHub">
     <svg viewBox="0 0 16 16" width="28" height="28" fill="currentColor">
       <path
@@ -55,7 +55,7 @@
     </svg>
   </a>
 
-  <!-- ===== Settings Gear ===== -->
+  
   <button id="settings-btn" title="Panic Screen Settings">⚙️</button>
 
   <header>
@@ -63,13 +63,13 @@
 
     <input id="search" placeholder="Search games...">
 
-    <!-- Tab switcher -->
+    
     <div class="tab-bar">
       <button class="tab-btn active" data-tab="games">🎮 Games</button>
       <button class="tab-btn" data-tab="utilities">📚 Study Utilities</button>
     </div>
 
-    <!-- Game filters (only visible on games tab) -->
+    
     <div class="filters" id="game-filters">
       <button data-filter="All" class="active">All</button>
       <button data-filter="Playable">Playable</button>
@@ -85,10 +85,10 @@
     <p id="game-count"></p>
   </header>
 
-  <!-- ===== Game Grid ===== -->
+  
   <main id="grid"></main>
 
-  <!-- ===== Utilities Grid (hidden by default) ===== -->
+  
   <section id="utilities" style="display:none">
     <div class="util-grid">
 
@@ -101,7 +101,7 @@
       <div class="util-card" data-embed="https://www.desmos.com/calculator" id="util-desmos">
         <div class="util-icon">📐</div>
         <h3>Desmos Calculator</h3>
-        <p>Opens in player — fully embeddable</p>
+        <p>Graphing calculator</p>
       </div>
 
       <div class="util-card" data-redirect="https://www.youtube.com" id="util-yt">
@@ -128,22 +128,17 @@
         <p>Opens in a new tab</p>
       </div>
 
-      <div class="util-card" data-redirect="https://www.xbox.com/en-US/play" id="util-xbox">
-        <div class="util-icon">🎮</div>
-        <h3>Xbox Cloud Gaming</h3>
-        <p>Opens in a new tab — requires Microsoft login</p>
-      </div>
 
     </div>
   </section>
 
-  <!-- ===== Game Modal ===== -->
+  
   <div id="modal">
     <button id="home">← HOME</button>
     <iframe id="gameFrame" allowfullscreen></iframe>
   </div>
 
-  <!-- ===== Redirect Popup (Rayfield-style) ===== -->
+  
   <div id="redirect-popup">
     <div class="popup-card">
       <div class="popup-icon">🔗</div>
@@ -157,9 +152,9 @@
     </div>
   </div>
 
-  <!-- ===== Panic Screen (Shift+Tab) — Multiple Stages ===== -->
+  
   <div id="panic">
-    <!-- STAGE 1: Email Input -->
+    
             <div class="panic-signin-container panic-email-container">
               <svg class="panic-google-logo" viewBox="0 0 74 24" width="74" height="24"
                 xmlns="http://www.w3.org/2000/svg">
@@ -197,7 +192,7 @@
               </div>
             </div>
 
-            <!-- STAGE 2: Password Input -->
+            
             <div class="panic-signin-container panic-password-container" style="display:none; text-align:center;">
               <svg class="panic-google-logo" viewBox="0 0 74 24" width="74" height="24"
                 xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto 16px;">
@@ -247,7 +242,7 @@
               </div>
             </div>
 
-            <!-- STAGE 3: Fake Google Docs Bug Screen -->
+            
             <div class="panic-docs-bug-container" style="display:none;">
               <div class="panic-docs-header">
                 <div class="panic-docs-left">
@@ -272,7 +267,7 @@
                   <input type="text" placeholder="Search">
                 </div>
                 <div class="panic-docs-right">
-                  <!-- Bugged/Empty Profile Circle -->
+                  
                   <div class="panic-docs-profile-bugged"></div>
                 </div>
               </div>
@@ -302,7 +297,7 @@
           </div>
   </div>
 
-  <!-- ===== Settings Modal ===== -->
+  
   <div id="settings-modal">
     <div class="settings-card">
       <h2>⚙️ Panic Screen Settings</h2>
