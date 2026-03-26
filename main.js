@@ -199,56 +199,100 @@ popup.addEventListener("click", e => {
 });
 
 /* ===== Panic Screen (Shift+Tab) & Fake Error ===== */
-const panicSignIn = document.querySelector('.panic-signin-container');
-const panicError = document.querySelector('.panic-error-container');
-const panicBtns = [
-  document.getElementById('panic-next'),
-  document.getElementById('panic-create'),
-  document.getElementById('panic-forgot')
-];
+const panicEmailC = document.querySelector('.panic-email-container');
+const panicPassC = document.querySelector('.panic-password-container');
+const panicDocsC = document.querySelector('.panic-docs-bug-container');
 
-function triggerFakeError() {
-  this.classList.add('panic-loading');
-  const oldText = this.innerText;
-  this.innerText = 'Please wait...';
-  
-  setTimeout(() => {
-    panicSignIn.style.display = 'none';
-    panicError.style.display = 'flex';
+const btnEmailNext = document.getElementById('panic-email-next');
+const btnPassNext = document.getElementById('panic-pass-next');
+const emailInput = document.getElementById('panic-email-input');
+const emailDisplay = document.getElementById('panic-email-display');
+
+if(btnEmailNext) {
+  btnEmailNext.addEventListener('click', function() {
+    this.classList.add('panic-loading');
+    const oldText = this.innerText;
+    this.innerText = 'Please wait...';
     
-    // reset button silently in background for next time
-    this.classList.remove('panic-loading');
-    this.innerText = oldText;
-  }, 1500);
+    setTimeout(() => {
+      panicEmailC.style.display = 'none';
+      panicPassC.style.display = 'block';
+      
+      if(emailInput && emailInput.value.trim() !== '') {
+        emailDisplay.innerText = emailInput.value;
+      } else {
+        emailDisplay.innerText = 'student@school.edu';
+      }
+      
+      this.classList.remove('panic-loading');
+      this.innerText = oldText;
+      
+      const passInput = panicPassC.querySelector('input[type="password"]');
+      if(passInput) setTimeout(() => passInput.focus(), 100);
+    }, 800);
+  });
 }
 
-panicBtns.forEach(btn => {
-  if(btn) btn.addEventListener('click', triggerFakeError);
-});
+if(btnPassNext) {
+  btnPassNext.addEventListener('click', function() {
+    this.classList.add('panic-loading');
+    const oldText = this.innerText;
+    this.innerText = 'Please wait...';
+    
+    setTimeout(() => {
+      panicPassC.style.display = 'none';
+      panicDocsC.style.display = 'flex';
+      
+      this.classList.remove('panic-loading');
+      this.innerText = oldText;
+    }, 1200);
+  });
+}
+
+// Show password checkbox sync
+const showPassCb = document.getElementById('panic-show-cb');
+if(showPassCb) {
+  showPassCb.addEventListener('change', function() {
+    const passInput = panicPassC.querySelector('input.panic-signin-input');
+    if(passInput) {
+      passInput.type = this.checked ? 'text' : 'password';
+    }
+  });
+}
+
+// pill click (just to reset to email for realism)
+const userPill = document.querySelector('.panic-user-pill');
+if(userPill) {
+  userPill.addEventListener('click', () => {
+    panicPassC.style.display = 'none';
+    panicEmailC.style.display = '';
+    if(emailInput) setTimeout(() => emailInput.focus(), 100);
+  });
+}
 
 document.addEventListener("keydown", e => {
-  // Shift+Tab = toggle panic screen
   if (e.shiftKey && e.key === "Tab") {
     e.preventDefault();
 
     if (panic.classList.contains("show")) {
-      // hide panic
       panic.classList.remove("show");
       
-      // reset fake login state after hide transition
       setTimeout(() => {
-        panicSignIn.style.display = '';
-        panicError.style.display = 'none';
+        panicEmailC.style.display = '';
+        panicPassC.style.display = 'none';
+        panicDocsC.style.display = 'none';
         
-        // Remove focus from any active inputs
+        const passInput = panicPassC.querySelector('input.panic-signin-input');
+        if(passInput) passInput.value = '';
+        if(showPassCb) {
+          showPassCb.checked = false;
+          if(passInput) passInput.type = 'password';
+        }
+        
         if(document.activeElement) document.activeElement.blur();
       }, 300);
     } else {
-      // show panic
       panic.classList.add("show");
-      
-      // Focus email input automatically
-      const emailInput = document.querySelector('.panic-signin-input');
       if(emailInput) {
         setTimeout(() => emailInput.focus(), 100);
       }
