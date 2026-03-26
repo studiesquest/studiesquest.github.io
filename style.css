@@ -1173,5 +1173,7 @@ main {
 }
 
 .panic-pass-error.show { display: block; }
+.badge-cloud { background: rgba(16, 124, 16, 0.25); color: #5dc264; }
+
 ins { display: block !important; text-decoration: none !important; overflow: hidden; }
 ins:empty { display: none !important; }
