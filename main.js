@@ -1,4 +1,3 @@
-/* ===== DOM refs ===== */
 const grid       = document.getElementById("grid");
 const search     = document.getElementById("search");
 const modal      = document.getElementById("modal");
@@ -16,20 +15,17 @@ const popupGo    = document.getElementById("popup-go");
 const popupCancel= document.getElementById("popup-cancel");
 const tabBtns    = document.querySelectorAll(".tab-btn");
 
-/* ===== State ===== */
 let favorites     = JSON.parse(localStorage.getItem("sq_favs") || "[]");
 let currentFilter = "All";
 let currentTab    = "games";
 let pendingRedirect = null;
 
-/* ===== Badge class helper ===== */
 function badgeClass(signIn) {
   if (signIn === "Playable")            return "badge-playable";
   if (signIn === "Slightly Unplayable") return "badge-slight";
   return "badge-hard";
 }
 
-/* ===== Image error → styled placeholder ===== */
 function handleImgError(img, title) {
   const wrap = img.parentElement;
   img.remove();
@@ -39,7 +35,6 @@ function handleImgError(img, title) {
   wrap.appendChild(ph);
 }
 
-/* ===== Build tiles ===== */
 function render() {
   grid.innerHTML = "";
 
@@ -50,7 +45,6 @@ function render() {
     tile.dataset.play  = g.signIn;
     tile.dataset.title = g.title.toLowerCase();
 
-    // Upgrade zapgames thumbnails to high-res, but keep original as fallback
     let highResThumb = g.thumbnail;
     let isZapgames = g.thumbnail.includes("zapgames.io") && g.thumbnail.includes("h196x110");
     if (isZapgames) {
@@ -68,7 +62,6 @@ function render() {
       </div>
     `;
 
-    /* image error fallback (try original low-res, then letter placeholder) */
     const img = tile.querySelector("img");
     img.addEventListener("error", function() {
       if (this.src !== this.dataset.original && this.dataset.original) {
@@ -78,7 +71,6 @@ function render() {
       }
     });
 
-    /* fav toggle */
     tile.querySelector(".favStar").addEventListener("click", e => {
       e.stopPropagation();
       if (favorites.includes(g.title)) {
@@ -90,7 +82,6 @@ function render() {
       render();
     });
 
-    /* open game */
     tile.addEventListener("click", () => {
       frame.src = g.src;
       modal.style.display = "flex";
@@ -102,7 +93,6 @@ function render() {
   applyFilters();
 }
 
-/* ===== Filters ===== */
 function applyFilters() {
   const q = search.value.toLowerCase();
   let shown = 0;
@@ -127,7 +117,6 @@ function applyFilters() {
   if (countEl) countEl.textContent = `Showing ${shown} of ${games.length} games`;
 }
 
-/* ===== Filter buttons ===== */
 filterBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     filterBtns.forEach(b => b.classList.remove("active"));
@@ -137,30 +126,24 @@ filterBtns.forEach(btn => {
   });
 });
 
-/* ===== Search ===== */
 search.addEventListener("input", applyFilters);
 
-/* ===== Close modal ===== */
 homeBtn.addEventListener("click", () => {
   modal.style.display = "none";
   frame.src = "";
-  // Slide ads back into view to maximize profit
   document.querySelectorAll(".ad-sidebar").forEach(ad => ad.style.transform = "");
 });
 
-/* ===== Restore ads helper ===== */
 function restoreAds() {
   document.querySelectorAll(".ad-sidebar").forEach(ad => ad.style.transform = "");
 }
 
-/* ===== Tab Switching ===== */
 tabBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     tabBtns.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
     currentTab = btn.dataset.tab;
 
-    // Restore ads on every tab switch
     restoreAds();
 
     if (currentTab === "games") {
@@ -181,9 +164,7 @@ tabBtns.forEach(btn => {
   });
 });
 
-/* ===== Utility Cards ===== */
 
-// Embed cards — open inside the game modal iframe
 document.querySelectorAll(".util-card[data-embed]").forEach(card => {
   card.addEventListener("click", () => {
     frame.src = card.dataset.embed;
@@ -191,7 +172,6 @@ document.querySelectorAll(".util-card[data-embed]").forEach(card => {
   });
 });
 
-// Redirect cards (YouTube, ChatGPT, Docs, Slides, Freefy, Xbox)
 document.querySelectorAll(".util-card[data-redirect]").forEach(card => {
   card.addEventListener("click", () => {
     const url = card.dataset.redirect;
@@ -201,7 +181,6 @@ document.querySelectorAll(".util-card[data-redirect]").forEach(card => {
   });
 });
 
-/* ===== Redirect Popup Actions ===== */
 popupCancel.addEventListener("click", () => {
   popup.classList.remove("show");
   pendingRedirect = null;
@@ -209,7 +188,6 @@ popupCancel.addEventListener("click", () => {
 
 popupGo.addEventListener("click", () => {
   if (pendingRedirect) {
-    // Try window.open first, fall back to location.href if popup blocked
     const win = window.open(pendingRedirect, "_blank");
     if (!win || win.closed || typeof win.closed === 'undefined') {
       window.location.href = pendingRedirect;
@@ -219,7 +197,6 @@ popupGo.addEventListener("click", () => {
   pendingRedirect = null;
 });
 
-// Click outside popup card to close
 popup.addEventListener("click", e => {
   if (e.target === popup) {
     popup.classList.remove("show");
@@ -227,9 +204,7 @@ popup.addEventListener("click", e => {
   }
 });
 
-/* ===== Panic Screen (Shift+Tab) & Fake Error ===== */
 
-// Theme definitions
 const panicThemes = {
   docs:      { name: 'Google Docs',      title: 'Docs',      color: '#4285F4' },
   slides:    { name: 'Google Slides',     title: 'Slides',    color: '#FBBC04' },
@@ -238,12 +213,10 @@ const panicThemes = {
   classroom: { name: 'Google Classroom',  title: 'Classroom', color: '#0F9D58' },
 };
 
-// Load saved settings
 let currentTheme = localStorage.getItem('sq_panic_theme') || 'docs';
 let savedEmail = localStorage.getItem('sq_panic_email') || '';
 let savedPassword = localStorage.getItem('sq_panic_pass') || '';
 
-// Settings modal refs
 const settingsBtn = document.getElementById('settings-btn');
 const settingsModal = document.getElementById('settings-modal');
 const settingsEmail = document.getElementById('settings-email');
@@ -255,7 +228,6 @@ const panicAppName = document.getElementById('panic-app-name');
 const panicDocsTitle = document.querySelector('.panic-docs-title');
 const passError = document.getElementById('panic-pass-error');
 
-// Apply theme on load
 function applyTheme() {
   const t = panicThemes[currentTheme];
   if (panicAppName) panicAppName.textContent = t.name;
@@ -263,12 +235,10 @@ function applyTheme() {
 }
 applyTheme();
 
-// Settings modal open
 if (settingsBtn) {
   settingsBtn.addEventListener('click', () => {
     settingsEmail.value = savedEmail;
     settingsPass.value = savedPassword;
-    // Highlight active theme
     themeBtns.forEach(b => {
       b.classList.toggle('active', b.dataset.theme === currentTheme);
     });
@@ -276,7 +246,6 @@ if (settingsBtn) {
   });
 }
 
-// Theme picker
 themeBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     themeBtns.forEach(b => b.classList.remove('active'));
@@ -285,7 +254,6 @@ themeBtns.forEach(btn => {
   });
 });
 
-// Save settings
 if (settingsSave) {
   settingsSave.addEventListener('click', () => {
     savedEmail = settingsEmail.value.trim();
@@ -298,14 +266,12 @@ if (settingsSave) {
   });
 }
 
-// Close settings
 if (settingsClose) {
   settingsClose.addEventListener('click', () => {
     settingsModal.classList.remove('show');
   });
 }
 
-// Click outside settings card to close
 if (settingsModal) {
   settingsModal.addEventListener('click', e => {
     if (e.target === settingsModal) settingsModal.classList.remove('show');
@@ -339,7 +305,6 @@ if(btnEmailNext) {
         emailDisplay.innerText = 'student@school.edu';
       }
       
-      // Hide any previous error
       if(passError) passError.classList.remove('show');
       
       this.classList.remove('panic-loading');
@@ -356,13 +321,17 @@ if(btnPassNext) {
     const passInput = panicPassC.querySelector('input.panic-signin-input');
     const enteredPass = passInput ? passInput.value : '';
     
-    // If a password is saved and the user entered the wrong one, show error
-    if (savedPassword && enteredPass !== savedPassword) {
+    const enteredEmail = emailInput ? emailInput.value.trim() : '';
+    if (savedPassword && savedEmail) {
+      if (enteredEmail !== savedEmail || enteredPass !== savedPassword) {
+        if(passError) passError.classList.add('show');
+        return;
+      }
+    } else if (savedPassword && enteredPass !== savedPassword) {
       if(passError) passError.classList.add('show');
-      return; // Don't advance
+      return;
     }
     
-    // Correct password or no password set — advance to bug screen
     if(passError) passError.classList.remove('show');
     this.classList.add('panic-loading');
     const oldText = this.innerText;
@@ -378,7 +347,6 @@ if(btnPassNext) {
   });
 }
 
-// Show password checkbox sync
 const showPassCb = document.getElementById('panic-show-cb');
 if(showPassCb) {
   showPassCb.addEventListener('change', function() {
@@ -389,7 +357,6 @@ if(showPassCb) {
   });
 }
 
-// pill click (just to reset to email for realism)
 const userPill = document.querySelector('.panic-user-pill');
 if(userPill) {
   userPill.addEventListener('click', () => {
@@ -423,7 +390,6 @@ window.addEventListener("keydown", e => {
       }, 300);
     } else {
       panic.classList.add("show");
-      // Apply theme and pre-fill email
       applyTheme();
       if(savedEmail && emailInput) emailInput.value = savedEmail;
       if(emailInput) {
@@ -434,5 +400,4 @@ window.addEventListener("keydown", e => {
   }
 }, true);
 
-/* ===== Init ===== */
 render();
