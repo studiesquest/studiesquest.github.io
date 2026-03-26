@@ -319,6 +319,16 @@
         <label for="settings-password">Set Password</label>
         <input type="password" id="settings-password" placeholder="Set your panic password">
       </div>
+      <div class="settings-section" style="margin-top: 15px;">
+        <label style="display:flex; align-items:center; gap:8px;">
+          <input type="checkbox" id="settings-force-panic" style="width:18px;height:18px;accent-color:#00e676;">
+          Force Panic Focus (Experimental)
+        </label>
+        <p style="font-size:12px; color:#81c784; margin-top:6px; line-height:1.4;">
+          Forces the browser to keep keyboard focus so Shift+Tab always works. <br>
+          <b>Note:</b> May cause control issues in games that require mouse clicking to look around (like 1v1.LOL). Only enable if games are ignoring your panic key.
+        </p>
+      </div>
       <div class="settings-bottom">
         <button id="settings-save">✅ Save Settings</button>
         <button id="settings-close">✖ Close</button>
