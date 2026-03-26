@@ -14,6 +14,7 @@ const popupUrl   = document.getElementById("popup-url");
 const popupGo    = document.getElementById("popup-go");
 const popupCancel= document.getElementById("popup-cancel");
 const tabBtns    = document.querySelectorAll(".tab-btn");
+const settingsBtn = document.getElementById("settings-btn");
 
 let favorites     = JSON.parse(localStorage.getItem("sq_favs") || "[]");
 let currentFilter = "All";
@@ -95,6 +96,7 @@ function render() {
       }
       frame.src = g.src;
       modal.style.display = "flex";
+      settingsBtn.style.display = "none";
     });
 
     grid.appendChild(tile);
@@ -141,6 +143,7 @@ search.addEventListener("input", applyFilters);
 homeBtn.addEventListener("click", () => {
   modal.style.display = "none";
   frame.src = "";
+  settingsBtn.style.display = "";
   document.querySelectorAll(".ad-sidebar").forEach(ad => ad.style.transform = "");
 });
 
@@ -227,7 +230,7 @@ let currentTheme = localStorage.getItem('sq_panic_theme') || 'docs';
 let savedEmail = localStorage.getItem('sq_panic_email') || '';
 let savedPassword = localStorage.getItem('sq_panic_pass') || '';
 
-const settingsBtn = document.getElementById('settings-btn');
+// settingsBtn moved to top
 const settingsModal = document.getElementById('settings-modal');
 const settingsEmail = document.getElementById('settings-email');
 const settingsPass = document.getElementById('settings-password');
