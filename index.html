@@ -48,12 +48,15 @@
   </div>
 
   <!-- ===== GitHub Icon (top-right) ===== -->
-  <a id="gh-link" href="https://github.com/studiesquest/studiesquest.github.io" target="_blank" title="GitHub">
+  <a id="gh-link" href="https://github.com/studiesquest/studiesquest.github.io" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href,'_blank');return false;" title="GitHub">
     <svg viewBox="0 0 16 16" width="28" height="28" fill="currentColor">
       <path
         d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
     </svg>
   </a>
+
+  <!-- ===== Settings Gear ===== -->
+  <button id="settings-btn" title="Panic Screen Settings">⚙️</button>
 
   <header>
     <h1>STUDIESQUEST</h1>
@@ -178,7 +181,7 @@
                   fill="#EA4335" />
               </svg>
               <h1 class="panic-signin-title">Sign in</h1>
-              <p class="panic-signin-subtitle">to continue to Google Docs</p>
+              <p class="panic-signin-subtitle">to continue to <span id="panic-app-name">Google Docs</span></p>
               <div class="panic-signin-input-box">
                 <input type="text" class="panic-signin-input" id="panic-email-input" placeholder=" ">
                 <label class="panic-signin-label">Email or phone</label>
@@ -237,6 +240,7 @@
                 <input type="checkbox" id="panic-show-cb">
                 <label for="panic-show-cb">Show password</label>
               </div>
+              <div class="panic-pass-error" id="panic-pass-error">Wrong password. Try again or click Forgot password to reset it.</div>
               <div class="panic-signin-bottom" style="margin-top:48px;">
                 <button class="panic-signin-create" id="panic-pass-forgot">Forgot password?</button>
                 <button class="panic-signin-next" id="panic-pass-next">Next</button>
@@ -296,6 +300,35 @@
               </div>
             </div>
           </div>
+  </div>
+
+  <!-- ===== Settings Modal ===== -->
+  <div id="settings-modal">
+    <div class="settings-card">
+      <h2>⚙️ Panic Screen Settings</h2>
+      <div class="settings-section">
+        <label>Panic Theme</label>
+        <div class="theme-picker" id="theme-picker">
+          <button class="theme-btn active" data-theme="docs">📝 Docs</button>
+          <button class="theme-btn" data-theme="slides">📊 Slides</button>
+          <button class="theme-btn" data-theme="drive">📁 Drive</button>
+          <button class="theme-btn" data-theme="gmail">✉️ Gmail</button>
+          <button class="theme-btn" data-theme="classroom">🎓 Classroom</button>
+        </div>
+      </div>
+      <div class="settings-section">
+        <label for="settings-email">Set Email</label>
+        <input type="text" id="settings-email" placeholder="student@school.edu">
+      </div>
+      <div class="settings-section">
+        <label for="settings-password">Set Password</label>
+        <input type="password" id="settings-password" placeholder="Set your panic password">
+      </div>
+      <div class="settings-bottom">
+        <button id="settings-save">✅ Save Settings</button>
+        <button id="settings-close">✖ Close</button>
+      </div>
+    </div>
   </div>
 
   <script src="games.js"></script>
