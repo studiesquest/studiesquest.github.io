@@ -5,9 +5,9 @@
 <h1 align="center">🎮 StudiesQuest</h1>
 
 <p align="center">
-  <b>100+ free unblocked games — NO pop-up ads, NO tracking, NO lag.</b><br>
+  <b>100+ free unblocked games — NO popup ads, NO tracking, NO lag.</b><br>
   Built for Chromebook sign-in page bypass. Just open and play.
-  (right now I am using banner ads that you can close but I need this to buy a real domain for you guys!)
+  (right now I am using banner ads that you can close completely and it wont distract you. I will use these ads to buy a real link to connect to the site.)
   (Afterwards I will permanantly remove ads from the site!)
 </p>
 
@@ -43,7 +43,7 @@ Since the sign-in page doesn't support cursor lock, games are rated:
 ## 📦 What's Inside
 
 - **Zero Pop-Ups**: A premium, clean experience with no annoying pop-up ads ruining your games.
-- **100+ games** from ZapGames & AZ Games
+- **100+ games** all working perfectly fine!
 - Subway Surfers, Retro Bowl, Geometry Dash, Slope, FNAF series, Cookie Clicker, Tetris, Minecraft, and way more
 - Search & filter by playability
 - Favorites system (saved locally)
