@@ -948,3 +948,33 @@ main {
     padding: 24px 20px;
   }
 }
+
+/* ===== Sidebar Ad Placeholders ===== */
+.ad-sidebar {
+  position: fixed;
+  top: 15vh;
+  width: 160px;
+  height: 600px;
+  background: rgba(4, 28, 11, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(25, 190, 40, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 10;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.ad-left { left: 20px; }
+.ad-right { right: 20px; }
+
+/* Hide on smaller screens to strictly prevent blocking content */
+@media (max-width: 1300px) {
+  .ad-sidebar { display: none !important; }
+}
