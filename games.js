@@ -113,9 +113,7 @@ const games = [
   { title: "Love Tester", src: "https://zapgames.io/love-tester.embed", thumbnail: "https://zapgames.io/cache/data/image/game/love-tester-h196x110.webp", signIn: "Playable" },
   { title: "Granny", src: "https://app-259805.games.s3.yandex.net/259805/fadb3yakgje68vxwmy7a1khmb3vj9vxc_brotli/index.html?is-united-page=1&skip-guard=1&header=no&clid=13924144&flags=%7B%22adv_sticky_banner_disabled%22%3Atrue%7D", thumbnail: "https://zapgames.io/cache/data/image/game/granny-h196x110.webp", signIn: "Hardly Playable" },
 
-  // ============================================================
-  // NEW BATCH - Verified slugs from ZapGames sitemap (no dupes)
-  // ============================================================
+
   {title:"Shell Shockers", src:"https://zapgames.io/shell-shockers.embed", thumbnail:"https://zapgames.io/cache/data/image/game/shell-shockers-h196x110.webp", signIn:"Hardly Playable"},
   {title:"Slitherio", src:"https://zapgames.io/slitherio.embed", thumbnail:"https://zapgames.io/cache/data/image/game/slitherio-h196x110.webp", signIn:"Playable"},
   {title:"Agar.io", src:"https://zapgames.io/agario.embed", thumbnail:"https://zapgames.io/cache/data/image/game/agario-h196x110.webp", signIn:"Playable"},
