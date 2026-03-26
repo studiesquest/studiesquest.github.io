@@ -1,5 +1,4 @@
 const games = [
-  { title: "Xbox Cloud Gaming", src: "https://www.xbox.com/en-US/play", thumbnail: "https://zapgames.io/cache/data/image/game/xbox-cloud-gaming-h196x110.webp", signIn: "Hardly Playable" },
   { title: "Slope", src: "https://zapgames.io/slope.embed", thumbnail: "https://zapgames.io/cache/data/image/game/slope-game-h196x110.webp", signIn: "Playable" },
   { title: "Smash Karts", src: "https://zapgames.io/smash-karts.embed", thumbnail: "https://zapgames.io/cache/data/image/game/smash-karts-h196x110.webp", signIn: "Playable" },
   { title: "Drive Mad", src: "https://zapgames.io/drive-mad.embed", thumbnail: "https://zapgames.io/cache/data/image/game/drive-mad-h196x110.webp", signIn: "Playable" },
@@ -19,6 +18,7 @@ const games = [
   { title: "Speed Stars", src: "https://zapgames.io/speed-stars.embed", thumbnail: "https://zapgames.io/cache/data/image/game/speed-stars-h196x110.webp", signIn: "Playable" },
   { title: "Soccer Bros", src: "https://zapgames.io/soccer-bros.embed", thumbnail: "https://zapgames.io/cache/data/image/game/soccer-bros-h196x110.webp", signIn: "Playable" },
   { title: "Snow Road", src: "https://azgames.io/snow-road.embed", thumbnail: "https://azgames.io/upload/cache/upload/imgs/snowroad-m180x180.png", signIn: "Playable" },
+  { title: "Xbox Cloud Gaming", src: "https://www.xbox.com/en-US/play", thumbnail: "https://zapgames.io/cache/data/image/game/xbox-cloud-gaming-h196x110.webp", signIn: "Cloud Gaming" },
   { title: "Wacky Flip", src: "https://zapgames.io/wacky-flip.embed", thumbnail: "https://zapgames.io/cache/data/image/game/wacky-flip-h196x110.webp", signIn: "Playable" },
   { title: "Tap Road", src: "https://zapgames.io/tap-road.embed", thumbnail: "https://zapgames.io/cache/data/image/game/tap-road-game-h196x110.webp", signIn: "Playable" },
   { title: "Curve Rush", src: "https://zapgames.io/curve-rush.embed", thumbnail: "https://zapgames.io/cache/data/image/game/curve-rush-h196x110.webp", signIn: "Playable" },
