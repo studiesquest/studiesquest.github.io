@@ -97,6 +97,7 @@ function render() {
       frame.src = g.src;
       modal.style.display = "flex";
       settingsBtn.style.display = "none";
+      showLoadingOverlay();
       if (typeof handleForcePanic === 'function') handleForcePanic(true);
     });
 
@@ -226,6 +227,11 @@ const panicThemes = {
   drive:     { name: 'Google Drive',      title: 'Drive',     color: '#34A853' },
   gmail:     { name: 'Gmail',             title: 'Gmail',     color: '#EA4335' },
   classroom: { name: 'Google Classroom',  title: 'Classroom', color: '#0F9D58' },
+  calendar:  { name: 'Google Calendar',   title: 'Calendar',  color: '#4285F4' },
+  photos:    { name: 'Google Photos',     title: 'Photos',    color: '#FBBC04' },
+  keep:      { name: 'Google Keep',       title: 'Keep',      color: '#FBBC04' },
+  maps:      { name: 'Google Maps',       title: 'Maps',      color: '#34A853' },
+  meet:      { name: 'Google Meet',       title: 'Meet',      color: '#00897B' },
 };
 
 let currentTheme = localStorage.getItem('sq_panic_theme') || 'docs';
@@ -260,6 +266,7 @@ function applyTheme() {
   const t = panicThemes[currentTheme];
   if (panicAppName) panicAppName.textContent = t.name;
   if (panicDocsTitle) panicDocsTitle.textContent = t.title;
+  document.querySelectorAll('.panic-app-name-mirror').forEach(el => el.textContent = t.name);
 }
 applyTheme();
 
@@ -408,9 +415,8 @@ window.addEventListener("keydown", e => {
       panic.classList.remove("show");
       
       setTimeout(() => {
+        hideAllPanicScreens();
         panicEmailC.style.display = '';
-        panicPassC.style.display = 'none';
-        panicDocsC.style.display = 'none';
         
         const passInput = panicPassC.querySelector('input.panic-signin-input');
         if(passInput) passInput.value = '';
@@ -425,8 +431,8 @@ window.addEventListener("keydown", e => {
     } else {
       panic.classList.add("show");
       applyTheme();
-      if(savedEmail && emailInput) emailInput.value = savedEmail;
       if(emailInput) {
+        emailInput.value = '';
         setTimeout(() => emailInput.focus(), 100);
       }
 
@@ -442,3 +448,173 @@ window.addEventListener("keydown", e => {
 }, true);
 
 render();
+
+const loadingOverlay = document.getElementById('game-loading-overlay');
+const loadingBarFill = loadingOverlay ? loadingOverlay.querySelector('.loading-bar-fill') : null;
+let loadingInterval = null;
+
+function showLoadingOverlay() {
+  if (!loadingOverlay) return;
+  loadingOverlay.classList.remove('hidden');
+  loadingOverlay.style.display = 'flex';
+  if (loadingBarFill) loadingBarFill.style.width = '0%';
+
+  let progress = 0;
+  if (loadingInterval) clearInterval(loadingInterval);
+  loadingInterval = setInterval(() => {
+    progress += Math.random() * 8 + 2;
+    if (progress > 85) progress = 85;
+    if (loadingBarFill) loadingBarFill.style.width = progress + '%';
+  }, 300);
+
+  frame.addEventListener('load', function onLoad() {
+    frame.removeEventListener('load', onLoad);
+    if (loadingInterval) clearInterval(loadingInterval);
+    if (loadingBarFill) loadingBarFill.style.width = '100%';
+    setTimeout(() => {
+      loadingOverlay.classList.add('hidden');
+      setTimeout(() => { loadingOverlay.style.display = 'none'; }, 500);
+    }, 600);
+  });
+}
+
+function hideAllPanicScreens() {
+  const screens = [
+    '.panic-email-container',
+    '.panic-password-container',
+    '.panic-docs-bug-container',
+    '.panic-create-container',
+    '.panic-forgot-email-container',
+    '.panic-forgot-pass-container'
+  ];
+  screens.forEach(sel => {
+    const el = document.querySelector(sel);
+    if (el) el.style.display = 'none';
+  });
+  const tooltip = document.getElementById('panic-learn-more-tooltip');
+  if (tooltip) tooltip.style.display = 'none';
+}
+
+const btnCreate = document.getElementById('panic-create');
+if (btnCreate) {
+  btnCreate.addEventListener('click', () => {
+    hideAllPanicScreens();
+    const createC = document.querySelector('.panic-create-container');
+    if (createC) createC.style.display = 'flex';
+  });
+}
+
+const btnCreateBack = document.getElementById('panic-create-back');
+if (btnCreateBack) {
+  btnCreateBack.addEventListener('click', () => {
+    hideAllPanicScreens();
+    if (panicEmailC) panicEmailC.style.display = 'flex';
+    if (emailInput) setTimeout(() => emailInput.focus(), 100);
+  });
+}
+
+const btnCreateNext = document.getElementById('panic-create-next');
+if (btnCreateNext) {
+  btnCreateNext.addEventListener('click', function() {
+    this.classList.add('panic-loading');
+    this.innerText = 'Please wait...';
+    setTimeout(() => {
+      hideAllPanicScreens();
+      if (panicDocsC) panicDocsC.style.display = 'flex';
+      this.classList.remove('panic-loading');
+      this.innerText = 'Next';
+    }, 1200);
+  });
+}
+
+const btnForgot = document.getElementById('panic-forgot');
+if (btnForgot) {
+  btnForgot.addEventListener('click', () => {
+    hideAllPanicScreens();
+    const forgotEmailC = document.querySelector('.panic-forgot-email-container');
+    if (forgotEmailC) forgotEmailC.style.display = 'flex';
+  });
+}
+
+const btnForgotEmailBack = document.getElementById('panic-forgot-email-back');
+if (btnForgotEmailBack) {
+  btnForgotEmailBack.addEventListener('click', () => {
+    hideAllPanicScreens();
+    if (panicEmailC) panicEmailC.style.display = 'flex';
+    if (emailInput) setTimeout(() => emailInput.focus(), 100);
+  });
+}
+
+const btnForgotEmailNext = document.getElementById('panic-forgot-email-next');
+if (btnForgotEmailNext) {
+  btnForgotEmailNext.addEventListener('click', function() {
+    this.classList.add('panic-loading');
+    this.innerText = 'Please wait...';
+    setTimeout(() => {
+      hideAllPanicScreens();
+      if (panicDocsC) panicDocsC.style.display = 'flex';
+      this.classList.remove('panic-loading');
+      this.innerText = 'Next';
+    }, 1200);
+  });
+}
+
+const btnPassForgot = document.getElementById('panic-pass-forgot');
+if (btnPassForgot) {
+  btnPassForgot.addEventListener('click', () => {
+    hideAllPanicScreens();
+    const forgotPassC = document.querySelector('.panic-forgot-pass-container');
+    if (forgotPassC) forgotPassC.style.display = 'flex';
+    const recoveryShow = document.getElementById('panic-recovery-email-show');
+    if (recoveryShow && emailInput) recoveryShow.textContent = emailInput.value.trim() || '';
+  });
+}
+
+const btnForgotPassTry = document.getElementById('panic-forgot-pass-try');
+if (btnForgotPassTry) {
+  btnForgotPassTry.addEventListener('click', () => {
+    hideAllPanicScreens();
+    if (panicDocsC) panicDocsC.style.display = 'flex';
+  });
+}
+
+const btnForgotPassNext = document.getElementById('panic-forgot-pass-next');
+if (btnForgotPassNext) {
+  btnForgotPassNext.addEventListener('click', function() {
+    this.classList.add('panic-loading');
+    this.innerText = 'Please wait...';
+    setTimeout(() => {
+      hideAllPanicScreens();
+      if (panicDocsC) panicDocsC.style.display = 'flex';
+      this.classList.remove('panic-loading');
+      this.innerText = 'Next';
+    }, 1200);
+  });
+}
+
+const btnLearnMore = document.getElementById('panic-learn-more');
+if (btnLearnMore) {
+  btnLearnMore.addEventListener('click', (e) => {
+    e.preventDefault();
+    const tooltip = document.getElementById('panic-learn-more-tooltip');
+    if (tooltip) tooltip.style.display = 'block';
+  });
+}
+
+const btnTooltipClose = document.getElementById('panic-tooltip-close');
+if (btnTooltipClose) {
+  btnTooltipClose.addEventListener('click', () => {
+    const tooltip = document.getElementById('panic-learn-more-tooltip');
+    if (tooltip) tooltip.style.display = 'none';
+  });
+}
+
+const retryBtns = document.querySelectorAll('.panic-retry-btn');
+retryBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.innerText = 'Retrying...';
+    setTimeout(() => {
+      btn.innerText = 'Retry';
+    }, 1500);
+  });
+});
