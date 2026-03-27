@@ -26,7 +26,7 @@ const games = [
   { title: "Escape Road", src: "https://zapgames.io/escape-road.embed", thumbnail: "https://zapgames.io/cache/data/image/game/escape-road-h196x110.webp", signIn: "Playable" },
   { title: "Escape Road 2", src: "https://zapgames.io/escape-road-2.embed", thumbnail: "https://zapgames.io/cache/data/image/game/escape-road-2-h196x110.webp", signIn: "Playable" },
   { title: "Escape Road City 2", src: "https://zapgames.io/escape-road-city-2.embed", thumbnail: "https://zapgames.io/cache/data/image/game/escape-road-city-2-h196x110.webp", signIn: "Playable" },
-  { title: "Slope 2", src: "https://azgames.io/slope-2.embed", thumbnail: "https://azgames.io/upload/cache/upload/imgs/slope2-m180x180.png", signIn: "Playable" },
+  { title: "Slope", src: "https://zapgames.io/slope.embed", thumbnail: "https://azgames.io/upload/cache/upload/imgs/slope2-m180x180.png", signIn: "Playable" },
   { title: "Slope 3", src: "https://azgames.io/slope-3.embed", thumbnail: "https://azgames.io/upload/cache/upload/imgs/slope1-m180x180.png", signIn: "Playable" },
   { title: "Head Soccer 2024", src: "https://azgames.io/head-soccer-2024.embed", thumbnail: "https://azgames.io/upload/cache/upload/imgs/thumbnail_90x90-m180x180.jpg", signIn: "Playable" },
   { title: "People Playground", src: "https://azgames.io/ragdoll-playground.embed", thumbnail: "https://azgames.io/upload/cache/upload/imgs/ragdollplayground-m180x180.png", signIn: "Playable" },
