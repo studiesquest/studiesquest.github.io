@@ -712,21 +712,24 @@ main {
 
 .panic-signin-guest {
   font-size: 14px;
-  color: #444746;
+  color: #5f6368;
+  margin-top: 40px;
+  margin-bottom: 30px;
   line-height: 1.5;
-  margin-bottom: 48px;
 }
 
 .panic-signin-guest a {
-  color: #0b57d0;
+  color: #1a73e8;
   text-decoration: none;
   font-weight: 500;
+  display: inline-block;
 }
 
 .panic-signin-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
 }
 
 .panic-signin-create {
@@ -1187,15 +1190,23 @@ ins:empty { display: none !important; }
 
 #game-loading-overlay {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 99;
-  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #0d0d2b 100%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 120px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 18px;
+  align-items: center;
+  color: white;
   transition: opacity 0.5s ease;
+  box-shadow: 0 4px 20px rgba(0, 230, 118, 0.3);
 }
 #game-loading-overlay.hidden {
   opacity: 0;
