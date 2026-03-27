@@ -1,5 +1,5 @@
 const games = [
-  { title: "Web Proxy (Google Bypass)", src: "https://www.google.com/webhp?igu=1", thumbnail: "https://cdn.iconscout.com/icon/free/png-256/vpn-6-118837.png", signIn: "Search Engine" },
+  { title: "Slope", src: "https://zapgames.io/slope.embed", thumbnail: "https://zapgames.io/cache/data/image/game/slope-game-h196x110.webp", signIn: "Playable" },
   { title: "Smash Karts", src: "https://zapgames.io/smash-karts.embed", thumbnail: "https://zapgames.io/cache/data/image/game/smash-karts-h196x110.webp", signIn: "Playable" },
   { title: "BasketBall Bros", src: "https://zapgames.io/drive-mad.embed", thumbnail: "https://zapgames.io/cache/data/image/game/drive-mad-h196x110.webp", signIn: "Playable" },
   { title: "Soccer Random", src: "https://zapgames.io/basketball-bros.embed", thumbnail: "hhttps://zapgames.io/cache/data/image/game/basketball-bros-h196x110.webp", signIn: "Playable" },
@@ -98,7 +98,7 @@ const games = [
   { title: "Short Trip", src: "https://zapgames.io/short-trip.embed", thumbnail: "https://zapgames.io/cache/data/image/game/short-trip-h196x110.webp", signIn: "Playable" },
   { title: "Adopt Me", src: "https://zapgames.io/adopt-me.embed", thumbnail: "https://zapgames.io/cache/data/image/game/adopt-me-h196x110.webp", signIn: "Playable" },
   { title: "Love Tester", src: "https://zapgames.io/love-tester.embed", thumbnail: "https://zapgames.io/cache/data/image/game/love-tester-h196x110.webp", signIn: "Playable" },
-  { title: "Granny", src: "https://zapgames.io/granny.embed", thumbnail: "https://zapgames.io/cache/data/image/game/granny-h196x110.webp", signIn: "Playable" },
+  { title: "Granny", src: "https://yandex.com/games/app/259805?utm_source=distrib&is-united-page=1&skip-guard=1&header=no&utm_medium=goodmediasoftware&clid=13924144&flags=%7B%22adv_sticky_banner_disabled%22%3Atrue%7D", thumbnail: "https://zapgames.io/cache/data/image/game/granny-h196x110.webp", signIn: "Playable" },
   { title: "Shell Shockers", src: "https://zapgames.io/shell-shockers.embed", thumbnail: "https://zapgames.io/cache/data/image/game/shell-shockers-h196x110.webp", signIn: "Hardly Playable" },
   { title: "Slitherio", src: "https://zapgames.io/slitherio.embed", thumbnail: "https://zapgames.io/cache/data/image/game/slitherio-h196x110.webp", signIn: "Playable" },
   { title: "Agar.io", src: "https://zapgames.io/agario.embed", thumbnail: "https://zapgames.io/cache/data/image/game/agario-h196x110.webp", signIn: "Playable" },
