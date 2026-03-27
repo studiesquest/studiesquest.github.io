@@ -2,7 +2,7 @@ const games = [
   { title: "Slope", src: "https://zapgames.io/slope.embed", thumbnail: "https://zapgames.io/cache/data/image/game/slope-game-h196x110.webp", signIn: "Playable" },
   { title: "Smash Karts", src: "https://zapgames.io/smash-karts.embed", thumbnail: "https://zapgames.io/cache/data/image/game/smash-karts-h196x110.webp", signIn: "Playable" },
   { title: "Drive Mad", src: "https://zapgames.io/drive-mad.embed", thumbnail: "https://zapgames.io/cache/data/image/game/drive-mad-h196x110.webp", signIn: "Playable" },
-  { title: "Moto X3M", src: "https://zapgames.io/moto-x3m.embed", thumbnail: "https://zapgames.io/cache/data/image/game/moto-x3m-h196x110.webp", signIn: "Playable" },
+  { title: "Moto X3M", src: "https://html5.gamedistribution.com/5b0abd4c0faa4f5eb190a9a16d5a1b4c/", thumbnail: "https://zapgames.io/cache/data/image/game/moto-x3m-h196x110.webp", signIn: "Playable" },
   { title: "Moto X3M Pool Party", src: "https://zapgames.io/moto-x3m-5-pool-party.embed", thumbnail: "https://zapgames.io/cache/data/image/game/moto-x3m-5-pool-party-h196x110.webp", signIn: "Playable" },
   { title: "Stickman Hook", src: "https://zapgames.io/stickman-hook.embed", thumbnail: "https://zapgames.io/cache/data/image/game/stickman-hook-h196x110.webp", signIn: "Playable" },
   { title: "Paper.io 2", src: "https://zapgames.io/paperio.embed", thumbnail: "https://zapgames.io/cache/data/image/game/paperio-h196x110.webp", signIn: "Playable" },
