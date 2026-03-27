@@ -1177,3 +1177,142 @@ main {
 
 ins { display: block !important; text-decoration: none !important; overflow: hidden; }
 ins:empty { display: none !important; }
+
+#game-loading-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 99;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #0d0d2b 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  transition: opacity 0.5s ease;
+}
+#game-loading-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.loading-brand {
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, #00e5ff, #7c4dff, #ff4081);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+.loading-bar-wrap {
+  width: 220px;
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.loading-bar-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #00e5ff, #7c4dff);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+.loading-text {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 1px;
+}
+
+.panic-tooltip-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 32px;
+  max-width: 420px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  z-index: 9999;
+  font-family: 'Google Sans', 'Segoe UI', Roboto, sans-serif;
+}
+.panic-tooltip-card h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #202124;
+  margin-bottom: 12px;
+}
+.panic-tooltip-card p {
+  font-size: 14px;
+  color: #5f6368;
+  line-height: 1.5;
+  margin: 0;
+}
+#panic-learn-more-tooltip {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 9998;
+}
+
+.panic-retry-btn {
+  background: none;
+  border: 1px solid #dadce0;
+  color: #1a73e8;
+  font-size: 13px;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 16px;
+}
+.panic-retry-btn:hover {
+  background: rgba(26,115,232,0.04);
+}
+
+.panic-template-label {
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 11px;
+  color: #5f6368;
+  font-weight: 400;
+}
+.panic-docs-sq {
+  position: relative;
+}
+
+.panic-docs-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 8px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+.panic-doc-name {
+  flex: 1;
+  color: #202124;
+  font-weight: 400;
+}
+.panic-doc-date {
+  color: #5f6368;
+  font-size: 12px;
+  min-width: 90px;
+}
+.panic-doc-owner {
+  color: #5f6368;
+  font-size: 12px;
+  min-width: 30px;
+}
+
+.theme-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.panic-app-name-mirror {
+  color: #1a73e8;
+}
