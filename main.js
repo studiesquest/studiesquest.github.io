@@ -456,7 +456,9 @@ window.addEventListener('blur', () => {
     overlayShown = true;
     if (loadingOverlay) {
       loadingOverlay.style.display = 'flex';
-      loadingOverlay.classList.remove('hidden');
+      setTimeout(() => {
+        loadingOverlay.classList.remove('hidden');
+      }, 10);
       setTimeout(() => {
         loadingOverlay.classList.add('hidden');
         setTimeout(() => { loadingOverlay.style.display = 'none'; }, 500);
