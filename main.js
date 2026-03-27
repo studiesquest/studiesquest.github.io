@@ -37,6 +37,23 @@ function handleImgError(img, title) {
   wrap.appendChild(ph);
 }
 
+// Edge Focus Traps
+const edgeLeft = document.createElement('div');
+edgeLeft.style.cssText = 'position:fixed; top:0; left:0; width:15px; height:100%; z-index:9999;';
+const edgeRight = document.createElement('div');
+edgeRight.style.cssText = 'position:fixed; top:0; right:0; width:15px; height:100%; z-index:9999;';
+document.body.appendChild(edgeLeft);
+document.body.appendChild(edgeRight);
+
+function edgeFocus() {
+  if (typeof forcePanic !== 'undefined' && forcePanic) { // Check if forcePanic is defined and true
+    window.focus();
+    document.body.focus();
+  }
+}
+edgeLeft.addEventListener('mouseenter', edgeFocus);
+edgeRight.addEventListener('mouseenter', edgeFocus);
+
 function render() {
   grid.innerHTML = "";
 
@@ -229,6 +246,7 @@ popup.addEventListener("click", e => {
 
 
 const panicThemes = {
+  signin:    { name: '',                  title: 'Sign in',   color: '#4285F4' },
   docs:      { name: 'Google Docs',      title: 'Docs',      color: '#4285F4' },
   slides:    { name: 'Google Slides',     title: 'Slides',    color: '#FBBC04' },
   drive:     { name: 'Google Drive',      title: 'Drive',     color: '#34A853' },
@@ -248,14 +266,48 @@ let forcePanic = localStorage.getItem('sq_force_panic') === 'true';
 let forcePanicInterval = null;
 
 function handleForcePanic(isActive) {
-  if (forcePanicInterval) clearInterval(forcePanicInterval);
-  if (isActive && forcePanic) {
-    forcePanicInterval = setInterval(() => {
-      window.focus();
-      document.body.focus();
-    }, 500);
+  // We no longer fiercely rip focus with setInterval.
+  // The traps around the iframe in HTML will catch Shift+Tab strokes natively.
+}
+
+const panicTrapPrev = document.getElementById("panic-trap-prev");
+const panicTrapNext = document.getElementById("panic-trap-next");
+
+function executeTrapPanic(e) {
+  if (forcePanic && modal.style.display === "flex") {
+    // Shift+Tab or Tab escaped the iframe!
+    e.preventDefault();
+    if (panicTrapNext) panicTrapNext.blur();
+    if (panicTrapPrev) panicTrapPrev.blur();
+    
+    // Immediately show panic screen if not already shown
+    if (panic.style.display !== "flex") {
+      panic.style.display = "flex";
+      panicEmailContainer.style.display = "";
+      panicCreateContainer.style.display = "none";
+      panicForgotEmailContainer.style.display = "none";
+      panicForgotPassContainer.style.display = "none";
+      panicPasswordContainer.style.display = "none";
+      panicDocsBugContainer.style.display = "none";
+      panicLearnMoreTooltip.style.display = "none";
+      
+      panicEmailInput.value = "";
+      panicForgotPassInput.value = "";
+      
+      const theme = panicThemes[currentTheme] || panicThemes.docs;
+      panicBody.style.background = "#fff";
+      panicBody.style.color = "#202124";
+      document.body.style.overflow = "hidden";
+      grid.style.display = "none";
+      utilSection.style.display = "none";
+      document.title = "Sign in - Google Accounts";
+      updateThemeDisplay(currentTheme);
+    }
   }
 }
+
+if (panicTrapPrev) panicTrapPrev.addEventListener("focus", executeTrapPanic);
+if (panicTrapNext) panicTrapNext.addEventListener("focus", executeTrapPanic);
 
 // settingsBtn moved to top
 const settingsModal = document.getElementById('settings-modal');
@@ -270,10 +322,16 @@ const panicDocsTitle = document.querySelector('.panic-docs-title');
 const passError = document.getElementById('panic-pass-error');
 
 function applyTheme() {
-  const t = panicThemes[currentTheme];
+  const t = panicThemes[currentTheme] || panicThemes.docs;
   if (panicAppName) panicAppName.textContent = t.name;
   if (panicDocsTitle) panicDocsTitle.textContent = t.title;
   document.querySelectorAll('.panic-app-name-mirror').forEach(el => el.textContent = t.name);
+  
+  document.querySelectorAll('.panic-signin-subtitle').forEach(el => {
+    if (el.innerHTML.includes('to continue to')) {
+      el.style.display = currentTheme === 'signin' ? 'none' : '';
+    }
+  });
 }
 applyTheme();
 
@@ -462,16 +520,22 @@ let overlayShown = false;
 window.addEventListener('blur', () => {
   if (modal.style.display === 'flex' && !overlayShown && document.activeElement === frame) {
     if (frame.src.includes('webhp?igu=1')) return;
+    if (panic.style.display === "flex") return; // prevent StudiesQuest from overriding a panic!
+    
     overlayShown = true;
     if (loadingOverlay) {
       loadingOverlay.style.display = 'flex';
       setTimeout(() => {
         loadingOverlay.classList.remove('hidden');
       }, 10);
+      
+      const isAzGame = frame.src.includes('azgames');
+      const hideDelay = isAzGame ? 2500 : 2000;
+      
       setTimeout(() => {
         loadingOverlay.classList.add('hidden');
         setTimeout(() => { loadingOverlay.style.display = 'none'; }, 500);
-      }, 2000);
+      }, hideDelay);
     }
   }
 });
