@@ -7,6 +7,7 @@
 <p align="center">
   <b>100+ free unblocked games — NO popup ads, NO tracking, NO lag.</b><br>
   Built for Chromebook sign-in page bypass. Just open and play.
+  Some embedded games on this site may display advertisements within their iframes. Please note that these ads are provided by the original game sources, and are not created, controlled, or managed by me.
   (right now I am using banner ads that you can close completely and it wont distract you. I will use these ads to buy a real link to connect to the site.)
   (Afterwards I will permanantly remove ads from the site!)
 </p>
