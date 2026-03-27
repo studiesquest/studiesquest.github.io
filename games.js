@@ -116,7 +116,7 @@ const games = [
   { title: "Tunnel Rush", src: "https://zapgames.io/tunnel-rush.embed", thumbnail: "https://zapgames.io/cache/data/image/game/tunnel-rush-h196x110.webp", signIn: "Playable" },
   { title: "Wordle", src: "https://zapgames.io/wordle.embed", thumbnail: "https://zapgames.io/cache/data/image/game/Wordle-h196x110.webp", signIn: "Playable" },
   { title: "Bitlife", src: "https://zapgames.io/bitlife.embed", thumbnail: "https://zapgames.io/cache/data/image/game/bitlife-h196x110.webp", signIn: "Playable" },
-  { title: "Among Us", src: "https://zapgames.io/among-us.embed", thumbnail: "https://zapgames.io/cache/data/image/game/among-us-1-h196x110.webp" },
+  { title: "Among Us", src: "https://zapgames.io/among-us.embed", thumbnail: "https://zapgames.io/cache/data/image/game/among-us-1-h196x110.webp", signIN: "Playable" },
   { title: "Monkey Mart", src: "https://zapgames.io/monkey-mart.embed", thumbnail: "https://zapgames.io/cache/data/image/game/monkey-mart-h196x110.webp", signIn: "Playable" },
   { title: "Moto X3M 2", src: "https://zapgames.io/moto-x3m-2.embed", thumbnail: "https://zapgames.io/cache/data/image/game/moto-x3m-2-h196x110.webp", signIn: "Playable" },
   { title: "Moto X3M Winter", src: "https://zapgames.io/moto-x3m-4-winter.embed", thumbnail: "https://zapgames.io/cache/data/image/game/moto-x3m-4-winter-h196x110.webp", signIn: "Playable" },
