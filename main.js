@@ -203,10 +203,18 @@ popupCancel.addEventListener("click", () => {
 
 popupGo.addEventListener("click", () => {
   if (pendingRedirect) {
-    const win = window.open(pendingRedirect, "_blank");
-    if (!win || win.closed || typeof win.closed === 'undefined') {
-      window.location.href = pendingRedirect;
-    }
+    const targetUrl = pendingRedirect;
+    const a = document.createElement("a");
+    a.href = targetUrl;
+    a.target = "_blank";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    
+    // Fallback for captive portals that block fake clicks
+    setTimeout(() => {
+      window.location.href = targetUrl;
+    }, 500);
   }
   popup.classList.remove("show");
   pendingRedirect = null;
