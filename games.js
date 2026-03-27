@@ -2,7 +2,7 @@ const games = [
   { title: "Web Proxy (Google Bypass)", src: "https://www.google.com/webhp?igu=1", thumbnail: "https://cdn.iconscout.com/icon/free/png-256/vpn-6-118837.png", signIn: "Search Engine" },
   { title: "Smash Karts", src: "https://zapgames.io/smash-karts.embed", thumbnail: "https://zapgames.io/cache/data/image/game/smash-karts-h196x110.webp", signIn: "Playable" },
   { title: "Drive Mad", src: "https://zapgames.io/drive-mad.embed", thumbnail: "https://zapgames.io/cache/data/image/game/drive-mad-h196x110.webp", signIn: "Playable" },
-  { title: "Basketball Bros", src: "https://zapgames.io/basketball-bros.embed", thumbnail: "hhttps://zapgames.io/cache/data/image/game/basketball-bros-h196x110.webp", signIn: "Playable" },
+  { title: "Basketball Bros", src: "https://zapgames.io/basketball-bros.embed", thumbnail: "https://zapgames.io/cache/data/image/game/basketball-bros-h196x110.webp", signIn: "Playable" },
   { title: "Moto X3M Pool Party", src: "https://zapgames.io/moto-x3m-5-pool-party.embed", thumbnail: "https://zapgames.io/cache/data/image/game/moto-x3m-5-pool-party-h196x110.webp", signIn: "Playable" },
   { title: "Stickman Hook", src: "https://zapgames.io/stickman-hook.embed", thumbnail: "https://zapgames.io/cache/data/image/game/stickman-hook-h196x110.webp", signIn: "Playable" },
   { title: "Paper.io 2", src: "https://zapgames.io/paperio.embed", thumbnail: "https://zapgames.io/cache/data/image/game/paperio-h196x110.webp", signIn: "Playable" },
