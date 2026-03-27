@@ -166,7 +166,6 @@ const games = [
   { title: "Short Life", src: "https://zapgames.io/short-life.embed", thumbnail: "https://zapgames.io/cache/data/image/game/short-life-h196x110.webp", signIn: "Playable" },
   { title: "Vex 9", src: "https://zapgames.io/vex-9.embed", thumbnail: "https://zapgames.io/cache/data/image/game/vex-9-h196x110.webp", signIn: "Playable" },
   { title: "Vex", src: "https://zapgames.io/vex.embed", thumbnail: "https://zapgames.io/cache/data/image/game/vex-h196x110.webp", signIn: "Playable" },
-  { title: "Penalty Kick Online", src: "https://zapgames.io/penalty-kick-online.embed", thumbnail: "https://zapgames.io/cache/data/image/game/penalty-kick-online-h196x110.webp", signIn: "Playable" },
   { title: "Plants vs Zombies", src: "https://zapgames.io/plants-vs-zombies.embed", thumbnail: "https://zapgames.io/cache/data/image/game/plants-vs-zombies-h196x110.webp", signIn: "Playable" },
   { title: "Kour", src: "https://zapgames.io/kour.embed", thumbnail: "https://zapgames.io/cache/data/image/game/kour-h196x110.webp", signIn: "Hardly Playable" },
   { title: "Gladihoppers", src: "https://zapgames.io/gladihoppers.embed", thumbnail: "https://zapgames.io/cache/data/image/game/gladihoppers-h196x110.webp", signIn: "Playable" },
