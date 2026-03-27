@@ -171,7 +171,7 @@ const games = [
   { title: "Gladihoppers", src: "https://zapgames.io/gladihoppers.embed", thumbnail: "https://zapgames.io/cache/data/image/game/gladihoppers-h196x110.webp", signIn: "Playable" },
   { title: "8 Ball Pool", src: "https://zapgames.io/8-ball-pool.embed", thumbnail: "https://zapgames.io/cache/data/image/game/8-ball-pool-h196x110.webp", signIn: "Playable" },
   { title: "Crazy Cattle 3D", src: "https://zapgames.io/crazy-cattle-3d.embed", thumbnail: "https://zapgames.io/cache/data/image/game/crazy-cattle-3d-h196x110.webp", signIn: "Playable" },
-  { title: "Granny 2", src: "https://zapgames.io/zombie-derby-blocky-roads.embed", thumbnail: "https://zapgames.io/cache/data/image/game/zombie-derby-blocky-roads-h196x110.webp", signIn: "Hardly Playable" },
+  { title: "Zombie Derby Blocks", src: "https://zapgames.io/zombie-derby-blocky-roads.embed", thumbnail: "https://zapgames.io/cache/data/image/game/zombie-derby-blocky-roads-h196x110.webp", signIn: "Playable" },
   { title: "Fall Guys", src: "https://zapgames.io/fall-guys.embed", thumbnail: "https://zapgames.io/cache/data/image/game/fall-guys-h196x110.webp", signIn: "Playable" },
   { title: "Super Mario Bros", src: "https://zapgames.io/super-mario-bros.embed", thumbnail: "https://zapgames.io/cache/data/image/game/super-mario-bros-h196x110.webp", signIn: "Playable" },
   { title: "GeoGuessr", src: "https://zapgames.io/geoguessr.embed", thumbnail: "https://zapgames.io/cache/data/image/game/geoguessr-h196x110.webp", signIn: "Playable" },
