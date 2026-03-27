@@ -451,6 +451,8 @@ render();
 
 const loadingOverlay = document.getElementById('game-loading-overlay');
 const loadingBarFill = loadingOverlay ? loadingOverlay.querySelector('.loading-bar-fill') : null;
+const loadingPlayBtn = document.getElementById('loading-play-btn');
+const loadingText = loadingOverlay ? loadingOverlay.querySelector('.loading-text') : null;
 let loadingInterval = null;
 
 function showLoadingOverlay() {
@@ -458,6 +460,8 @@ function showLoadingOverlay() {
   loadingOverlay.classList.remove('hidden');
   loadingOverlay.style.display = 'flex';
   if (loadingBarFill) loadingBarFill.style.width = '0%';
+  if (loadingPlayBtn) loadingPlayBtn.style.display = 'none';
+  if (loadingText) loadingText.textContent = 'Loading game...';
 
   let progress = 0;
   if (loadingInterval) clearInterval(loadingInterval);
@@ -471,10 +475,19 @@ function showLoadingOverlay() {
     frame.removeEventListener('load', onLoad);
     if (loadingInterval) clearInterval(loadingInterval);
     if (loadingBarFill) loadingBarFill.style.width = '100%';
+    if (loadingText) loadingText.textContent = 'Game ready!';
+    if (loadingPlayBtn) loadingPlayBtn.style.display = 'inline-block';
+  });
+}
+
+if (loadingPlayBtn) {
+  loadingPlayBtn.addEventListener('click', () => {
+    if (loadingText) loadingText.textContent = 'Loading main game...';
+    if (loadingPlayBtn) loadingPlayBtn.style.display = 'none';
     setTimeout(() => {
       loadingOverlay.classList.add('hidden');
       setTimeout(() => { loadingOverlay.style.display = 'none'; }, 500);
-    }, 600);
+    }, 800);
   });
 }
 
