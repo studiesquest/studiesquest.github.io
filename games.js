@@ -144,7 +144,7 @@ const games = [
   { title: "Suika", src: "https://zapgames.io/suika.embed", thumbnail: "https://zapgames.io/cache/data/image/game/suika-h196x110.webp", signIn: "Playable" },
   { title: "Infinite Craft", src: "https://zapgames.io/infinite-craft.embed", thumbnail: "https://zapgames.io/cache/data/image/game/infinite-craft-h196x110.webp", signIn: "Playable" },
   { title: "Sprunki", src: "https://zapgames.io/sprunki.embed", thumbnail: "https://zapgames.io/cache/data/image/game/sprunki-h196x110.webp", signIn: "Playable" },
-  { title: "Eaglercraft", src: "https://zapgames.io/eaglercraft.embed", thumbnail: "https://zapgames.io/cache/data/image/game/eaglercraft-h196x110.webp", signIn: "Playable" },
+  { title: "Minecraft", src: "https://zapgames.io/eaglercraft.embed", thumbnail: "https://zapgames.io/cache/data/image/game/eaglercraft-h196x110.webp", signIn: "Playable" },
   { title: "Poppy Playtime", src: "https://zapgames.io/poppy-playtime.embed", thumbnail: "https://zapgames.io/cache/data/image/game/poppy-playtime-h196x110.webp", signIn: "Hardly Playable" },
   { title: "FNAF 4", src: "https://zapgames.io/fnaf-4.embed", thumbnail: "https://zapgames.io/cache/data/image/game/fnaf-4-h196x110.webp", signIn: "Playable" },
   { title: "Friday Night Funkin", src: "https://zapgames.io/friday-night-funkin.embed", thumbnail: "https://zapgames.io/cache/data/image/game/friday-night-funkin-h196x110.webp", signIn: "Playable" },
