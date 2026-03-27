@@ -131,7 +131,7 @@ const games = [
   { title: "Geometry Dash Breeze", src: "https://zapgames.io/geometry-dash-breeze.embed", thumbnail: "https://zapgames.io/cache/data/image/game/geometry-dash-breeze-h196x110.webp", signIn: "Playable" },
   { title: "Narrow One", src: "https://zapgames.io/narrow-one.embed", thumbnail: "https://zapgames.io/cache/data/image/game/narrow-one-h196x110.webp", signIn: "Hardly Playable" },
   { title: "Territorial.io", src: "https://zapgames.io/territorial-io.embed", thumbnail: "https://zapgames.io/cache/data/image/game/territorial-io-h196x110.webp", signIn: "Playable" },
-  { title: "Hole.io", src: "https://zapgames.io/hole-io.embed", thumbnail: "https://zapgames.io/cache/data/image/game/hole-io-h196x110.webp", signIn: "Playable" },
+  { title: "Hole.io", src: "https://zapgames.io/hole-io.embed", thumbnail: "https://zapgames.io/cache/data/image/game/holeio-h196x110.webp", signIn: "Playable" },
   { title: "Bonk.io", src: "https://zapgames.io/bonk-io.embed", thumbnail: "https://zapgames.io/cache/data/image/game/bonk-io-h196x110.webp", signIn: "Playable" },
   { title: "Cookie Clicker", src: "https://zapgames.io/cookie-clicker.embed", thumbnail: "https://zapgames.io/cache/data/image/game/cookie-clicker-h196x110.webp", signIn: "Playable" },
   { title: "Tetris", src: "https://zapgames.io/tetris.embed", thumbnail: "https://zapgames.io/cache/data/image/game/tetris-h196x110.webp", signIn: "Playable" },
