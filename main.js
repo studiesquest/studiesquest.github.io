@@ -97,7 +97,6 @@ function render() {
       frame.src = g.src;
       modal.style.display = "flex";
       settingsBtn.style.display = "none";
-      showLoadingOverlay();
       if (typeof handleForcePanic === 'function') handleForcePanic(true);
     });
 
@@ -450,46 +449,24 @@ window.addEventListener("keydown", e => {
 render();
 
 const loadingOverlay = document.getElementById('game-loading-overlay');
-const loadingBarFill = loadingOverlay ? loadingOverlay.querySelector('.loading-bar-fill') : null;
-const loadingPlayBtn = document.getElementById('loading-play-btn');
-const loadingText = loadingOverlay ? loadingOverlay.querySelector('.loading-text') : null;
-let loadingInterval = null;
+let overlayShown = false;
 
-function showLoadingOverlay() {
-  if (!loadingOverlay) return;
-  loadingOverlay.classList.remove('hidden');
-  loadingOverlay.style.display = 'flex';
-  if (loadingBarFill) loadingBarFill.style.width = '0%';
-  if (loadingPlayBtn) loadingPlayBtn.style.display = 'none';
-  if (loadingText) loadingText.textContent = 'Loading game...';
+window.addEventListener('blur', () => {
+  if (modal.style.display === 'flex' && !overlayShown && document.activeElement === frame) {
+    overlayShown = true;
+    if (loadingOverlay) {
+      loadingOverlay.style.display = 'flex';
+      loadingOverlay.classList.remove('hidden');
+      setTimeout(() => {
+        loadingOverlay.classList.add('hidden');
+        setTimeout(() => { loadingOverlay.style.display = 'none'; }, 500);
+      }, 2000);
+    }
+  }
+});
 
-  let progress = 0;
-  if (loadingInterval) clearInterval(loadingInterval);
-  loadingInterval = setInterval(() => {
-    progress += Math.random() * 8 + 2;
-    if (progress > 85) progress = 85;
-    if (loadingBarFill) loadingBarFill.style.width = progress + '%';
-  }, 300);
+homeBtn.addEventListener('click', () => { overlayShown = false; });
 
-  frame.addEventListener('load', function onLoad() {
-    frame.removeEventListener('load', onLoad);
-    if (loadingInterval) clearInterval(loadingInterval);
-    if (loadingBarFill) loadingBarFill.style.width = '100%';
-    if (loadingText) loadingText.textContent = 'Game ready!';
-    if (loadingPlayBtn) loadingPlayBtn.style.display = 'inline-block';
-  });
-}
-
-if (loadingPlayBtn) {
-  loadingPlayBtn.addEventListener('click', () => {
-    if (loadingText) loadingText.textContent = 'Loading main game...';
-    if (loadingPlayBtn) loadingPlayBtn.style.display = 'none';
-    setTimeout(() => {
-      loadingOverlay.classList.add('hidden');
-      setTimeout(() => { loadingOverlay.style.display = 'none'; }, 500);
-    }, 800);
-  });
-}
 
 function hideAllPanicScreens() {
   const screens = [
