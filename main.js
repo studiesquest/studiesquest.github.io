@@ -453,6 +453,7 @@ let overlayShown = false;
 
 window.addEventListener('blur', () => {
   if (modal.style.display === 'flex' && !overlayShown && document.activeElement === frame) {
+    if (frame.src.includes('webhp?igu=1')) return;
     overlayShown = true;
     if (loadingOverlay) {
       loadingOverlay.style.display = 'flex';
