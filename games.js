@@ -9,7 +9,7 @@ const games = [
   { title: "Basketball Stars", src: "https://zapgames.io/basketball-stars.embed", thumbnail: "https://zapgames.io/cache/data/image/game/basketball-bros-h196x110.webp", signIn: "Playable" },
   { title: "Rocket Soccer", src: "https://zapgames.io/rocket-soccer.embed", thumbnail: "https://zapgames.io/cache/data/image/game/rocket-soccer-f546x307.webp", signIn: "Playable" },
   { title: "Space Waves", src: "https://zapgames.io/space-waves.embed", thumbnail: "https://zapgames.io/cache/data/image/game/space-waves-h196x110.webp", signIn: "Playable" },
-  { title: "CS 1.6", src: "https://ubg100.github.io/cs16/", thumbnail: "https://tse1.mm.bing.net/th?q=counter+strike+1.6+icon", signIn: "Hardly Playable" },
+  { title: "CS 1.6", src: "https://zapgames.io/cs-1.embed", thumbnail: "https://zapgames.io/cache/data/image/game/cs-1-h196x110.webp", signIn: "Hardly Playable" },
   { title: "Drift Boss", src: "https://zapgames.io/drift-boss.embed", thumbnail: "https://zapgames.io/cache/data/image/game/drift-boss-h196x110.webp", signIn: "Playable" },
   { title: "Snow Rider", src: "https://zapgames.io/snow-rider.embed", thumbnail: "https://zapgames.io/cache/data/image/game/snow-rider-h196x110.webp", signIn: "Playable" },
   { title: "Eggy Car", src: "https://zapgames.io/eggy-car.embed", thumbnail: "https://tse1.mm.bing.net/th?q=eggy+car+unblocked+icon", signIn: "Playable" },
