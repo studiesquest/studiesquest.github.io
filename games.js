@@ -9,7 +9,7 @@ const games = [
   { title: "Basketball Stars", src: "https://zapgames.io/basketball-stars.embed", thumbnail: "https://zapgames.io/cache/data/image/game/basketball-bros-h196x110.webp", signIn: "Playable" },
   { title: "Rocket Soccer", src: "https://zapgames.io/rocket-soccer.embed", thumbnail: "https://zapgames.io/cache/data/image/game/rocket-soccer-f546x307.webp", signIn: "Playable" },
   { title: "Space Waves", src: "https://zapgames.io/space-waves.embed", thumbnail: "https://zapgames.io/cache/data/image/game/space-waves-h196x110.webp", signIn: "Playable" },
-  { title: "CS 1.6", src: "https://app-362399.cdn.games.yandex.net/362399/c22g2d5dgcjxubb07hvditm5njyr1n2v_brotli/index.html?is-united-page=1&skip-guard=1&header=no&clid=13924144&flags=%7B%22adv_sticky_banner_disabled%22%3Atrue%7D&sdk=%2Fsdk%2F_%2Fv2.1cfa6241c8b6991a4ef6.js#origin=https%3A%2F%2Fyandex.com&app-id=362399&device-type=desktop", thumbnail: "https://tse1.mm.bing.net/th?q=counter+strike+1.6+icon", signIn: "Hardly Playable" },
+  { title: "CS 1.6", src: "https://zapgames.io/cs-1.embed", thumbnail: "https://zapgames.io/cache/data/image/game/cs-1-h196x110.webp", signIn: "Hardly Playable" },
   { title: "Drift Boss", src: "https://zapgames.io/drift-boss.embed", thumbnail: "https://zapgames.io/cache/data/image/game/drift-boss-h196x110.webp", signIn: "Playable" },
   { title: "Snow Rider", src: "https://zapgames.io/snow-rider.embed", thumbnail: "https://zapgames.io/cache/data/image/game/snow-rider-h196x110.webp", signIn: "Playable" },
   { title: "Eggy Car", src: "https://zapgames.io/eggy-car.embed", thumbnail: "https://tse1.mm.bing.net/th?q=eggy+car+unblocked+icon", signIn: "Playable" },
