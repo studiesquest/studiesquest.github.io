@@ -624,6 +624,8 @@ main {
   max-width: 448px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .panic-google-logo {
@@ -1010,9 +1012,7 @@ main {
 .ad-right .ad-close { left: -12px; }
 
 
-@media (max-width: 1300px) {
-  .ad-sidebar { display: none !important; }
-}
+
 
 
 #settings-btn {
@@ -1343,4 +1343,13 @@ ins:empty { display: none !important; }
 }
 .panic-app-name-mirror {
   color: #1a73e8;
+}
+
+@media (max-width: 1400px) {
+  .ad-sidebar { 
+    display: none !important; 
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
 }
