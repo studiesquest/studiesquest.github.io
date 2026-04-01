@@ -162,7 +162,6 @@ const games = [
   { title: "Head Soccer", src: "https://zapgames.io/head-soccer.embed", thumbnail: "https://zapgames.io/cache/data/image/game/head-soccer-h196x110.webp", signIn: "Playable" },
   { title: "Age of War", src: "https://zapgames.io/age-of-war.embed", thumbnail: "https://zapgames.io/cache/data/image/game/age-of-war-h196x110.webp", signIn: "Playable" },
   { title: "Stickman War", src: "https://zapgames.io/stickman-war.embed", thumbnail: "https://zapgames.io/cache/data/image/game/stickman-war-h196x110.webp", signIn: "Playable" },
-  { title: "Drive Mad 2", src: "https://zapgames.io/drive-mad-2.embed", thumbnail: "https://zapgames.io/cache/data/image/game/drive-mad-2-h196x110.webp", signIn: "Playable" },
   { title: "Dreadhead Parkour", src: "https://zapgames.io/dreadhead-parkour.embed", thumbnail: "https://zapgames.io/cache/data/image/game/dreadhead-parkour-h196x110.webp", signIn: "Playable" },
   { title: "Only Up", src: "https://zapgames.io/only-up.embed", thumbnail: "https://zapgames.io/cache/data/image/game/only-up-h196x110.webp", signIn: "Playable" },
   { title: "Short Life", src: "https://zapgames.io/short-life.embed", thumbnail: "https://zapgames.io/cache/data/image/game/short-life-h196x110.webp", signIn: "Playable" },
