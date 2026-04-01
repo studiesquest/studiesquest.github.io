@@ -9,7 +9,7 @@ const games = [
   { title: "Basketball Stars", src: "https://zapgames.io/basketball-stars.embed", thumbnail: "https://zapgames.io/cache/data/image/game/basketball-stars-h196x110.webp", signIn: "Playable" },
   { title: "Rocket Soccer", src: "https://zapgames.io/rocket-soccer.embed", thumbnail: "https://zapgames.io/cache/data/image/game/rocket-soccer-f546x307.webp", signIn: "Playable" },
   { title: "Space Waves", src: "https://zapgames.io/space-waves.embed", thumbnail: "https://zapgames.io/cache/data/image/game/space-waves-h196x110.webp", signIn: "Playable" },
-  { title: "CS 1", src: "https://yandex.com/games/app/362399?utm_source=distrib&skip-guard=1&header=no&utm_medium=goodmediasoftware&flags=%7B%22adv_sticky_banner_disabled%22%3Atrue%7D", thumbnail: "https://zapgames.io/cache/data/image/game/cs-1-h196x110.webp", signIn: "Hardly Playable" },
+  { title: "2v2.IO", src: "https://zapgames.io/2v2io.embed", thumbnail: "https://zapgames.io/cache/data/image/game/2v2io-h196x110.webp", signIn: "Hardly Playable" },
   { title: "Drift Boss", src: "https://zapgames.io/drift-boss.embed", thumbnail: "https://zapgames.io/cache/data/image/game/drift-boss-h196x110.webp", signIn: "Playable" },
   { title: "FNAF 1", src: "https://zapgames.io/fnaf.embed", thumbnail: "https://zapgames.io/cache/data/image/game/fnaf-h196x110.webp", signIn: "Playable" },
   { title: "Sky Bounce", src: "https://zapgames.io/sky-bounce.embed", thumbnail: "https://zapgames.io/cache/data/image/game/sky-bounce-h196x110.webp", signIn: "Playable" },
