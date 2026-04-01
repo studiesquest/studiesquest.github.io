@@ -10,8 +10,7 @@
   <meta name="keywords"
     content="StudiesQuest, unblocked games, free games, chromebook games, play at school, HTML5 games, slope unblocked, FNAF games, study games">
 
-  <link rel="icon" href="output.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="output.jpg">
+  <link rel="icon" href="https://zapgames.io/cache/data/image/site/favicon.ico" type="image/x-icon">
 
   <meta property="og:title" content="StudiesQuest - Premium Unblocked Games">
   <meta property="og:description"
@@ -23,15 +22,25 @@
 <body>
 
 
-  <div class="ad-sidebar ad-left">
-    <button class="ad-close" onclick="this.parentElement.style.transform='translateX(-200%)'" title="Hide Ad">❮</button>
-    <iframe width="160" height="600" frameborder="0" scrolling="no" style="border:none;"
-      srcdoc="<html><body style='margin:0;padding:0;'><script type='text/javascript'>atOptions={'key':'b64296e2ea256965fa584c721f19f8c1','format':'iframe','height':600,'width':160,'params':{}};</script><script type='text/javascript' src='https://www.highperformanceformat.com/b64296e2ea256965fa584c721f19f8c1/invoke.js'></script></body></html>"></iframe>
+  <div class="ad-sidebar ad-left" id="ad-left">
+    <button class="ad-close" onclick="this.parentElement.style.display='none'" title="Hide Ad">❮</button>
+    <div class="ad-content">
+      <!-- Adsterra 160x600 -->
+      <script type="text/javascript">
+        atOptions = { 'key': 'b64296e2ea256965fa584c721f19f8c1', 'format': 'iframe', 'height': 600, 'width': 160, 'params': {} };
+      </script>
+      <script type="text/javascript" src="https://www.highperformanceformat.com/b64296e2ea256965fa584c721f19f8c1/invoke.js"></script>
+    </div>
   </div>
-  <div class="ad-sidebar ad-right">
-    <button class="ad-close" onclick="this.parentElement.style.transform='translateX(200%)'" title="Hide Ad">❯</button>
-    <iframe width="160" height="600" frameborder="0" scrolling="no" style="border:none;"
-      srcdoc="<html><body style='margin:0;padding:0;'><script type='text/javascript'>atOptions={'key':'b64296e2ea256965fa584c721f19f8c1','format':'iframe','height':600,'width':160,'params':{}};</script><script type='text/javascript' src='https://www.highperformanceformat.com/b64296e2ea256965fa584c721f19f8c1/invoke.js'></script></body></html>"></iframe>
+  <div class="ad-sidebar ad-right" id="ad-right">
+    <button class="ad-close" onclick="this.parentElement.style.display='none'" title="Hide Ad">❯</button>
+    <div class="ad-content">
+      <!-- Adsterra 160x600 -->
+      <script type="text/javascript">
+        atOptions = { 'key': 'b64296e2ea256965fa584c721f19f8c1', 'format': 'iframe', 'height': 600, 'width': 160, 'params': {} };
+      </script>
+      <script type="text/javascript" src="https://www.highperformanceformat.com/b64296e2ea256965fa584c721f19f8c1/invoke.js"></script>
+    </div>
   </div>
 
 
@@ -132,9 +141,9 @@
       <div class="loading-brand">STUDIESQUEST</div>
       <div class="loading-text">Loading main game...</div>
     </div>
-    <button id="panic-trap-prev" tabindex="0" style="position:absolute; opacity:0; left:-9999px;"></button>
-    <iframe id="gameFrame" tabindex="0" allowfullscreen></iframe>
-    <button id="panic-trap-next" tabindex="0" style="position:absolute; opacity:0; left:-9999px;"></button>
+      <div id="panic-trap-prev" tabindex="0" style="position: absolute; top: 0; left: 0; width: 1px; height: 1px; opacity: 0;"></div>
+      <iframe id="gameFrame" allow="autoplay; fullscreen; cursor-lock"></iframe>
+      <div id="panic-trap-next" tabindex="0" style="position: absolute; bottom: 0; right: 0; width: 1px; height: 1px; opacity: 0;"></div>
   </div>
 
 
