@@ -14,7 +14,7 @@ const games = [
   { title: "FNAF 1", src: "https://zapgames.io/fnaf.embed", thumbnail: "https://zapgames.io/cache/data/image/game/fnaf-h196x110.webp", signIn: "Playable" },
   { title: "Sky Bounce", src: "https://zapgames.io/sky-bounce.embed", thumbnail: "https://zapgames.io/cache/data/image/game/sky-bounce-h196x110.webp", signIn: "Playable" },
   { title: "Vex Hyper Dash", src: "https://zapgames.io/vex-hyper-dash.embed", thumbnail: "https://zapgames.io/cache/data/image/game/vex-hyper-dash-game-h196x110.webp", signIn: "Playable" },
-  { title: "Burnout Drift", src: "https://games.crazygames.com/en_US/burnout-drift/index.html?czyExpSkipPlayNowOnly_CZY_18027_2=disabled&v=1.354", thumbnail: "https://imgs.crazygames.com/burnoutdrift.png?metadata=none&quality=75&width=196&dpr=2", signIn: "Playable" },
+  { title: "Burnout Drift", src: "https://games.crazygames.com/en_US/burnout-drift/index.html?v=1.354", thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI2ambni7T_j4IMzupYF8bdHJgp3BNGTI6nvm31q4TGyICpCgq6CosZLB2xGAPaKj9U4VS-LutIL_3vfWEf0xjU_QB3s8Ne0QLfYeiWuc&s=10", signIn: "Playable" },
   { title: "Drift Hunters", src: "https://zapgames.io/drift-hunters.embed", thumbnail: "https://zapgames.io/cache/data/image/game/drift-hunters-h196x110.webp", signIn: "Playable" },
   { title: "Jetski Race", src: "https://zapgames.io/jetski-race.embed", thumbnail: "https://zapgames.io/cache/data/image/game/jetski-race-h196x110.webp", signIn: "Playable" },
   { title: "Football Bros", src: "https://zapgames.io/football-bros.embed", thumbnail: "https://zapgames.io/cache/data/image/game/football-bros-h196x110.webp", signIn: "Playable" },
